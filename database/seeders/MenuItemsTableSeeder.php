@@ -27,7 +27,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$crmMenuItem->exists) {
             $crmMenuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'fa fa-cube',
+                'icon_class' => 'voyager-list',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
                 'order'      => $maxOrder,
