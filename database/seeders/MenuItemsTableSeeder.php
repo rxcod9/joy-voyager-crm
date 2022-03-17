@@ -3,6 +3,8 @@
 namespace Joy\VoyagerCrm\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use TCG\Voyager\Models\Menu;
+use TCG\Voyager\Models\MenuItem;
 
 class MenuItemsTableSeeder extends Seeder
 {
@@ -13,6 +15,25 @@ class MenuItemsTableSeeder extends Seeder
      */
     public function run()
     {
+        $menu = Menu::where('name', 'admin')->firstOrFail();
+
+        $maxOrder = MenuItem::max('order');
+
+        $crmMenuItem = MenuItem::firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => __('joy-voyager-crm::seeders.menu_items.crm'),
+            'url'     => '',
+        ]);
+        if (!$crmMenuItem->exists) {
+            $crmMenuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'fa fa-cube',
+                'color'      => null,
+                'parent_id'  => null,
+                'order'      => $maxOrder,
+            ])->save();
+        }
+
         $this->call([
             \Joy\VoyagerBreadAccount\Database\Seeders\MenuItemsTableSeeder::class,
             \Joy\VoyagerBreadCall\Database\Seeders\MenuItemsTableSeeder::class,
@@ -41,6 +62,6 @@ class MenuItemsTableSeeder extends Seeder
             \Joy\VoyagerBreadTargetList\Database\Seeders\MenuItemsTableSeeder::class,
             \Joy\VoyagerBreadTask\Database\Seeders\MenuItemsTableSeeder::class,
             \Joy\VoyagerBreadTicket\Database\Seeders\MenuItemsTableSeeder::class,
-        ]);
+        ], [$crmMenuItem->id]);
     }
 }
