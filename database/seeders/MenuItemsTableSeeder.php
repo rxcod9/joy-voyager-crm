@@ -62,6 +62,6 @@ class MenuItemsTableSeeder extends Seeder
             \Joy\VoyagerBreadTargetList\Database\Seeders\MenuItemsTableSeeder::class,
             \Joy\VoyagerBreadTask\Database\Seeders\MenuItemsTableSeeder::class,
             \Joy\VoyagerBreadTicket\Database\Seeders\MenuItemsTableSeeder::class,
-        ], false, [$crmMenuItem->id]);
+        ], false, ['parentMenuId' => $crmMenuItem->id]);
     }
 }
