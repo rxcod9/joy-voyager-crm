@@ -28,6 +28,12 @@ composer require joy/voyager-crm
 
 # 2. Publish
 php artisan vendor:publish --provider="Joy\VoyagerCrm\VoyagerCrmServiceProvider" --force
+# 3. Migrate
+php artisan migrate
+# 4. Seeders
+php artisan db:seed --provider="\Joy\VoyagerCrm\Database\Seeders\VoyagerDatabaseSeeder" --force
+# 5. Dmmy Seeders
+php artisan db:seed --provider="\Joy\VoyagerCrm\Database\Seeders\VoyagerDummyDatabaseSeeder" --force
 ```
 
 ---
