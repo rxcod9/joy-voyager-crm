@@ -8,7 +8,9 @@ return [
         //
     ],
     'menu_items' => [
-        'crm' => 'CRM',
+        'crm'       => 'CRM',
+        'sales'     => 'Sales',
+        'marketing' => 'Marketing',
     ],
     'settings' => [
         //
