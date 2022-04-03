@@ -48,7 +48,6 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             \Joy\VoyagerBreadQuote\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
             \Joy\VoyagerBreadRelatable\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
             \Joy\VoyagerBreadReport\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
-            \Joy\VoyagerBreadSample\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
             \Joy\VoyagerBreadSubscription\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
             \Joy\VoyagerBreadTarget\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
             \Joy\VoyagerBreadTargetList\Database\Seeders\VoyagerDummyDatabaseSeeder::class,

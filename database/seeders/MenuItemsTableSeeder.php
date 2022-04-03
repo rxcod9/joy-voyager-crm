@@ -17,8 +17,6 @@ class MenuItemsTableSeeder extends Seeder
     {
         $menu = Menu::where('name', 'admin')->firstOrFail();
 
-        $maxOrder = MenuItem::max('order');
-
         // $crmMenuItem = MenuItem::firstOrNew([
         //     'menu_id' => $menu->id,
         //     'title'   => __('joy-voyager-crm::seeders.menu_items.crm'),
@@ -30,7 +28,7 @@ class MenuItemsTableSeeder extends Seeder
         //         'icon_class' => 'voyager-list',
         //         'color'      => null,
         //         'parent_id'  => $parentMenuId,
-        //         'order'      => $maxOrder,
+        //         'order'      => MenuItem::max('order'),
         //     ])->save();
         // }
 
@@ -45,7 +43,7 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-list',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
-                'order'      => $maxOrder,
+                'order'      => MenuItem::max('order'),
             ])->save();
         }
 
@@ -71,7 +69,7 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-list',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
-                'order'      => $maxOrder,
+                'order'      => MenuItem::max('order'),
             ])->save();
         }
 
@@ -99,7 +97,7 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-list',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
-                'order'      => $maxOrder,
+                'order'      => MenuItem::max('order'),
             ])->save();
         }
 
@@ -124,7 +122,7 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-list',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
-                'order'      => $maxOrder,
+                'order'      => MenuItem::max('order'),
             ])->save();
         }
 
@@ -152,7 +150,7 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-list',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
-                'order'      => $maxOrder,
+                'order'      => MenuItem::max('order'),
             ])->save();
         }
 
@@ -178,7 +176,7 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-list',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
-                'order'      => $maxOrder,
+                'order'      => MenuItem::max('order'),
             ])->save();
         }
 
@@ -252,7 +250,6 @@ class MenuItemsTableSeeder extends Seeder
         //     \Joy\VoyagerBreadQuote\Database\Seeders\MenuItemsTableSeeder::class,
         //     \Joy\VoyagerBreadRelatable\Database\Seeders\MenuItemsTableSeeder::class,
         //     \Joy\VoyagerBreadReport\Database\Seeders\MenuItemsTableSeeder::class,
-        //     \Joy\VoyagerBreadSample\Database\Seeders\MenuItemsTableSeeder::class,
         //     \Joy\VoyagerBreadSubscription\Database\Seeders\MenuItemsTableSeeder::class,
         //     \Joy\VoyagerBreadTarget\Database\Seeders\MenuItemsTableSeeder::class,
         //     \Joy\VoyagerBreadTargetList\Database\Seeders\MenuItemsTableSeeder::class,

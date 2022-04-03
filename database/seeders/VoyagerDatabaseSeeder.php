@@ -48,7 +48,6 @@ class VoyagerDatabaseSeeder extends Seeder
             \Joy\VoyagerBreadQuote\Database\Seeders\VoyagerDatabaseSeeder::class,
             \Joy\VoyagerBreadRelatable\Database\Seeders\VoyagerDatabaseSeeder::class,
             \Joy\VoyagerBreadReport\Database\Seeders\VoyagerDatabaseSeeder::class,
-            \Joy\VoyagerBreadSample\Database\Seeders\VoyagerDatabaseSeeder::class,
             \Joy\VoyagerBreadSubscription\Database\Seeders\VoyagerDatabaseSeeder::class,
             \Joy\VoyagerBreadTarget\Database\Seeders\VoyagerDatabaseSeeder::class,
             \Joy\VoyagerBreadTargetList\Database\Seeders\VoyagerDatabaseSeeder::class,
