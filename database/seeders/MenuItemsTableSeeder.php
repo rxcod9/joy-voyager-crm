@@ -40,7 +40,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$salesMenuItem->exists) {
             $salesMenuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-list',
+                'icon_class' => 'voyager-shop',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
                 'order'      => MenuItem::max('order') + 1,
@@ -66,7 +66,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$marketingMenuItem->exists) {
             $marketingMenuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-list',
+                'icon_class' => 'voyager-megaphone',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
                 'order'      => MenuItem::max('order') + 1,
@@ -94,7 +94,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$supportMenuItem->exists) {
             $supportMenuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-list',
+                'icon_class' => 'voyager-question',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
                 'order'      => MenuItem::max('order') + 1,
@@ -119,7 +119,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$activitiesMenuItem->exists) {
             $activitiesMenuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-list',
+                'icon_class' => 'voyager-activity',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
                 'order'      => MenuItem::max('order') + 1,
@@ -147,7 +147,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$collaborationMenuItem->exists) {
             $collaborationMenuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-list',
+                'icon_class' => 'voyager-puzzle',
                 'color'      => null,
                 'parent_id'  => $parentMenuId,
                 'order'      => MenuItem::max('order') + 1,
