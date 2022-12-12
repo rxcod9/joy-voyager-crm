@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users_password_link', function (Blueprint $table) {
+            $table->comment('');
+            $table->uuid('id')->primary();
+            $table->string('keyhash')->nullable();
+            $table->uuid('user_id')->nullable();
+            $table->uuid('username')->nullable()->index('idx_username');
+            $table->dateTime('date_generated')->nullable();
+            
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('users_password_link');
+    }
+};
