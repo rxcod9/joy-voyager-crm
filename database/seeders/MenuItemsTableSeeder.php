@@ -15,9 +15,9 @@ class MenuItemsTableSeeder extends Seeder
      */
     public function run($parentMenuId = null)
     {
-        // $menu = Menu::where('name', 'admin')->firstOrFail();
+        // $menu = Voyager::model('Menu')->where('name', 'admin')->firstOrFail();
 
-        // // $crmMenuItem = MenuItem::firstOrNew([
+        // // $crmMenuItem = Voyager::model('MenuItem')->firstOrNew([
         // //     'menu_id' => $menu->id,
         // //     'title'   => __('joy-voyager-crm::seeders.menu_items.crm'),
         // //     'url'     => '',
@@ -28,11 +28,11 @@ class MenuItemsTableSeeder extends Seeder
         // //         'icon_class' => 'voyager-list',
         // //         'color'      => null,
         // //         'parent_id'  => $parentMenuId,
-        // //         'order'      => MenuItem::max('order') + 1,
+        // //         'order'      => Voyager::model('MenuItem')->max('order') + 1,
         // //     ])->save();
         // // }
 
-        // $salesMenuItem = MenuItem::firstOrNew([
+        // $salesMenuItem = Voyager::model('MenuItem')->firstOrNew([
         //     'menu_id' => $menu->id,
         //     'title'   => __('joy-voyager-crm::seeders.menu_items.sales'),
         //     'url'     => '',
@@ -43,13 +43,13 @@ class MenuItemsTableSeeder extends Seeder
         //         'icon_class' => 'voyager-shop',
         //         'color'      => null,
         //         'parent_id'  => $parentMenuId,
-        //         'order'      => MenuItem::max('order') + 1,
+        //         'order'      => Voyager::model('MenuItem')->max('order') + 1,
         //     ])->save();
         // }
 
         // $this->call(
         //     [
-        //         \Joy\VoyagerBreadAccount\Database\Seeders\MenuItemsTableSeeder::class,
+        //         \Joy\VoyagerCrm\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadContact\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadLead\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadOpportunity\Database\Seeders\MenuItemsTableSeeder::class,
@@ -58,7 +58,7 @@ class MenuItemsTableSeeder extends Seeder
         //     ['parentMenuId' => $salesMenuItem->id]
         // );
 
-        // $marketingMenuItem = MenuItem::firstOrNew([
+        // $marketingMenuItem = Voyager::model('MenuItem')->firstOrNew([
         //     'menu_id' => $menu->id,
         //     'title'   => __('joy-voyager-crm::seeders.menu_items.marketing'),
         //     'url'     => '',
@@ -69,13 +69,13 @@ class MenuItemsTableSeeder extends Seeder
         //         'icon_class' => 'voyager-megaphone',
         //         'color'      => null,
         //         'parent_id'  => $parentMenuId,
-        //         'order'      => MenuItem::max('order') + 1,
+        //         'order'      => Voyager::model('MenuItem')->max('order') + 1,
         //     ])->save();
         // }
 
         // $this->call(
         //     [
-        //         \Joy\VoyagerBreadAccount\Database\Seeders\MenuItemsTableSeeder::class,
+        //         \Joy\VoyagerCrm\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadContact\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadLead\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadCampaign\Database\Seeders\MenuItemsTableSeeder::class,
@@ -86,7 +86,7 @@ class MenuItemsTableSeeder extends Seeder
         //     ['parentMenuId' => $marketingMenuItem->id]
         // );
 
-        // $supportMenuItem = MenuItem::firstOrNew([
+        // $supportMenuItem = Voyager::model('MenuItem')->firstOrNew([
         //     'menu_id' => $menu->id,
         //     'title'   => __('joy-voyager-crm::seeders.menu_items.support'),
         //     'url'     => '',
@@ -97,13 +97,13 @@ class MenuItemsTableSeeder extends Seeder
         //         'icon_class' => 'voyager-question',
         //         'color'      => null,
         //         'parent_id'  => $parentMenuId,
-        //         'order'      => MenuItem::max('order') + 1,
+        //         'order'      => Voyager::model('MenuItem')->max('order') + 1,
         //     ])->save();
         // }
 
         // $this->call(
         //     [
-        //         \Joy\VoyagerBreadAccount\Database\Seeders\MenuItemsTableSeeder::class,
+        //         \Joy\VoyagerCrm\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadContact\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadTicket\Database\Seeders\MenuItemsTableSeeder::class,
         //     ],
@@ -111,7 +111,7 @@ class MenuItemsTableSeeder extends Seeder
         //     ['parentMenuId' => $supportMenuItem->id]
         // );
 
-        // $activitiesMenuItem = MenuItem::firstOrNew([
+        // $activitiesMenuItem = Voyager::model('MenuItem')->firstOrNew([
         //     'menu_id' => $menu->id,
         //     'title'   => __('joy-voyager-crm::seeders.menu_items.activities'),
         //     'url'     => '',
@@ -122,7 +122,7 @@ class MenuItemsTableSeeder extends Seeder
         //         'icon_class' => 'voyager-activity',
         //         'color'      => null,
         //         'parent_id'  => $parentMenuId,
-        //         'order'      => MenuItem::max('order') + 1,
+        //         'order'      => Voyager::model('MenuItem')->max('order') + 1,
         //     ])->save();
         // }
 
@@ -139,7 +139,7 @@ class MenuItemsTableSeeder extends Seeder
         //     ['parentMenuId' => $activitiesMenuItem->id]
         // );
 
-        // $collaborationMenuItem = MenuItem::firstOrNew([
+        // $collaborationMenuItem = Voyager::model('MenuItem')->firstOrNew([
         //     'menu_id' => $menu->id,
         //     'title'   => __('joy-voyager-crm::seeders.menu_items.collaboration'),
         //     'url'     => '',
@@ -150,7 +150,7 @@ class MenuItemsTableSeeder extends Seeder
         //         'icon_class' => 'voyager-puzzle',
         //         'color'      => null,
         //         'parent_id'  => $parentMenuId,
-        //         'order'      => MenuItem::max('order') + 1,
+        //         'order'      => Voyager::model('MenuItem')->max('order') + 1,
         //     ])->save();
         // }
 
@@ -165,7 +165,7 @@ class MenuItemsTableSeeder extends Seeder
         //     ['parentMenuId' => $collaborationMenuItem->id]
         // );
 
-        // $allMenuItem = MenuItem::firstOrNew([
+        // $allMenuItem = Voyager::model('MenuItem')->firstOrNew([
         //     'menu_id' => $menu->id,
         //     'title'   => __('joy-voyager-crm::seeders.menu_items.all'),
         //     'url'     => '',
@@ -176,13 +176,13 @@ class MenuItemsTableSeeder extends Seeder
         //         'icon_class' => 'voyager-list',
         //         'color'      => null,
         //         'parent_id'  => $parentMenuId,
-        //         'order'      => MenuItem::max('order') + 1,
+        //         'order'      => Voyager::model('MenuItem')->max('order') + 1,
         //     ])->save();
         // }
 
         // $this->call(
         //     [
-        //         \Joy\VoyagerBreadAccount\Database\Seeders\MenuItemsTableSeeder::class,
+        //         \Joy\VoyagerCrm\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadContact\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadOpportunity\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadLead\Database\Seeders\MenuItemsTableSeeder::class,
@@ -204,7 +204,7 @@ class MenuItemsTableSeeder extends Seeder
         //         \Joy\VoyagerBreadLocation\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadProduct\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadProductCategory\Database\Seeders\MenuItemsTableSeeder::class,
-        //         \Joy\VoyagerBreadPdfTemplate\Database\Seeders\MenuItemsTableSeeder::class,
+        //         \Joy\VoyagerBreadAosProductCategory\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadReport\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadArticle\Database\Seeders\MenuItemsTableSeeder::class,
         //         \Joy\VoyagerBreadArticleCategory\Database\Seeders\MenuItemsTableSeeder::class,
@@ -229,7 +229,7 @@ class MenuItemsTableSeeder extends Seeder
         // );
 
         // // $this->call([
-        // //     \Joy\VoyagerBreadAccount\Database\Seeders\MenuItemsTableSeeder::class,
+        // //     \Joy\VoyagerCrm\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadActivity\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadArticle\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadArticleCategory\Database\Seeders\MenuItemsTableSeeder::class,
@@ -253,7 +253,7 @@ class MenuItemsTableSeeder extends Seeder
         // //     \Joy\VoyagerBreadNotification\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadOpportunity\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadOrder\Database\Seeders\MenuItemsTableSeeder::class,
-        // //     \Joy\VoyagerBreadPdfTemplate\Database\Seeders\MenuItemsTableSeeder::class,
+        // //     \Joy\VoyagerBreadAosProductCategory\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadPipeline\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadPlan\Database\Seeders\MenuItemsTableSeeder::class,
         // //     \Joy\VoyagerBreadProduct\Database\Seeders\MenuItemsTableSeeder::class,
