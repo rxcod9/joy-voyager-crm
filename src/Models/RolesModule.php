@@ -10,11 +10,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class RolesModule
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $role_id
  * @property string|null $module_id
- * @property bool|null $allow
+ * @property bool|null   $allow
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  *
@@ -22,29 +22,29 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class RolesModule extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
 
-	protected $table = 'roles_modules';
-	public $incrementing = false;
+    protected $table     = 'roles_modules';
+    public $incrementing = false;
 
-	protected $casts = [
-		'allow' => 'bool',
-	];
+    protected $casts = [
+        'allow' => 'bool',
+    ];
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'role_id',
-		'module_id',
-		'allow',
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'role_id',
+        'module_id',
+        'allow',
+    ];
 }

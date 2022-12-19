@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ProjectsCase
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $case_id
  * @property string|null $project_id
  * @property Carbon|null $updated_at
@@ -21,24 +21,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class ProjectsCase extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
 
-	protected $table = 'projects_cases';
-	public $incrementing = false;
+    protected $table     = 'projects_cases';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'case_id',
-		'project_id',
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'case_id',
+        'project_id',
+    ];
 }

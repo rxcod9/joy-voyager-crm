@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class MeetingsLead
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $meeting_id
  * @property string|null $lead_id
  * @property string|null $required
@@ -23,26 +23,26 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class MeetingsLead extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
 
-	protected $table = 'meetings_leads';
-	public $incrementing = false;
+    protected $table     = 'meetings_leads';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'meeting_id',
-		'lead_id',
-		'required',
-		'accept_status',
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'meeting_id',
+        'lead_id',
+        'required',
+        'accept_status',
+    ];
 }

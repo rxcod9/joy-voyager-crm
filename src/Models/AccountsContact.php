@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class AccountsContact
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $contact_id
  * @property string|null $account_id
  * @property Carbon|null $updated_at
@@ -21,24 +21,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class AccountsContact extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
 
-	protected $table = 'accounts_contacts';
-	public $incrementing = false;
+    protected $table     = 'accounts_contacts';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'contact_id',
-		'account_id',
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'contact_id',
+        'account_id',
+    ];
 }

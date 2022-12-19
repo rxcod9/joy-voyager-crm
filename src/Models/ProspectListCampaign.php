@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ProspectListCampaign
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $prospect_list_id
  * @property string|null $campaign_id
  * @property Carbon|null $updated_at
@@ -21,24 +21,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class ProspectListCampaign extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
 
-	protected $table = 'prospect_list_campaigns';
-	public $incrementing = false;
+    protected $table     = 'prospect_list_campaigns';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'prospect_list_id',
-		'campaign_id',
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'prospect_list_id',
+        'campaign_id',
+    ];
 }

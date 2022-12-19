@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Note
- * 
+ *
  * @property string|null $assigned_user_id
- * @property string $id
+ * @property string      $id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $modified_by_id
@@ -23,8 +23,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $parent_type
  * @property string|null $parent_id
  * @property string|null $contact_id
- * @property bool|null $portal_flag
- * @property bool|null $embed_flag
+ * @property bool|null   $portal_flag
+ * @property bool|null   $embed_flag
  * @property string|null $description
  * @property Carbon|null $deleted_at
  *
@@ -32,40 +32,40 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Note extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	use Traits\CreatedModifiedBy;
-	// use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    use Traits\CreatedModifiedBy;
+    // use HasFactory;
 
-	protected $table = 'notes';
-	public $incrementing = false;
+    protected $table     = 'notes';
+    public $incrementing = false;
 
-	protected $casts = [
-		'portal_flag' => 'bool',
-		'embed_flag' => 'bool',
-	];
+    protected $casts = [
+        'portal_flag' => 'bool',
+        'embed_flag'  => 'bool',
+    ];
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'assigned_user_id',
-		'modified_by_id',
-		'created_by_id',
-		'name',
-		'file_mime_type',
-		'filename',
-		'parent_type',
-		'parent_id',
-		'contact_id',
-		'portal_flag',
-		'embed_flag',
-		'description',
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'assigned_user_id',
+        'modified_by_id',
+        'created_by_id',
+        'name',
+        'file_mime_type',
+        'filename',
+        'parent_type',
+        'parent_id',
+        'contact_id',
+        'portal_flag',
+        'embed_flag',
+        'description',
+    ];
 }

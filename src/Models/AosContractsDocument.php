@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class AosContractsDocument
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  * @property string|null $aos_contracts_id
@@ -22,25 +22,25 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class AosContractsDocument extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
 
-	protected $table = 'aos_contracts_documents';
-	public $incrementing = false;
+    protected $table     = 'aos_contracts_documents';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'aos_contracts_id',
-		'documents_id',
-		'document_revision_id'
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'aos_contracts_id',
+        'documents_id',
+        'document_revision_id'
+    ];
 }

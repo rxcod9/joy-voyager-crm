@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class AclRole
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $modified_by_id
@@ -24,27 +24,27 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class AclRole extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	use Traits\CreatedModifiedBy;
-	// use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    use Traits\CreatedModifiedBy;
+    // use HasFactory;
 
-	protected $table = 'acl_roles';
-	public $incrementing = false;
+    protected $table     = 'acl_roles';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'modified_by_id',
-		'created_by_id',
-		'name',
-		'description',
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'modified_by_id',
+        'created_by_id',
+        'name',
+        'description',
+    ];
 }

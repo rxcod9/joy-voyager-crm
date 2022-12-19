@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class OauthConsumer
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -27,34 +27,34 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class OauthConsumer extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	use Traits\CreatedModifiedBy;
-	// use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    use Traits\CreatedModifiedBy;
+    // use HasFactory;
 
-	protected $table = 'oauth_consumer';
-	public $incrementing = false;
+    protected $table     = 'oauth_consumer';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $hidden = [
-		'c_secret'
-	];
+    protected $hidden = [
+        'c_secret'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'name',
-		'modified_by_id',
-		'created_by_id',
-		'description',
-		'assigned_user_id',
-		'c_key',
-		'c_secret'
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'name',
+        'modified_by_id',
+        'created_by_id',
+        'description',
+        'assigned_user_id',
+        'c_key',
+        'c_secret'
+    ];
 }

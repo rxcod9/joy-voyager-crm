@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class RemindersInvitee
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -20,39 +20,39 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $description
  * @property Carbon|null $deleted_at
  * @property string|null $assigned_user_id
- * @property string $reminder_id
+ * @property string      $reminder_id
  * @property string|null $related_invitee_module
- * @property string $related_invitee_module_id
+ * @property string      $related_invitee_module_id
  *
  * @package Joy\VoyagerCrm\Models
  */
 class RemindersInvitee extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	use Traits\CreatedModifiedBy;
-	// use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    use Traits\CreatedModifiedBy;
+    // use HasFactory;
 
-	protected $table = 'reminders_invitees';
-	public $incrementing = false;
+    protected $table     = 'reminders_invitees';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'name',
-		'modified_by_id',
-		'created_by_id',
-		'description',
-		'assigned_user_id',
-		'reminder_id',
-		'related_invitee_module',
-		'related_invitee_module_id'
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'name',
+        'modified_by_id',
+        'created_by_id',
+        'description',
+        'assigned_user_id',
+        'reminder_id',
+        'related_invitee_module',
+        'related_invitee_module_id'
+    ];
 }

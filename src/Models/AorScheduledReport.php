@@ -5,16 +5,13 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class AorScheduledReport
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -32,34 +29,34 @@ use Illuminate\Database\Eloquent\{
  */
 class AorScheduledReport extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	use Traits\CreatedModifiedBy;
-	// use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    use Traits\CreatedModifiedBy;
+    // use HasFactory;
 
-	protected $table = 'aor_scheduled_reports';
-	public $incrementing = false;
+    protected $table     = 'aor_scheduled_reports';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'last_run'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'last_run'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'name',
-		'modified_by_id',
-		'created_by_id',
-		'description',
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'name',
+        'modified_by_id',
+        'created_by_id',
+        'description',
 
-		'schedule',
-		'last_run',
-		'status',
-		'email_recipients',
-		'aor_report_id'
-	];
+        'schedule',
+        'last_run',
+        'status',
+        'email_recipients',
+        'aor_report_id'
+    ];
 }

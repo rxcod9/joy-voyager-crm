@@ -12,8 +12,8 @@ use Joy\VoyagerCrm\Database\Factories\UserPreferenceFactory;
 
 /**
  * Class UserPreference
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $category
  * @property Carbon|null $deleted_at
  * @property Carbon|null $created_at
@@ -25,28 +25,28 @@ use Joy\VoyagerCrm\Database\Factories\UserPreferenceFactory;
  */
 class UserPreference extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
-	use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
-	protected $table = 'user_preferences';
-	public $incrementing = false;
+    protected $table     = 'user_preferences';
+    public $incrementing = false;
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'category',
-		'assigned_user_id',
-		'contents'
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'category',
+        'assigned_user_id',
+        'contents'
+    ];
 
     /**
      * Create a new factory instance for the model.
