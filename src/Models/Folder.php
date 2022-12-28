@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Joy\VoyagerCrm\Database\Factories\FolderFactory;
-
-use Illuminate\Database\Eloquent\{
-    Factories\HasFactory,
-    Model,
-    SoftDeletes
-};
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Folder

@@ -12,8 +12,8 @@ use Joy\VoyagerCrm\Database\Factories\TemplatesectionlineFactory;
 
 /**
  * Class Templatesectionline
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property string|null $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -23,42 +23,42 @@ use Joy\VoyagerCrm\Database\Factories\TemplatesectionlineFactory;
  * @property Carbon|null $deleted_at
  * @property string|null $thumbnail
  * @property string|null $grp
- * @property int|null $ord
+ * @property int|null    $ord
  *
  * @package Joy\VoyagerCrm\Models
  */
 class Templatesectionline extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	use Traits\CreatedModifiedBy;
-	use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    use Traits\CreatedModifiedBy;
+    use HasFactory;
 
-	protected $table = 'templatesectionline';
-	public $incrementing = false;
+    protected $table     = 'templatesectionline';
+    public $incrementing = false;
 
-	protected $casts = [
-		'ord' => 'int'
-	];
+    protected $casts = [
+        'ord' => 'int'
+    ];
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'name',
-		'modified_by_id',
-		'created_by_id',
-		'description',
-		'thumbnail',
-		'grp',
-		'ord'
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'name',
+        'modified_by_id',
+        'created_by_id',
+        'description',
+        'thumbnail',
+        'grp',
+        'ord'
+    ];
 
     /**
      * Create a new factory instance for the model.

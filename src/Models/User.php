@@ -6,12 +6,9 @@ namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
 use Joy\VoyagerCrm\Database\Factories\UserFactory;
-
-use Illuminate\Database\Eloquent\{
-	Factories\HasFactory,
-	Builder,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class User

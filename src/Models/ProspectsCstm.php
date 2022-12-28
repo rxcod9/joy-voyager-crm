@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ProspectsCstm
- * 
- * @property string $id_c
- * @property float|null $jjwg_maps_lng_c
- * @property float|null $jjwg_maps_lat_c
+ *
+ * @property string      $id_c
+ * @property float|null  $jjwg_maps_lng_c
+ * @property float|null  $jjwg_maps_lat_c
  * @property string|null $jjwg_maps_geocode_status_c
  * @property string|null $jjwg_maps_address_c
  *
@@ -20,32 +20,32 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class ProspectsCstm extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	// use Traits\CreatedModifiedBy;
+    use SoftDeletes;
+    use Traits\Uuids;
+    // use Traits\CreatedModifiedBy;
 
-	protected $table = 'prospects_cstm';
-	protected $primaryKey = 'id_c';
-	public $incrementing = false;
+    protected $table      = 'prospects_cstm';
+    protected $primaryKey = 'id_c';
+    public $incrementing  = false;
 
-	protected $casts = [
-		'jjwg_maps_lng_c' => 'float',
-		'jjwg_maps_lat_c' => 'float'
-	];
+    protected $casts = [
+        'jjwg_maps_lng_c' => 'float',
+        'jjwg_maps_lat_c' => 'float'
+    ];
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'jjwg_maps_lng_c',
-		'jjwg_maps_lat_c',
-		'jjwg_maps_geocode_status_c',
-		'jjwg_maps_address_c'
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'jjwg_maps_lng_c',
+        'jjwg_maps_lat_c',
+        'jjwg_maps_geocode_status_c',
+        'jjwg_maps_address_c'
+    ];
 }
