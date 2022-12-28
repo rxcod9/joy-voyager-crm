@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'folders',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.folder.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.folder.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-folder voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-folder voyager-folder',
                 'model_name'            => Voyager::modelClass('Folder'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\FolderPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

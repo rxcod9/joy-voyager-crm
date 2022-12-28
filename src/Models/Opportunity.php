@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\OpportunityFactory;
 
 /**
  * Class Opportunity
@@ -41,7 +40,7 @@ class Opportunity extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'opportunities';
     public $incrementing = false;
@@ -79,4 +78,14 @@ class Opportunity extends Model
         'sales_stage',
         'probability'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return OpportunityFactory::new();
+    }
 }

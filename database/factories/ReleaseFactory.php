@@ -22,10 +22,11 @@ class ReleaseFactory extends Factory
     public function definition()
     {
         return [
-            'name'   => $this->faker->name(),
-            'status' => $this->faker->randomElement([
-                'ACTIVE',
-                'INACTIVE',
+            'name'       => $this->faker->name(),
+            'list_order' => $this->faker->numberBetween(1, 100),
+            'status'     => $this->faker->randomElement([
+                'Active',
+                'Inactive',
             ]),
             'created_at' => $this->faker->dateTime(),
             'updated_at' => $this->faker->dateTime(),

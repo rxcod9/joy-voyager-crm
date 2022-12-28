@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
+use Joy\VoyagerCrm\Database\Factories\AmProjecttemplateFactory;
 
 use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
+    Factories\HasFactory,
+    Model,
+    SoftDeletes
 };
 
 /**
@@ -34,7 +36,7 @@ class AmProjecttemplate extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'am_projecttemplates';
     public $incrementing = false;
@@ -62,4 +64,14 @@ class AmProjecttemplate extends Model
         'priority',
         'override_business_hours'
     ];
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return AmProjecttemplateFactory::new();
+    }
 }

@@ -21,7 +21,7 @@ class VoyagerDatabaseSeeder extends Seeder
             // RolesTableSeeder::class,
             PermissionsTableSeeder::class,
             'Database\\Seeders\\PermissionRoleTableSeeder',
-            SettingsTableSeeder::class,
+            // SettingsTableSeeder::class,
             // UserSettingsPermissionsTableSeeder::class,
             'Database\\Seeders\\PermissionRoleTableSeeder',
             // UserSettingsTableSeeder::class,

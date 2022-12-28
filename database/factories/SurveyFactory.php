@@ -22,12 +22,14 @@ class SurveyFactory extends Factory
     public function definition()
     {
         return [
-            'name'        => $this->faker->name(),
-            'description' => $this->faker->text(500),
-            'status'      => $this->faker->randomElement([
-                'ACTIVE',
-                'INACTIVE',
-            ]),
+            'name'              => $this->faker->name(),
+            'description'       => $this->faker->text(500),
+            'status'            => $this->faker->randomKey(
+                config('joy-voyager-crm.surveys.statuses', [
+                    'Draft'     => 'Draft',
+                    'Published' => 'Published',
+                ])
+            ),
             'submit_text'       => $this->faker->text(10),
             'satisfied_text'    => $this->faker->text(10),
             'neither_text'      => $this->faker->text(10),

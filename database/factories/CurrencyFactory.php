@@ -23,17 +23,24 @@ class CurrencyFactory extends Factory
     {
         $currencyCode = $this->faker->unique()->currencyCode();
 
+        $currencies     = json_decode(file_get_contents(__DIR__ . '/json/currencies.json'));
+        $randomCurrency = $this->faker->unique()->randomElement($currencies);
+
         return [
-            'name'            => $this->faker->name(),
-            'symbol'          => $currencyCode,
-            'iso4217'         => $currencyCode,
+            'name'            => optional($randomCurrency)->name ?? $this->faker->name(),
+            'symbol'          => optional($randomCurrency)->symbol_native ?? $currencyCode,
+            'iso4217'         => optional($randomCurrency)->code ?? $currencyCode,
+            'decimal'         => optional($randomCurrency)->decimal ?? 2,
+            'rounding'        => optional($randomCurrency)->rounding ?? 0,
             'conversion_rate' => $this->faker->randomFloat(4, 20, 200),
-            'status'          => $this->faker->randomElement([
-                'ACTIVE',
-                'INACTIVE',
-            ]),
-            'created_at' => $this->faker->dateTime(),
-            'updated_at' => $this->faker->dateTime(),
+            'status'          => $this->faker->randomKey(
+                config('joy-voyager-crm.currencies.statuses', [
+                    'Active'   => 'Active',
+                    'Inactive' => 'Inactive',
+                ])
+            ),
+            'created_at'      => $this->faker->dateTime(),
+            'updated_at'      => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

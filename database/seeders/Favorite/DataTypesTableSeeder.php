@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'favorites',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.favorite.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.favorite.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-favorite voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-favorite voyager-heart',
                 'model_name'            => Voyager::modelClass('Favorite'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\FavoritePolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

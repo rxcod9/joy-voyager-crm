@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'aow_workflow',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.aow_workflow.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.aow_workflow.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-aow_workflow voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-aow_workflow voyager-tools',
                 'model_name'            => Voyager::modelClass('AowWorkflow'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\AowWorkflowPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

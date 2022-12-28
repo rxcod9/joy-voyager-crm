@@ -22,10 +22,19 @@ class FolderFactory extends Factory
     public function definition()
     {
         return [
-            'name'        => $this->faker->name(),
+            'name'          => $this->faker->name(),
             // 'description' => $this->faker->text(500),
-            'created_at'  => $this->faker->dateTime(),
-            'updated_at'  => $this->faker->dateTime(),
+            'folder_type'   => $this->faker->randomElement([
+                'Type1',
+                'Type2',
+            ]),
+            'parent_folder' => null,
+            'has_child'     => $this->faker->boolean(),
+            'is_group'      => $this->faker->boolean(),
+            'is_dynamic'    => $this->faker->boolean(),
+            'dynamic_query' => null,
+            'created_at'    => $this->faker->dateTime(),
+            'updated_at'    => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

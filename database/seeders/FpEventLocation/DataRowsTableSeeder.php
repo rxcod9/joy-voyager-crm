@@ -60,7 +60,95 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        //
+        $dataRow = $this->dataRow($dataType, 'address');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.address'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'address_city');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.address_city'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'address_country');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.address_country'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'address_postalcode');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.address_postalcode'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'address_state');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.address_state'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'capacity');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.capacity'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
 
         $dataRow = $this->dataRow($dataType, 'fp_event_location_belongsto_assigned_user_relationship');
         if (!$dataRow->exists) {

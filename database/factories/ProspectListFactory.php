@@ -24,6 +24,11 @@ class ProspectListFactory extends Factory
         return [
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
+            'list_type'   => $this->faker->randomElement([
+                'Type1',
+                'Type2',
+            ]),
+            'domain_name' => $this->faker->text(10),
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

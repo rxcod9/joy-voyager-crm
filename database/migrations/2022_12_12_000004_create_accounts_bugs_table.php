@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('accounts_bugs', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('id')->primary();
+            $table->id();
             $table->uuid('account_id')->nullable()->index('idx_acc_bug_acc');
             $table->uuid('bug_id')->nullable()->index('idx_acc_bug_bug');
 

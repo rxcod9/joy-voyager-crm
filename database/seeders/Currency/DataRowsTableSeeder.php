@@ -56,7 +56,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 2,
+                'order'        => 3,
             ])->save();
         }
 
@@ -71,7 +71,37 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 2,
+                'order'        => 4,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'decimal');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.decimal'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'rounding');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.rounding'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 6,
             ])->save();
         }
 
@@ -86,7 +116,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 2,
+                'order'        => 7,
             ])->save();
         }
 
@@ -101,13 +131,13 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 101,
                 'details'      => [
-                    'default' => 'ACTIVE',
-                    'options' => [
-                        'ACTIVE'   => 'ACTIVE',
-                        'INACTIVE' => 'INACTIVE',
-                    ],
+                    'default' => config('joy-voyager-crm.currencies.default_status', 'Active'),
+                    'options' => config('joy-voyager-crm.currencies.statuses', [
+                        'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
+                    ]),
                 ],
             ])->save();
         }
@@ -123,7 +153,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 8,
+                'order'        => 102,
             ])->save();
         }
 
@@ -138,7 +168,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 9,
+                'order'        => 103,
             ])->save();
         }
 
@@ -153,7 +183,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 9,
+                'order'        => 104,
             ])->save();
         }
 
@@ -168,6 +198,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
+                'order'        => 105,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -178,7 +209,6 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 10,
             ])->save();
         }
 
@@ -193,7 +223,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 11,
+                'order'        => 106,
             ])->save();
         }
 
@@ -208,6 +238,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
+                'order'        => 107,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -218,7 +249,6 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 12,
             ])->save();
         }
 
@@ -233,7 +263,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 13,
+                'order'        => 108,
             ])->save();
         }
     }

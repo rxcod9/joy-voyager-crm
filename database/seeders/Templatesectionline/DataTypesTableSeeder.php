@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'templatesectionline',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.templatesectionline.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.templatesectionline.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-templatesectionline voyager-categories',
+                'icon'                  => 'fa-solid fa-code',
                 'model_name'            => Voyager::modelClass('Templatesectionline'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\TemplatesectionlinePolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

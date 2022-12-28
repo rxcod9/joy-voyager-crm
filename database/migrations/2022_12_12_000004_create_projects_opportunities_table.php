@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -15,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('projects_opportunities', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('id')->primary();
+            $table->id();
             $table->uuid('opportunity_id')->nullable()->index('idx_proj_opp_opp');
             $table->uuid('project_id')->nullable()->index('idx_proj_opp_proj');
 

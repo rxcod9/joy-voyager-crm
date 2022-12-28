@@ -52,8 +52,8 @@ class UserFactory extends Factory
             'phone_other' => $this->faker->phoneNumber(),
             'phone_fax' => $this->faker->phoneNumber(),
             'status' => $this->faker->randomElement([
-                'ACTIVE',
-                'INACTIVE',
+                'Active',
+                'Inactive',
             ]),
             'address_street' => $this->faker->streetName(),
             'address_city' => $this->faker->city(),
@@ -63,8 +63,8 @@ class UserFactory extends Factory
             'portal_only' => $this->faker->boolean(),
             'show_on_employees' => $this->faker->boolean(),
             'employee_status' => $this->faker->randomElement([
-                'ACTIVE',
-                'INACTIVE',
+                'Active',
+                'Inactive',
             ]),
             // 'messenger_id' => $this->faker->messenger_id(),
             // 'messenger_type' => $this->faker->messenger_type(),

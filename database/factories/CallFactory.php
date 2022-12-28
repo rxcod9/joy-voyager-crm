@@ -22,25 +22,25 @@ class CallFactory extends Factory
     public function definition()
     {
         return [
-            'name'             => $this->faker->name(),
-            'description'      => $this->faker->text(500),
-            'duration_hours'   => $this->faker->numberBetween(1, 24),
-            'duration_minutes' => $this->faker->numberBetween(1, 60),
-            'date_start'       => $this->faker->dateTimeBetween('-3months', '-2months'),
-            'date_end'         => $this->faker->dateTimeBetween('-2months', '-1month'),
-            'parent_type'      => null,
-            'parent_id'        => null,
-            'status'           => $this->faker->randomElement([
-                'ACTIVE',
-                'INACTIVE',
-                'PLANNED',
+            'name'                => $this->faker->name(),
+            'description'         => $this->faker->text(500),
+            'duration_hours'      => $this->faker->numberBetween(1, 24),
+            'duration_minutes'    => $this->faker->numberBetween(1, 60),
+            'date_start'          => $this->faker->dateTimeBetween('-3months', '-2months'),
+            'date_end'            => $this->faker->dateTimeBetween('-2months', '-1month'),
+            'parent_type'         => null,
+            'parent_id'           => null,
+            'status'              => $this->faker->randomElement([
+                'Active',
+                'Inactive',
+                'Planned',
             ]),
-            'direction' => $this->faker->randomElement([
+            'direction'           => $this->faker->randomElement([
                 'INCOMING',
                 'OUTGOING',
             ]),
-            'reminder_time'       => $this->faker->randomNumber(),
-            'email_reminder_time' => $this->faker->randomNumber(),
+            'reminder_time'       => $this->faker->randomNumber(8),
+            'email_reminder_time' => $this->faker->randomNumber(8),
             'email_reminder_sent' => $this->faker->boolean(),
             'outlook_id'          => null,
             'repeat_type'         => null,

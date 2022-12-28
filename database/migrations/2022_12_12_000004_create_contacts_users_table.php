@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('contacts_users', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('id')->primary();
+            $table->id();
             $table->uuid('contact_id')->nullable()->index('idx_con_users_con');
             $table->uuid('user_id')->nullable()->index('idx_con_users_user');
 

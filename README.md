@@ -4,10 +4,10 @@ This [Laravel](https://laravel.com/)/[Voyager](https://voyager.devdojo.com/) mod
 
 By 🐼 [Ramakant Gangwar](https://github.com/rxcod9).
 
-[![Screenshot](https://raw.githubusercontent.com/rxcod9/joy-voyager-crm/main/cover.jpg)](https://joy-voyager-crm.herokuapp.com)
+[![Screenshot](https://raw.githubusercontent.com/rxcod9/joy-voyager-crm/main/cover.jpg)](https://joy-voyager-crm.kodmonk.com)
 
 [![Latest Version](https://img.shields.io/github/v/release/rxcod9/joy-voyager-crm?style=flat-square)](https://github.com/rxcod9/joy-voyager-crm/releases)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/rxcod9/joy-voyager-crm/run-tests?label=tests)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/rxcod9/joy-voyager-crm/run-tests.yml?branch=main&label=tests)
 [![Total Downloads](https://img.shields.io/packagist/dt/joy/voyager-crm.svg?style=flat-square)](https://packagist.org/packages/joy/voyager-crm)
 
 ---
@@ -50,7 +50,7 @@ In order to override views delivered by Voyager DataTable, copy contents from ``
 
 ## Working Example
 
-You can try laravel demo here [https://joy-voyager-crm.herokuapp.com/api/documentation](https://joy-voyager-crm.herokuapp.com/api/documentation).
+You can try laravel demo here [https://joy-voyager-crm.kodmonk.com/api/documentation](https://joy-voyager-crm.kodmonk.com/api/documentation).
 
 ## Documentation
 

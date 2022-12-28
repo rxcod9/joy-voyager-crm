@@ -26,8 +26,8 @@ class AosPdfTemplateFactory extends Factory
             'description' => $this->faker->text(500),
             'active'      => $this->faker->boolean(),
             'type'        => $this->faker->randomElement([
-                'TYPE1',
-                'TYPE2',
+                'Type1',
+                'Type2',
             ]),
             'pdfheader'     => $this->faker->paragraphs(10, true),
             'pdffooter'     => $this->faker->paragraphs(10, true),

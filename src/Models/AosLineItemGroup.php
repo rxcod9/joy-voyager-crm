@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\AosLineItemGroupFactory;
 
 /**
  * Class AosLineItemGroup
@@ -47,7 +46,7 @@ class AosLineItemGroup extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'aos_line_item_groups';
     public $incrementing = false;
@@ -100,4 +99,14 @@ class AosLineItemGroup extends Model
         'number',
         'currency_id'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return AosLineItemGroupFactory::new();
+    }
 }

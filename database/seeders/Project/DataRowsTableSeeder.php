@@ -60,7 +60,199 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        //
+        $dataRow = $this->dataRow($dataType, 'estimated_start_date');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'date',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.estimated_start_date'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'estimated_end_date');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'date',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.estimated_end_date'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'status');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.status'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'default' => config('joy-voyager-crm.projects.default_status', 'Active'),
+                    'options' => config('joy-voyager-crm.projects.statuses', [
+                        'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
+                    ]),
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'priority');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.priority'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'default' => config('joy-voyager-crm.projects.default_priority', 'Low'),
+                    'options' => config('joy-voyager-crm.projects.priorities', [
+                        'Low'    => 'Low',
+                        'Medium' => 'Medium',
+                        'High'   => 'High',
+                    ]),
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'override_business_hours');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.override_business_hours'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'project_belongstomany_bugs_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.bugs'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Bug'),
+                    'table'       => 'bugs',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'projects_bugs',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'project_belongstomany_accounts_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.accounts'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Account'),
+                    'table'       => 'accounts',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'projects_accounts',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'project_belongstomany_contacts_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.contacts'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Account'),
+                    'table'       => 'contacts',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'first_name',
+                    'pivot_table' => 'projects_contacts',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'project_belongstomany_opportunities_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.opportunities'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Opportunity'),
+                    'table'       => 'opportunities',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'projects_opportunities',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
 
         $dataRow = $this->dataRow($dataType, 'project_belongsto_assigned_user_relationship');
         if (!$dataRow->exists) {

@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'securitygroups',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.securitygroup.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.securitygroup.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-securitygroup voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-securitygroup voyager-group',
                 'model_name'            => Voyager::modelClass('Securitygroup'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\SecuritygroupPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

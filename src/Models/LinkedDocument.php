@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\LinkedDocumentFactory;
 
 /**
  * Class LinkedDocument
@@ -29,6 +28,7 @@ class LinkedDocument extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
     protected $table     = 'linked_documents';
     public $incrementing = false;
@@ -48,4 +48,14 @@ class LinkedDocument extends Model
         'document_id',
         'document_revision_id',
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return LinkedDocumentFactory::new();
+    }
 }

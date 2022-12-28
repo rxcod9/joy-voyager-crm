@@ -44,7 +44,227 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        //
+        $dataRow = $this->dataRow($dataType, 'orphaned');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.orphaned'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'last_synced');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.last_synced'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 4,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'date_sent_received');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.date_sent_received'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.type'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 6,
+                'details'      => [
+                    'default' => 'Type1',
+                    'options' => [
+                        'Type1' => 'Type1',
+                        'Type2' => 'Type2',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'flagged');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.flagged'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 7,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'reply_to_status');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.reply_to_status'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 8,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'intent');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.intent'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 9,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'mailbox_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.mailbox_id'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'parent_type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent_type'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 11,
+                'details'      => [
+                    'default' => null,
+                    'options' => [
+                        'opportunities' => 'opportunities',
+                        'cases'         => 'cases',
+                        'leads'         => 'leads',
+                        'project'       => 'project',
+                        'prospects'     => 'prospects',
+                        'bugs'          => 'bugs',
+                        'project_task'  => 'project_task',
+                        'accounts'      => 'accounts',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'parent_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent_id'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 12,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'uid');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.uid'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 13,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'category_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.category_id'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 14,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'status');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.status'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 100,
+                'details'      => [
+                    'default' => 'Active',
+                    'options' => [
+                        'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
+                    ],
+                ],
+            ])->save();
+        }
 
         $dataRow = $this->dataRow($dataType, 'email_belongsto_assigned_user_relationship');
         if (!$dataRow->exists) {

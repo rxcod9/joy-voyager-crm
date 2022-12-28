@@ -18,12 +18,12 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'outbound_email',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.outbound_email.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.outbound_email.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-outbound_email voyager-categories',
+                'icon'                  => 'fa fa-envelopes-bulk',
                 'model_name'            => Voyager::modelClass('OutboundEmail'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\OutboundEmailPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',
-                'generate_permissions' => 1,
-                'description'          => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
             ])->save();
         }
     }

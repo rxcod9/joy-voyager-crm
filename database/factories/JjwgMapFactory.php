@@ -24,6 +24,14 @@ class JjwgMapFactory extends Factory
         return [
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
+            'distance'    => $this->faker->randomFloat(4, 5, 20),
+            'unit_type'   => $this->faker->randomElement([
+                'Mi',
+                'Km',
+            ]),
+            'module_type' => null,
+            'parent_type' => null,
+            'parent_id'   => null,
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

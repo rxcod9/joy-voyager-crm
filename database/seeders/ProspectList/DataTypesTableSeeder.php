@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'prospect_lists',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.prospect_list.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.prospect_list.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-prospect_list voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-prospect_list voyager-news',
                 'model_name'            => Voyager::modelClass('ProspectList'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\ProspectListPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

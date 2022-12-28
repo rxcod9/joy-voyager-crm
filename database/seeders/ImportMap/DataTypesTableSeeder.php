@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'import_maps',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.import_map.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.import_map.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-import_map voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-import_map voyager-upload',
                 'model_name'            => Voyager::modelClass('ImportMap'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\ImportMapPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

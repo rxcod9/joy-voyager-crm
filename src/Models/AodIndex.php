@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\AodIndexFactory;
 
 /**
  * Class AodIndex
@@ -33,7 +32,7 @@ class AodIndex extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'aod_index';
     public $incrementing = false;
@@ -57,4 +56,14 @@ class AodIndex extends Model
         'last_optimised',
         'location'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return AodIndexFactory::new();
+    }
 }

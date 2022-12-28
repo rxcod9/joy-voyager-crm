@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'saved_search',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.saved_search.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.saved_search.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-saved_search voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-saved_search voyager-search',
                 'model_name'            => Voyager::modelClass('SavedSearch'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\SavedSearchPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

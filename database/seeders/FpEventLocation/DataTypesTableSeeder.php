@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'fp_event_locations',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.fp_event_location.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.fp_event_location.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-fp_event_location voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-fp_event_location voyager-location',
                 'model_name'            => Voyager::modelClass('FpEventLocation'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\FpEventLocationPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

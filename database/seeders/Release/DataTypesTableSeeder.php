@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'releases',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.release.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.release.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-release voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-release voyager-lightbulb',
                 'model_name'            => Voyager::modelClass('Release'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\ReleasePolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

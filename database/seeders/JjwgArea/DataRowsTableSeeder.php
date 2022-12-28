@@ -60,7 +60,65 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        //
+        $dataRow = $this->dataRow($dataType, 'city');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.city'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 9,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'state');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.state'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'country');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.country'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 12,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'coordinates');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.coordinates'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => 10,
+            ])->save();
+        }
 
         $dataRow = $this->dataRow($dataType, 'jjwg_area_belongsto_assigned_user_relationship');
         if (!$dataRow->exists) {

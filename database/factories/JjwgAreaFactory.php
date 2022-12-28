@@ -24,6 +24,10 @@ class JjwgAreaFactory extends Factory
         return [
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
+            'city'        => $this->faker->city(),
+            'state'       => $this->faker->state(),
+            'country'     => $this->faker->country(),
+            'coordinates' => null,
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

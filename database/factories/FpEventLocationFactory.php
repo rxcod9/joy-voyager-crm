@@ -22,10 +22,16 @@ class FpEventLocationFactory extends Factory
     public function definition()
     {
         return [
-            'name'        => $this->faker->name(),
-            'description' => $this->faker->text(500),
-            'created_at'  => $this->faker->dateTime(),
-            'updated_at'  => $this->faker->dateTime(),
+            'name'               => $this->faker->name(),
+            'description'        => $this->faker->text(500),
+            'address'            => $this->faker->streetName(),
+            'address_city'       => $this->faker->city(),
+            'address_country'    => $this->faker->country(),
+            'address_postalcode' => $this->faker->postcode(),
+            'address_state'      => $this->faker->state(),
+            'capacity'           => $this->faker->text(50),
+            'created_at'         => $this->faker->dateTime(),
+            'updated_at'         => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

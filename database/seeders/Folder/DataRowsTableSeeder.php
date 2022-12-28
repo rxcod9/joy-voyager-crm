@@ -45,7 +45,127 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        //
+        $dataRow = $this->dataRow($dataType, 'folder_type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.folder_type'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 3,
+                'details'      => [
+                    'default' => 'Type1',
+                    'options' => [
+                        'Type1' => 'Type1',
+                        'Type2' => 'Type2',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'folder_belongsto_parent_folder_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent_folder'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => 4,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Folder'),
+                    'table'       => 'folders',
+                    'type'        => 'belongsTo',
+                    'column'      => 'parent_folder',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'folders',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'parent_folder');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent_folder'),
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'has_child');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.has_child'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'is_group');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.is_group'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 7,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'is_dynamic');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.is_dynamic'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 8,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'dynamic_query');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text_area',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.dynamic_query'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 9,
+            ])->save();
+        }
 
         $dataRow = $this->dataRow($dataType, 'folder_belongsto_assigned_user_relationship');
         if (!$dataRow->exists) {

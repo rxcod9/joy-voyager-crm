@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\ContactFactory;
 
 /**
  * Class Contact
- * 
- * @property string $id
+ *
+ * @property string      $id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $modified_by_id
@@ -28,7 +27,7 @@ use Illuminate\Database\Eloquent\{
  * @property string|null $title
  * @property string|null $photo
  * @property string|null $department
- * @property bool|null $do_not_call
+ * @property bool|null   $do_not_call
  * @property string|null $phone_home
  * @property string|null $phone_mobile
  * @property string|null $phone_work
@@ -54,75 +53,85 @@ use Illuminate\Database\Eloquent\{
  * @property Carbon|null $birthdate
  * @property string|null $campaign_id
  * @property string|null $joomla_account_id
- * @property bool|null $portal_account_disabled
+ * @property bool|null   $portal_account_disabled
  * @property string|null $portal_user_type
  *
  * @package Joy\VoyagerCrm\Models
  */
 class Contact extends Model
 {
-	use SoftDeletes;
-	use Traits\Uuids;
-	use Traits\CreatedModifiedBy;
-	// use HasFactory;
+    use SoftDeletes;
+    use Traits\Uuids;
+    use Traits\CreatedModifiedBy;
+    use HasFactory;
 
-	protected $table = 'contacts';
-	public $incrementing = false;
+    protected $table     = 'contacts';
+    public $incrementing = false;
 
-	protected $casts = [
-		'do_not_call' => 'bool',
-		'portal_account_disabled' => 'bool'
-	];
+    protected $casts = [
+        'do_not_call'             => 'bool',
+        'portal_account_disabled' => 'bool'
+    ];
 
-	protected $dates = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'date_reviewed',
-		'birthdate'
-	];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'date_reviewed',
+        'birthdate'
+    ];
 
-	protected $fillable = [
-		'created_at',
-		'updated_at',
-		'deleted_at',
-		'modified_by_id',
-		'created_by_id',
-		'description',
-		'assigned_user_id',
-		'salutation',
-		'first_name',
-		'last_name',
-		'title',
-		'photo',
-		'department',
-		'do_not_call',
-		'phone_home',
-		'phone_mobile',
-		'phone_work',
-		'phone_other',
-		'phone_fax',
-		'lawful_basis',
-		'date_reviewed',
-		'lawful_basis_source',
-		'primary_address_street',
-		'primary_address_city',
-		'primary_address_state',
-		'primary_address_postalcode',
-		'primary_address_country',
-		'alt_address_street',
-		'alt_address_city',
-		'alt_address_state',
-		'alt_address_postalcode',
-		'alt_address_country',
-		'assistant',
-		'assistant_phone',
-		'lead_source',
-		'reports_to_id',
-		'birthdate',
-		'campaign_id',
-		'joomla_account_id',
-		'portal_account_disabled',
-		'portal_user_type'
-	];
+    protected $fillable = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'modified_by_id',
+        'created_by_id',
+        'description',
+        'assigned_user_id',
+        'salutation',
+        'first_name',
+        'last_name',
+        'title',
+        'photo',
+        'department',
+        'do_not_call',
+        'phone_home',
+        'phone_mobile',
+        'phone_work',
+        'phone_other',
+        'phone_fax',
+        'lawful_basis',
+        'date_reviewed',
+        'lawful_basis_source',
+        'primary_address_street',
+        'primary_address_city',
+        'primary_address_state',
+        'primary_address_postalcode',
+        'primary_address_country',
+        'alt_address_street',
+        'alt_address_city',
+        'alt_address_state',
+        'alt_address_postalcode',
+        'alt_address_country',
+        'assistant',
+        'assistant_phone',
+        'lead_source',
+        'reports_to_id',
+        'birthdate',
+        'campaign_id',
+        'joomla_account_id',
+        'portal_account_disabled',
+        'portal_user_type'
+    ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return ContactFactory::new();
+    }
 }

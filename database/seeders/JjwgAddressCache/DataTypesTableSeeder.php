@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'jjwg_address_cache',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.jjwg_address_cache.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.jjwg_address_cache.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-jjwg_address_cache voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-jjwg_address_cache voyager-data',
                 'model_name'            => Voyager::modelClass('JjwgAddressCache'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\JjwgAddressCachePolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

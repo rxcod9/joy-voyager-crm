@@ -6,12 +6,9 @@ namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
 use Joy\VoyagerCrm\Database\Factories\CurrencyFactory;
-
-use Illuminate\Database\Eloquent\{
-    Factories\HasFactory,
-    Model,
-    SoftDeletes
-};
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Currency
@@ -55,6 +52,9 @@ class Currency extends Model
         'deleted_at',
         'name',
         'symbol',
+        'iso4217',
+        'decimal',
+        'rounding',
         'iso4217',
         'conversion_rate',
         'status',

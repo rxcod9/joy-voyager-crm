@@ -60,7 +60,68 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        //
+        $dataRow = $this->dataRow($dataType, 'list_type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.list_type'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 4,
+                'details'      => [
+                    'default' => 'Type1',
+                    'options' => [
+                        'Type1' => 'Type1',
+                        'Type2' => 'Type2',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'domain_name');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.domain_name'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'prospect_list_belongstomany_campaign_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.campaign'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Campaign'),
+                    'table'       => 'campaigns',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'prospect_list_campaigns',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
 
         $dataRow = $this->dataRow($dataType, 'prospect_list_belongsto_assigned_user_relationship');
         if (!$dataRow->exists) {

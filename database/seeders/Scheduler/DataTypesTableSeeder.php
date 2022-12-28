@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'schedulers',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.scheduler.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.scheduler.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-scheduler voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-scheduler voyager-alarm-clock',
                 'model_name'            => Voyager::modelClass('Scheduler'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\SchedulerPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

@@ -87,33 +87,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => 5,
                 'details'      => [
-                    'default' => 'TYPE1',
-                    'options' => [
-                        'TYPE1' => 'TYPE1',
-                        'TYPE2' => 'TYPE2',
-                    ],
-                ],
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($dataType, 'status');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'select_dropdown',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.status'),
-                'required'     => 0,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 6,
-                'details'      => [
-                    'default' => 'INACTIVE',
-                    'options' => [
-                        'INACTIVE' => 'INACTIVE',
-                        'ACTIVE'   => 'ACTIVE',
-                    ],
+                    'default' => config('joy-voyager-crm.bugs.default_type', 'Type1'),
+                    'options' => config('joy-voyager-crm.bugs.types', [
+                        'Type1' => 'Type1',
+                        'Type2' => 'Type2',
+                    ]),
                 ],
             ])->save();
         }
@@ -131,11 +109,12 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => 7,
                 'details'      => [
-                    'default' => 'INACTIVE',
-                    'options' => [
-                        'INACTIVE' => 'INACTIVE',
-                        'ACTIVE'   => 'ACTIVE',
-                    ],
+                    'default' => config('joy-voyager-crm.bugs.default_priority', 'Low'),
+                    'options' => config('joy-voyager-crm.bugs.priorities', [
+                        'Low'    => 'Low',
+                        'Medium' => 'Medium',
+                        'High'   => 'High',
+                    ]),
                 ],
             ])->save();
         }
@@ -143,7 +122,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'resolution');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.resolution'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -152,6 +131,13 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => 8,
+                'details'      => [
+                    'default' => config('joy-voyager-crm.bugs.default_resolution', 'No'),
+                    'options' => config('joy-voyager-crm.bugs.resolutions', [
+                        'Yes' => 'Yes',
+                        'No'  => 'No',
+                    ]),
+                ],
             ])->save();
         }
 
@@ -185,6 +171,31 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($dataType, 'bug_belongsto_found_in_release_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.found_in_release'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => 11,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Release'),
+                    'table'       => 'releases',
+                    'type'        => 'belongsTo',
+                    'column'      => 'found_in_release',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'releases',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($dataType, 'fixed_in_release');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -196,7 +207,32 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 11,
+                'order'        => 12,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'bug_belongsto_fixed_in_release_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.fixed_in_release'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => 13,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Release'),
+                    'table'       => 'releases',
+                    'type'        => 'belongsTo',
+                    'column'      => 'fixed_in_release',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'releases',
+                    'pivot'       => 0,
+                ],
             ])->save();
         }
 
@@ -211,7 +247,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 12,
+                'order'        => 14,
             ])->save();
         }
 
@@ -226,7 +262,29 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 13,
+                'order'        => 15,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'status');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.status'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 100,
+                'details'      => [
+                    'default' => config('joy-voyager-crm.bugs.default_status', 'Active'),
+                    'options' => config('joy-voyager-crm.bugs.statuses', [
+                        'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
+                    ]),
+                ],
             ])->save();
         }
 
@@ -241,6 +299,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 0,
+                'order'        => 101,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -251,7 +310,6 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 14,
             ])->save();
         }
 
@@ -266,7 +324,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 15,
+                'order'        => 102,
             ])->save();
         }
 
@@ -281,7 +339,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 16,
+                'order'        => 103,
             ])->save();
         }
 
@@ -296,7 +354,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 17,
+                'order'        => 104,
             ])->save();
         }
 
@@ -311,7 +369,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 18,
+                'order'        => 105,
             ])->save();
         }
 
@@ -326,6 +384,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
+                'order'        => 106,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -336,7 +395,6 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 19,
             ])->save();
         }
 
@@ -351,7 +409,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 20,
+                'order'        => 107,
             ])->save();
         }
 
@@ -366,6 +424,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
+                'order'        => 108,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -376,7 +435,6 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 21,
             ])->save();
         }
 
@@ -391,7 +449,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 22,
+                'order'        => 109,
             ])->save();
         }
     }

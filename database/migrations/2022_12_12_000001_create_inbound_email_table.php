@@ -26,7 +26,7 @@ return new class extends Migration {
             $table->string('service', 50)->nullable();
             $table->text('mailbox')->nullable();
             $table->boolean('delete_seen')->nullable()->default(false);
-            $table->string('mailbox_type', 10)->nullable();
+            $table->string('mailbox_type', 20)->nullable();
             $table->uuid('template_id')->nullable();
             $table->text('stored_options')->nullable();
             $table->uuid('group_id')->nullable();

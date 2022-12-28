@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\SecuritygroupsUserFactory;
 
 /**
  * Class SecuritygroupsUser
@@ -29,6 +28,7 @@ class SecuritygroupsUser extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
     protected $table     = 'securitygroups_users';
     public $incrementing = false;
@@ -53,4 +53,14 @@ class SecuritygroupsUser extends Model
         'primary_group',
         'noninheritable'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return SecuritygroupsUserFactory::new();
+    }
 }

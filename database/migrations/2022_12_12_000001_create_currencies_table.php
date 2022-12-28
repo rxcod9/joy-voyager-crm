@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->uuid('name')->nullable();
             $table->uuid('symbol')->nullable();
             $table->string('iso4217', 3)->nullable();
+            $table->unsignedInteger('decimal')->default(2);
+            $table->unsignedInteger('rounding')->default(0);
             $table->double('conversion_rate')->nullable()->default(0);
             $table->string('status', 100)->nullable();
 

@@ -45,7 +45,42 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        //
+        $dataRow = $this->dataRow($dataType, 'list_order');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.list_order'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'status');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.status'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 4,
+                'details'      => [
+                    'default' => 'Inactive',
+                    'options' => [
+                        'Inactive' => 'Inactive',
+                        'Active'   => 'Active',
+                    ],
+                ],
+            ])->save();
+        }
 
         $dataRow = $this->dataRow($dataType, 'created_at');
         if (!$dataRow->exists) {

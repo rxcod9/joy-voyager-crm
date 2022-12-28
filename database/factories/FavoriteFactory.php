@@ -24,6 +24,8 @@ class FavoriteFactory extends Factory
         return [
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
+            // 'parent_id' => null, // @TODO voyager morphTo relationship
+            // 'parent_type' => null,
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

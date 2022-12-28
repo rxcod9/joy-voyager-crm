@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'spots',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.spot.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.spot.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-spot voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-spot voyager-pie-chart',
                 'model_name'            => Voyager::modelClass('Spot'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\SpotPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

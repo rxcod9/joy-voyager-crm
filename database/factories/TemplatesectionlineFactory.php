@@ -24,6 +24,9 @@ class TemplatesectionlineFactory extends Factory
         return [
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
+            'thumbnail'   => null,
+            'grp'         => $this->faker->word(),
+            'ord'         => $this->faker->numberBetween(1, 100),
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

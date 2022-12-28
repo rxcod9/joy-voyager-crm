@@ -91,7 +91,7 @@ class DataRowsTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user_id'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,

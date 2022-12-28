@@ -608,10 +608,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => 36,
                 'details'      => [
-                    'default' => 'INACTIVE',
+                    'default' => 'Inactive',
                     'options' => [
-                        'INACTIVE' => 'INACTIVE',
-                        'ACTIVE'   => 'ACTIVE',
+                        'Inactive' => 'Inactive',
+                        'Active'   => 'Active',
                     ],
                 ],
             ])->save();
@@ -735,10 +735,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => 44,
                 'details'      => [
-                    'default' => 'INACTIVE',
+                    'default' => 'Inactive',
                     'options' => [
-                        'INACTIVE' => 'INACTIVE',
-                        'ACTIVE'   => 'ACTIVE',
+                        'Inactive' => 'Inactive',
+                        'Active'   => 'Active',
                     ],
                 ],
             ])->save();

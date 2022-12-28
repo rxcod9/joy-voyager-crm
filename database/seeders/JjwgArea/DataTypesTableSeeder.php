@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'jjwg_areas',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.jjwg_area.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.jjwg_area.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-jjwg_area voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-jjwg_area voyager-thumb-tack',
                 'model_name'            => Voyager::modelClass('JjwgArea'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\JjwgAreaPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

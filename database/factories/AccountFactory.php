@@ -25,8 +25,8 @@ class AccountFactory extends Factory
             'name'         => $this->faker->name(),
             'description'  => $this->faker->text(500),
             'account_type' => $this->faker->randomElement([
-                'TYPE1',
-                'TYPE2',
+                'Type1',
+                'Type2',
             ]),
             'industry'                    => $this->faker->word(10),
             'annual_revenue'              => $this->faker->word(10),

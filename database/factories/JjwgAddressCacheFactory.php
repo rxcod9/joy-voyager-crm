@@ -24,6 +24,8 @@ class JjwgAddressCacheFactory extends Factory
         return [
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
+            'lat'         => $this->faker->latitude(),
+            'lng'         => $this->faker->longitude(),
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

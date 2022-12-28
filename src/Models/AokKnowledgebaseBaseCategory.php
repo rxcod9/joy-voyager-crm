@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Joy\VoyagerCrm\Database\Factories\AokKnowledgebaseBaseCategoryFactory;
 
 /**
  * Class AokKnowledgebaseBaseCategory
@@ -31,6 +30,7 @@ class AokKnowledgebaseBaseCategory extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
     protected $table     = 'aok_knowledgebase_base_categories';
     public $incrementing = false;
@@ -52,4 +52,14 @@ class AokKnowledgebaseBaseCategory extends Model
 
         'assigned_user_id'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return AokKnowledgebaseBaseCategoryFactory::new();
+    }
 }

@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('aok_knowledgebase_categories', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('id')->primary();
+            $table->id();
             $table->uuid('aok_knowledgebase_id')->nullable();
             $table->uuid('aok_knowledgebase_base_categories_id')->nullable();
 

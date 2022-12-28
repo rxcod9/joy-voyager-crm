@@ -59,6 +59,10 @@ class OutboundEmail extends Model
         'deleted_at'
     ];
 
+    protected $hidden = [
+        'mail_smtppass'
+    ];
+
     protected $fillable = [
         'created_at',
         'updated_at',

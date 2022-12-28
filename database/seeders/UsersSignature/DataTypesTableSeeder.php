@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'users_signatures',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.users_signature.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.users_signature.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-users_signature voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-users_signature voyager-pen',
                 'model_name'            => Voyager::modelClass('UsersSignature'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\UsersSignaturePolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

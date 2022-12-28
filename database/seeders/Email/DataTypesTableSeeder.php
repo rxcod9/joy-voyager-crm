@@ -19,7 +19,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'emails',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.email.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.email.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-email voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-email voyager-mail',
                 'model_name'            => Voyager::modelClass('Email'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\EmailPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

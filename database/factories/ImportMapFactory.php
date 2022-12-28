@@ -22,10 +22,35 @@ class ImportMapFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name'           => $this->faker->name(),
             // 'description' => $this->faker->text(500),
-            'created_at' => $this->faker->dateTime(),
-            'updated_at' => $this->faker->dateTime(),
+            'source'         => null,
+            'enclosure'      => $this->faker->randomElement([
+                ' ',
+                ',',
+                ';',
+                // '\t',
+                '|',
+                // '   ',
+            ]),
+            'delimiter'      => $this->faker->randomElement([
+                ' ',
+                ',',
+                ';',
+                // '\t',
+                '|',
+                // '   ',
+            ]),
+            'module'         => null,
+            'content'        => null,
+            'default_values' => null,
+            'has_header'     => $this->faker->boolean(),
+            'is_published'   => $this->faker->randomElement([
+                'Yes',
+                'No',
+            ]),
+            'created_at'     => $this->faker->dateTime(),
+            'updated_at'     => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('projects_accounts', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('id')->primary();
+            $table->id();
             $table->uuid('account_id')->nullable()->index('idx_proj_acct_acct');
             $table->uuid('project_id')->nullable()->index('idx_proj_acct_proj');
 

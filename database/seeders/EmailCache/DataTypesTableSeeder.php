@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'email_cache',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.email_cache.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.email_cache.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-email_cache voyager-categories',
+                'icon'                  => 'voyager-bread voyager-crm-email_cache voyager-data',
                 'model_name'            => Voyager::modelClass('EmailCache'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\EmailCachePolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

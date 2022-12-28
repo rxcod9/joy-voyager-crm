@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-	Model,
-	SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\AowProcessedAowActionFactory;
 
 /**
  * Class AowProcessedAowAction
@@ -28,6 +27,7 @@ class AowProcessedAowAction extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
     protected $table     = 'aow_processed_aow_actions';
     public $incrementing = false;
@@ -48,4 +48,14 @@ class AowProcessedAowAction extends Model
         'updated_at',
         'deleted_at'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return AowProcessedAowActionFactory::new();
+    }
 }

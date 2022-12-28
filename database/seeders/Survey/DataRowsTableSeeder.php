@@ -119,6 +119,28 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($dataType, 'status');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.status'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 100,
+                'details'      => [
+                    'default' => config('joy-voyager-crm.surveys.default_status', 'Active'),
+                    'options' => config('joy-voyager-crm.surveys.statuses', [
+                        'Draft'     => 'Draft',
+                        'Published' => 'Published',
+                    ]),
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($dataType, 'survey_belongsto_assigned_user_relationship');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -159,28 +181,6 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'status');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'select_dropdown',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.status'),
-                'required'     => 0,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 103,
-                'details'      => [
-                    'default' => 'ACTIVE',
-                    'options' => [
-                        'ACTIVE'   => 'ACTIVE',
-                        'INACTIVE' => 'INACTIVE',
-                    ],
-                ],
-            ])->save();
-        }
-
         $dataRow = $this->dataRow($dataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -192,7 +192,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 104,
+                'order'        => 103,
             ])->save();
         }
 
@@ -207,7 +207,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 105,
+                'order'        => 104,
             ])->save();
         }
 
@@ -222,7 +222,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 106,
+                'order'        => 105,
             ])->save();
         }
 
@@ -237,7 +237,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 107,
+                'order'        => 106,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -262,7 +262,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 108,
+                'order'        => 107,
             ])->save();
         }
 
@@ -277,7 +277,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 109,
+                'order'        => 108,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -302,7 +302,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 110,
+                'order'        => 109,
             ])->save();
         }
     }

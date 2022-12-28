@@ -60,86 +60,6 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'account_belongsto_assigned_user_relationship');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'relationship',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
-                'required'     => 0,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 0,
-                'details'      => [
-                    'model'       => Voyager::modelClass('User'),
-                    'table'       => 'users',
-                    'type'        => 'belongsTo',
-                    'column'      => 'assigned_user_id',
-                    'key'         => 'id',
-                    'label'       => 'name',
-                    'pivot_table' => 'users',
-                    'pivot'       => 0,
-                ],
-                'order' => 4,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($dataType, 'assigned_user_id');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 5,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($dataType, 'account_belongsto_parent_relationship');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'relationship',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent'),
-                'required'     => 0,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 0,
-                'details'      => [
-                    'model'       => Voyager::modelClass('Account'),
-                    'table'       => 'accounts',
-                    'type'        => 'belongsTo',
-                    'column'      => 'parent_id',
-                    'key'         => 'id',
-                    'label'       => 'name',
-                    'pivot_table' => 'accounts',
-                    'pivot'       => 0,
-                ],
-                'order' => 6,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($dataType, 'parent_id');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent'),
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => 7,
-            ])->save();
-        }
-
         $dataRow = $this->dataRow($dataType, 'account_type');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -151,12 +71,12 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 4,
                 'details'      => [
-                    'default' => 'TYPE1',
+                    'default' => 'Type1',
                     'options' => [
-                        'TYPE1' => 'TYPE1',
-                        'TYPE2' => 'TYPE2',
+                        'Type1' => 'Type1',
+                        'Type2' => 'Type2',
                     ],
                 ],
             ])->save();
@@ -173,7 +93,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 5,
             ])->save();
         }
 
@@ -188,7 +108,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 6,
             ])->save();
         }
 
@@ -203,7 +123,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 7,
             ])->save();
         }
 
@@ -218,7 +138,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 8,
             ])->save();
         }
 
@@ -233,7 +153,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 9,
             ])->save();
         }
 
@@ -263,7 +183,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 11,
             ])->save();
         }
 
@@ -278,7 +198,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 12,
             ])->save();
         }
 
@@ -293,7 +213,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 13,
             ])->save();
         }
 
@@ -308,7 +228,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 14,
             ])->save();
         }
 
@@ -323,7 +243,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 15,
             ])->save();
         }
 
@@ -338,7 +258,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 16,
             ])->save();
         }
 
@@ -353,7 +273,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 17,
             ])->save();
         }
 
@@ -368,7 +288,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 18,
             ])->save();
         }
 
@@ -383,7 +303,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 19,
             ])->save();
         }
 
@@ -398,7 +318,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 20,
             ])->save();
         }
 
@@ -413,7 +333,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 21,
             ])->save();
         }
 
@@ -428,7 +348,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 22,
             ])->save();
         }
 
@@ -443,7 +363,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 23,
             ])->save();
         }
 
@@ -458,7 +378,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 24,
             ])->save();
         }
 
@@ -473,7 +393,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 25,
             ])->save();
         }
 
@@ -488,7 +408,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 26,
             ])->save();
         }
 
@@ -503,7 +423,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 27,
                 'details'      => [
                     'model'       => Voyager::modelClass('Campaign'),
                     'table'       => 'campaigns',
@@ -514,6 +434,164 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'campaigns',
                     'pivot'       => 0,
                 ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'account_belongstomany_bugs_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.bugs'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Bug'),
+                    'table'       => 'bugs',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'accounts_bugs',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'account_belongstomany_contacts_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.contacts'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Contact'),
+                    'table'       => 'contacts',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'first_name',
+                    'pivot_table' => 'accounts_contacts',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'account_belongstomany_opportunities_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.opportunities'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Opportunity'),
+                    'table'       => 'opportunities',
+                    'type'        => 'belongsToMany',
+                    'column'      => 'id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'accounts_opportunities',
+                    'pivot'       => '1',
+                    'taggable'    => '0',
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'account_belongsto_assigned_user_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => 101,
+                'details'      => [
+                    'model'       => Voyager::modelClass('User'),
+                    'table'       => 'users',
+                    'type'        => 'belongsTo',
+                    'column'      => 'assigned_user_id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'users',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'assigned_user_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 102,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'account_belongsto_parent_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => 103,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Account'),
+                    'table'       => 'accounts',
+                    'type'        => 'belongsTo',
+                    'column'      => 'parent_id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'accounts',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'parent_id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent'),
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 104,
             ])->save();
         }
 
@@ -528,7 +606,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 8,
+                'order'        => 105,
             ])->save();
         }
 
@@ -543,7 +621,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 9,
+                'order'        => 106,
             ])->save();
         }
 
@@ -558,7 +636,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 9,
+                'order'        => 107,
             ])->save();
         }
 
@@ -573,6 +651,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
+                'order'        => 108,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -583,7 +662,6 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 10,
             ])->save();
         }
 
@@ -598,7 +676,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 11,
+                'order'        => 109,
             ])->save();
         }
 
@@ -613,6 +691,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
+                'order'        => 110,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -623,7 +702,6 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 12,
             ])->save();
         }
 
@@ -638,7 +716,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 13,
+                'order'        => 111,
             ])->save();
         }
     }

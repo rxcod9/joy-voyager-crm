@@ -18,7 +18,7 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'project',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.project.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.project.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-project voyager-categories',
+                'icon'                  => 'fas fa-project-diagram',
                 'model_name'            => Voyager::modelClass('Project'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\ProjectPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',

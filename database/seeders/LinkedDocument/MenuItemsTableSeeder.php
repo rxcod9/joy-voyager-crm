@@ -1,0 +1,37 @@
+<?php
+
+namespace Joy\VoyagerCrm\Database\Seeders\LinkedDocument;
+
+use Illuminate\Database\Seeder;
+use TCG\Voyager\Facades\Voyager;
+
+class MenuItemsTableSeeder extends Seeder
+{
+    /**
+     * Auto generated seed file.
+     *
+     * @return void
+     */
+    public function run($parentMenuId = null)
+    {
+        $menu = Voyager::model('Menu')->where('name', 'admin')->firstOrFail();
+
+        $maxOrder = Voyager::model('MenuItem')->max('order') ?? 1;
+
+        $menuItem = Voyager::model('MenuItem')->firstOrNew([
+            'menu_id' => $menu->id,
+            'title'   => __('joy-voyager-crm::seeders.menu_items.linked_documents'),
+            'url'     => '',
+            'route'   => 'voyager.linked-documents.index',
+        ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill([
+                'target'     => '_self',
+                'icon_class' => 'fa-solid fa-link',
+                'color'      => null,
+                'parent_id'  => $parentMenuId,
+                'order'      => ++$maxOrder,
+            ])->save();
+        }
+    }
+}

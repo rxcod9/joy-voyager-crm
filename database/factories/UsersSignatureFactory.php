@@ -22,10 +22,27 @@ class UsersSignatureFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name'           => $this->faker->name(),
             // 'description' => $this->faker->text(500),
-            'created_at' => $this->faker->dateTime(),
-            'updated_at' => $this->faker->dateTime(),
+            'signature'      => $this->faker->paragraphs(10, true),
+            // 'signature_html' => $this->faker->randomHtml(),
+            'signature_html' => '<p>' .
+                'Facilisis elementum platea ante vulputate placerat nulla scelerisque rhoncus faucibus.' .
+                '</p>' .
+                '<p>' .
+                'Volutpat montes auctor mauris ad proin consectetur integer diam himenaeos.' .
+                '</p>' .
+                '<p>' .
+                'Condimentum non ligula blandit vulputate pulvinar rhoncus elementum himenaeos laoreet!' .
+                '</p>' .
+                '<p>' .
+                'Lacus tincidunt dapibus faucibus, vestibulum class conubia turpis urna semper.' .
+                '</p>' .
+                '<p>' .
+                'Viverra tincidunt faucibus nascetur natoque tortor volutpat tincidunt laoreet curabitur.' .
+                '</p>',
+            'created_at'     => $this->faker->dateTime(),
+            'updated_at'     => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

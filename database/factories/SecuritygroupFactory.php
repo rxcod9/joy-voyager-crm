@@ -22,10 +22,11 @@ class SecuritygroupFactory extends Factory
     public function definition()
     {
         return [
-            'name'        => $this->faker->name(),
-            'description' => $this->faker->text(500),
-            'created_at'  => $this->faker->dateTime(),
-            'updated_at'  => $this->faker->dateTime(),
+            'name'           => $this->faker->name(),
+            'description'    => $this->faker->text(500),
+            'noninheritable' => $this->faker->boolean(),
+            'created_at'     => $this->faker->dateTime(),
+            'updated_at'     => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

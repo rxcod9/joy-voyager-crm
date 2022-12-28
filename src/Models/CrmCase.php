@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-
-use Illuminate\Database\Eloquent\{
-    Model,
-    SoftDeletes
-};
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\CrmCaseFactory;
+use TCG\Voyager\Facades\Voyager;
 
 /**
  * Class Case
@@ -41,7 +41,7 @@ class CrmCase extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'cases';
     public $incrementing = false;
@@ -75,4 +75,36 @@ class CrmCase extends Model
         'state',
         'contact_created_by_id'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return CrmCaseFactory::new();
+    }
+
+    /**
+     * Boot function.
+     */
+    protected static function boot()
+    {
+        // updating case_number and modified_by_id when model is created
+        static::creating(function ($model) {
+            if (!$model->isDirty('case_number')) {
+                $model->case_number = Voyager::model('CrmCase')->max('case_number') + 1;
+            }
+        });
+
+        // updating case_number when model is updated
+        static::updating(function ($model) {
+            if (!$model->isDirty('case_number') && !$model->case_number) {
+                $model->case_number = Voyager::model('CrmCase')->max('case_number') + 1;
+            }
+        });
+
+        parent::boot();
+    }
 }

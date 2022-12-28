@@ -19,12 +19,12 @@ class DataTypesTableSeeder extends Seeder
                 'name'                  => 'meetings',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.meeting.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.meeting.plural'),
-                'icon'                  => 'voyager-bread voyager-crm-meeting voyager-categories',
+                'icon'                  => 'fas fa-handshake',
                 'model_name'            => Voyager::modelClass('Meeting'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\MeetingPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',
-                'generate_permissions' => 1,
-                'description'          => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
             ])->save();
         }
     }

@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\{
 	Model,
 	SoftDeletes
 };
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Joy\VoyagerCrm\Database\Factories\ReminderFactory;
 
 /**
  * Class Reminder
@@ -40,7 +42,7 @@ class Reminder extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'reminders';
     public $incrementing = false;
@@ -78,4 +80,14 @@ class Reminder extends Model
         'date_willexecute',
         'popup_viewed'
     ];
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return ReminderFactory::new();
+    }
 }

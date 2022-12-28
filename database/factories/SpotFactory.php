@@ -24,6 +24,11 @@ class SpotFactory extends Factory
         return [
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
+            'config'      => null,
+            'type'        => $this->faker->randomElement([
+                'Type1',
+                'Type2',
+            ]),
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

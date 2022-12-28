@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->uuid('id')->primary();
             $table->uuid('aow_processed_id')->nullable();
             $table->uuid('aow_action_id')->nullable();
-            $table->uuid('status')->nullable()->default('Pending');
+            $table->string('status')->nullable()->default('Pending');
 
             $table->index(['aow_action_id', 'deleted_at', 'aow_processed_id'], 'idx_actid_del_freid');
             $table->index(['aow_processed_id', 'aow_action_id'], 'idx_aow_processed_aow_actions');

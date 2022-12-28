@@ -22,29 +22,37 @@ class BugFactory extends Factory
     public function definition()
     {
         return [
-            'name'        => $this->faker->name(),
-            'description' => $this->faker->text(500),
-            'bug_number'  => $this->faker->unique()->numberBetween(1, 1000),
-            'type'        => $this->faker->randomElement([
-                'TYPE1',
-                'TYPE2',
+            'name'             => $this->faker->name(),
+            'description'      => $this->faker->text(500),
+            'bug_number'       => $this->faker->unique()->numberBetween(1, 1000),
+            'type'             => $this->faker->randomKey([
+                config('joy-voyager-crm.bugs.types', [
+                    'Type1' => 'Type1',
+                    'Type2' => 'Type2',
+                ])
             ]),
-            'status' => $this->faker->randomElement([
-                'ACTIVE',
-                'INACTIVE',
+            'status'           => $this->faker->randomKey([
+                config('joy-voyager-crm.bugs.statuses', [
+                    'Active'   => 'Active',
+                    'Inactive' => 'Inactive',
+                ]),
             ]),
-            'priority' => $this->faker->randomElement([
-                'LOW',
-                'MEDIUM',
-                'HIGH',
+            'priority'         => $this->faker->randomKey([
+                config('joy-voyager-crm.bugs.priorities', [
+                    'Low'    => 'Low',
+                    'Medium' => 'Medium',
+                    'High'   => 'High',
+                ]),
             ]),
-            'resolution' => $this->faker->randomElement([
-                'YES',
-                'NO',
+            'resolution'       => $this->faker->randomKey([
+                config('joy-voyager-crm.bugs.resolutions', [
+                    'Yes' => 'Yes',
+                    'No'  => 'No',
+                ]),
             ]),
             'work_log'         => $this->faker->text(100),
-            'found_in_release' => $this->faker->text(10),
-            'fixed_in_release' => $this->faker->text(10),
+            // 'found_in_release' => null,
+            // 'fixed_in_release' => null,
             'source'           => $this->faker->text(10),
             'product_category' => $this->faker->text(10),
             'created_at'       => $this->faker->dateTime(),
