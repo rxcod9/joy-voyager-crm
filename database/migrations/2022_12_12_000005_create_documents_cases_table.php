@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('documents_cases', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('id')->primary();
+            $table->id();
             $table->uuid('document_id')->nullable();
             $table->uuid('case_id')->nullable();
 

@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Joy\VoyagerCrm\Database\Factories\SurveyresponseFactory;
 
 /**
  * Class Surveyresponse
@@ -34,7 +36,7 @@ class Surveyresponse extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'surveyresponses';
     public $incrementing = false;
@@ -66,4 +68,14 @@ class Surveyresponse extends Model
         'contact_id',
         'survey_id'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return SurveyresponseFactory::new();
+    }
 }

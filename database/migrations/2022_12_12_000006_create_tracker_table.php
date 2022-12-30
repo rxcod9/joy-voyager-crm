@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('tracker', function (Blueprint $table) {
             $table->comment('');
-            $table->integer('id', true);
+            $table->uuid('id')->primary();
             $table->uuid('monitor_id')->index('idx_tracker_monitor_id');
             $table->uuid('user_id')->nullable();
             $table->string('module_name')->nullable();

@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->uuid('id')->primary();
             $table->uuid('securitygroup_id')->nullable();
             $table->uuid('record_id')->nullable();
-            $table->uuid('module')->nullable();
+            $table->string('module')->nullable();
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
 

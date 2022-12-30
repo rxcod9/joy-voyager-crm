@@ -14,8 +14,8 @@ return new class extends Migration {
     {
         Schema::create('emailman', function (Blueprint $table) {
             $table->comment('');
+            $table->uuid('id')->primary();
             $table->uuid('user_id')->nullable();
-            $table->integer('id', true);
             $table->uuid('campaign_id')->nullable()->index('idx_eman_campaign_id');
             $table->uuid('marketing_id')->nullable();
             $table->uuid('list_id')->nullable();

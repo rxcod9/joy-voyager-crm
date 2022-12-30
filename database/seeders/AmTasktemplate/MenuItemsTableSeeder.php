@@ -16,12 +16,13 @@ class MenuItemsTableSeeder extends Seeder
     {
         $menu = Voyager::model('Menu')->where('name', 'admin')->firstOrFail();
 
-        $maxOrder = Voyager::model('MenuItem')->max('order') ?? 1;
+        $maxOrder = Voyager::model('MenuItem')->max('order') ?? 0;
 
         $menuItem = Voyager::model('MenuItem')->firstOrNew([
             'menu_id' => $menu->id,
             'title'   => __('joy-voyager-crm::seeders.menu_items.am_tasktemplates'),
             'url'     => '',
+            'parent_id'  => $parentMenuId,
             'route'   => 'voyager.am-tasktemplates.index',
         ]);
         if (!$menuItem->exists) {

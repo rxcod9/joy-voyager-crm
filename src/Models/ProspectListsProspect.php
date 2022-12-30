@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Joy\VoyagerCrm\Database\Factories\ProspectListsProspectFactory;
 
 /**
  * Class ProspectListsProspect
@@ -25,6 +27,7 @@ class ProspectListsProspect extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
     protected $table     = 'prospect_lists_prospects';
     public $incrementing = false;
@@ -43,4 +46,14 @@ class ProspectListsProspect extends Model
         'related_id',
         'related_type',
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return ProspectListsProspectFactory::new();
+    }
 }

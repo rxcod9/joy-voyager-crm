@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('accounts_cases', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('id')->primary();
+            $table->id();
             $table->uuid('account_id')->nullable()->index('idx_acc_case_acc');
             $table->uuid('case_id')->nullable()->index('idx_acc_acc_case');
             $table->timestamps();

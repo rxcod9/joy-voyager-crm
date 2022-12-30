@@ -14,13 +14,14 @@ class SettingsTableSeeder extends Seeder
     public function run()
     {
         $setting = $this->findSetting('users_signature.key1');
+        $order   = Voyager::model('Setting')->max('order') ?? 0;
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('joy-voyager-crm::seeders.settings.users_signature.key1'),
                 'value'        => 'Joy Voyager',
                 'details'      => '',
                 'type'         => 'text',
-                'order'        => 1,
+                'order'        => ++$order,
                 'group'        => 'UsersSignature',
             ])->save();
         }
@@ -32,7 +33,7 @@ class SettingsTableSeeder extends Seeder
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'image',
-                'order'        => 2,
+                'order'        => ++$order,
                 'group'        => 'UsersSignature',
             ])->save();
         }

@@ -17,7 +17,7 @@ class VoyagerDatabaseSeeder extends Seeder
             DataTypesTableSeeder::class,
             DataRowsTableSeeder::class,
             // MenusTableSeeder::class,
-            MenuItemsTableSeeder::class,
+            // MenuItemsTableSeeder::class,
             // RolesTableSeeder::class,
             PermissionsTableSeeder::class,
             'Database\\Seeders\\PermissionRoleTableSeeder',

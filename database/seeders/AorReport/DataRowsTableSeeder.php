@@ -14,6 +14,7 @@ class DataRowsTableSeeder extends Seeder
     public function run()
     {
         $dataType = Voyager::model('DataType')->where('slug', 'aor-reports')->firstOrFail();
+        $order    = Voyager::model('DataRow')->whereDataTypeId($dataType->id)->max('order') ?? 0;
 
         $dataRow = $this->dataRow($dataType, 'id');
         if (!$dataRow->exists) {
@@ -26,7 +27,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 1,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -41,7 +42,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 2,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -56,7 +57,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 3,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -71,7 +72,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => ++$order,
                 'details'      => [
                     'default' => null,
                     'options' => [
@@ -94,7 +95,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -109,7 +110,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 0,
-                'order'        => 101,
+                'order'        => ++$order,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -134,7 +135,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 102,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -149,7 +150,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 103,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -164,7 +165,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 104,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -179,7 +180,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 105,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -194,7 +195,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 106,
+                'order'        => ++$order,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -219,7 +220,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 107,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -234,7 +235,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 108,
+                'order'        => ++$order,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -259,7 +260,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 109,
+                'order'        => ++$order,
             ])->save();
         }
     }

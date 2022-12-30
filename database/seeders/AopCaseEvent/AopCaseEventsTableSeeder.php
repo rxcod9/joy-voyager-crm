@@ -21,6 +21,11 @@ class AopCaseEventsTableSeeder extends Seeder
         $count = 20;
         Voyager::model('AopCaseEvent')->factory()
             ->count($count)
+            ->state(function (array $attributes) use ($count) {
+                return [
+                    'case_id' => optional(Voyager::model('CrmCase')->inRandomOrder()->take(1)->first())->id,
+                ];
+            })
             ->create();
     }
 }

@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Joy\VoyagerCrm\Database\Factories\CampaignLogFactory;
 
 /**
  * Class CampaignLog
@@ -35,6 +37,7 @@ class CampaignLog extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
     protected $table     = 'campaign_log';
     public $incrementing = false;
@@ -69,4 +72,14 @@ class CampaignLog extends Model
         'more_information',
         'marketing_id'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return CampaignLogFactory::new();
+    }
 }

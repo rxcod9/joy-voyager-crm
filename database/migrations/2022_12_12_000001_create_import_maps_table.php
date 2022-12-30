@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('source')->nullable();
             $table->string('enclosure', 1)->nullable()->default(' ');
             $table->string('delimiter', 1)->nullable()->default(',');
-            $table->uuid('module')->nullable();
+            $table->string('module')->nullable();
             $table->text('content')->nullable();
             $table->text('default_values')->nullable();
             $table->boolean('has_header')->nullable()->default(true);

@@ -13,6 +13,7 @@ class DataRowsTableSeeder extends Seeder
     public function run()
     {
         $dataType = Voyager::model('DataType')->where('slug', 'users')->firstOrFail();
+        $order    = Voyager::model('DataRow')->whereDataTypeId($dataType->id)->max('order') ?? 0;
 
         $dataRow = $this->dataRow($dataType, 'id');
         if (!$dataRow->exists) {
@@ -25,7 +26,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 1,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -40,7 +41,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 2,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -55,7 +56,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 3,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -70,7 +71,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 0,
-                'order'        => 4,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -85,7 +86,35 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 5,
+                'order'        => ++$order,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'user_belongstomany_sugarfeeds_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.sugarfeeds'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'             => Voyager::modelClass('Sugarfeed'),
+                    'table'             => 'sugarfeed',
+                    'type'              => 'belongsToMany',
+                    'column'            => 'id',
+                    'key'               => 'id',
+                    'label'             => 'name',
+                    'pivot_table'       => 'users_feeds',
+                    'foreign_pivot_key' => 'user_id',
+                    'related_pivot_key' => 'feed_id',
+                    'pivot'             => '1',
+                    'taggable'          => '0',
+                ],
             ])->save();
         }
 
@@ -100,7 +129,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 6,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -115,7 +144,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 7,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -130,7 +159,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 7,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -145,7 +174,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 8,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -170,7 +199,7 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'roles',
                     'pivot'       => 0,
                 ],
-                'order' => 9,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -196,7 +225,7 @@ class DataRowsTableSeeder extends Seeder
                     'pivot'       => '1',
                     'taggable'    => '0',
                 ],
-                'order' => 10,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -211,7 +240,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 11,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -226,7 +255,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 12,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -241,7 +270,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 13,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -256,7 +285,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 1,
-                'order'        => 14,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -271,7 +300,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 1,
-                'order'        => 15,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -286,7 +315,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 16,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -301,7 +330,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 17,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -316,7 +345,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 18,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -331,7 +360,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 19,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -346,7 +375,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 20,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -361,7 +390,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 21,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -376,7 +405,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 22,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -391,7 +420,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 23,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -416,7 +445,7 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 24,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -431,7 +460,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 25,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -456,7 +485,7 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'users',
                     'pivot'       => 0,
                 ],
-                'order' => 26,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -471,7 +500,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 27,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -486,7 +515,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 28,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -501,7 +530,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 29,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -516,7 +545,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 30,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -531,7 +560,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 31,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -546,7 +575,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 32,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -561,7 +590,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 33,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -576,7 +605,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 34,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -591,7 +620,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 35,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -606,7 +635,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 36,
+                'order'        => ++$order,
                 'details'      => [
                     'default' => 'Inactive',
                     'options' => [
@@ -628,7 +657,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 37,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -643,7 +672,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 38,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -658,7 +687,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 39,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -673,7 +702,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 40,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -688,7 +717,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 41,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -703,7 +732,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 42,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -718,7 +747,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 43,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -733,7 +762,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 44,
+                'order'        => ++$order,
                 'details'      => [
                     'default' => 'Inactive',
                     'options' => [
@@ -755,7 +784,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 45,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -770,7 +799,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,
-                'order'        => 46,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -785,7 +814,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 47,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -800,7 +829,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => ++$order,
                 'details'      => [
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
@@ -825,7 +854,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 49,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -840,7 +869,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 50,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -855,7 +884,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 51,
+                'order'        => ++$order,
             ])->save();
         }
 
@@ -870,7 +899,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 52,
+                'order'        => ++$order,
             ])->save();
         }
     }

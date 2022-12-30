@@ -13,11 +13,12 @@ class UserSettingsTableSeeder extends Seeder
     public function run()
     {
         $setting = $this->findSettingType('preferences.check_for_new_email');
+        $order   = Voyager::model('UserSettingType')->max('order') ?? 0;
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('joy-voyager-crm::seeders.user_settings.check_for_new_email'),
                 'type'         => 'select_dropdown',
-                'order'        => 1,
+                'order'        => ++$order,
                 'group'        => 'Preferences',
                 'details'      => json_encode([
                     'default' => null,
@@ -35,7 +36,7 @@ class UserSettingsTableSeeder extends Seeder
             $setting->fill([
                 'display_name' => __('joy-voyager-crm::seeders.user_settings.character_set'),
                 'type'         => 'select_dropdown',
-                'order'        => 2,
+                'order'        => ++$order,
                 'group'        => 'Preferences',
                 'details'      => json_encode([
                     'default' => null,
