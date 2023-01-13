@@ -48,9 +48,11 @@ class EmailTemplateFactory extends Factory
             'body'        => strip_tags($html),
             'body_html'   => $html,
             'text_only'   => $this->faker->boolean(),
-            'type'        => $this->faker->randomElement([
-                'Type1',
-                'Type2',
+            'type'        => $this->faker->randomKey([
+                ''         => 'None',
+                'campaign' => 'Campaign',
+                'email'    => 'Email',
+                'event'    => 'Event',
             ]),
             'published'   => $this->faker->randomElement([
                 'Yes',

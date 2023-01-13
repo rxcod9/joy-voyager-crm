@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Opportunity;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -74,10 +73,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => '',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        ''                  => 'None',
+                        'Existing Business' => 'Existing Business',
+                        'New Business'      => 'New Business',
                     ],
                 ],
             ])->save();
@@ -126,7 +126,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'lead_source');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.lead_source'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -135,6 +135,26 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => 'Self Generated',
+                    'options' => [
+                        ''                  => 'None',
+                        'Cold Call'         => 'Cold Call',
+                        'Existing Customer' => 'Existing Customer',
+                        'Self Generated'    => 'Self Generated',
+                        'Employee'          => 'Employee',
+                        'Partner'           => 'Partner',
+                        'Public Relations'  => 'Public Relations',
+                        'Direct Mail'       => 'Direct Mail',
+                        'Conference'        => 'Conference',
+                        'Trade Show'        => 'Trade Show',
+                        'Web Site'          => 'Web Site',
+                        'Word of mouth'     => 'Word of mouth',
+                        'Email'             => 'Email',
+                        'Campaign'          => 'Campaign',
+                        'Other'             => 'Other',
+                    ],
+                ],
             ])->save();
         }
 
@@ -251,10 +271,18 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Stage1',
+                    'default' => 'Prospecting',
                     'options' => [
-                        'Stage1' => 'Stage1',
-                        'Stage2' => 'Stage2',
+                        'Prospecting'          => 'Prospecting',
+                        'Qualification'        => 'Qualification',
+                        'Needs Analysis'       => 'Needs Analysis',
+                        'Value Proposition'    => 'Value Proposition',
+                        'Id. Decision Makers'  => 'Identifying Decision Makers',
+                        'Perception Analysis'  => 'Perception Analysis',
+                        'Proposal/Price Quote' => 'Proposal/Price Quote',
+                        'Negotiation/Review'   => 'Negotiation/Review',
+                        'Closed Won'           => 'Closed Won',
+                        'Closed Lost'          => 'Closed Lost',
                     ],
                 ],
             ])->save();
@@ -263,7 +291,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'probability');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'number',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.probability'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -272,6 +300,48 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => 'Prospecting',
+                    'options' => [
+                        '10'  => 'Prospecting',
+                        '20'  => 'Qualification',
+                        '25'  => 'Needs Analysis',
+                        '30'  => 'Value Proposition',
+                        '40'  => 'Id. Decision Makers',
+                        '50'  => 'Perception Analysis',
+                        '65'  => 'Proposal/Price Quote',
+                        '80'  => 'Negotiation/Review',
+                        '100' => 'Closed Won',
+                        '0'   => 'Closed Lost',
+                    ],
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'opportunity_morphmany_calls_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.calls'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Call'),
+                    'table'       => 'calls',
+                    'type'        => 'morphMany',
+                    'function'    => 'parentable',
+                    'type_column' => 'parent_type',
+                    'column'      => 'parent_id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'calls',
+                    'pivot'       => 0,
+                ],
             ])->save();
         }
 

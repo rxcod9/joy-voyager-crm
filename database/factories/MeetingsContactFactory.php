@@ -22,19 +22,20 @@ class MeetingsContactFactory extends Factory
     public function definition()
     {
         return [
-            'meeting_id' => null,
-            'contact_id' => null,
-            'required'   => $this->faker->randomKey([
+            'meeting_id'    => null,
+            'contact_id'    => null,
+            'required'      => $this->faker->randomKey([
                 '1' => 'Yes',
                 '0' => 'No',
             ]),
-            'accept_status'     => $this->faker->randomKey([
-                'none'     => 'none',
-                'Active'   => 'Active',
-                'Inactive' => 'Inactive',
+            'accept_status' => $this->faker->randomKey([
+                'accept'    => 'Accepted',
+                'decline'   => 'Declined',
+                'tentative' => 'Tentative',
+                'none'      => 'None',
             ]),
-            'created_at' => $this->faker->dateTime(),
-            'updated_at' => $this->faker->dateTime(),
+            'created_at'    => $this->faker->dateTime(),
+            'updated_at'    => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

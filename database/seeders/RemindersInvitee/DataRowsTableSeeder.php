@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\RemindersInvitee;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -101,6 +100,7 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        // @TODO @FIXME morph relation
         $dataRow = $this->dataRow($dataType, 'related_invitee_module');
         if (!$dataRow->exists) {
             $dataRow->fill([

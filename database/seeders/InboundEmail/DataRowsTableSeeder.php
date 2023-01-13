@@ -163,10 +163,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'MailboxType1',
+                    'default' => 'pick',
                     'options' => [
-                        'MailboxType1' => 'MailboxType1',
-                        'MailboxType2' => 'MailboxType2',
+                        'pick'       => '--None--',
+                        'createcase' => 'Create Case',
+                        'bounce'     => 'Bounce Handling',
                     ],
                 ],
             ])->save();
@@ -260,10 +261,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => 'Active',
                     'options' => [
-                        'Inactive' => 'Inactive',
                         'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
                     ],
                 ],
             ])->save();

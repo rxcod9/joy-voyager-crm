@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AosQuote;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -404,7 +403,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'term');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.term'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -413,6 +412,14 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''       => 'None',
+                        'Net 15' => 'Nett 15',
+                        'Net 30' => 'Nett 30',
+                    ],
+                ],
             ])->save();
         }
 
@@ -429,10 +436,16 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Stage1',
+                    'default' => 'Draft',
                     'options' => [
-                        'Stage1' => 'Stage1',
-                        'Stage2' => 'Stage2',
+                        'Draft'           => 'Draft',
+                        'Negotiation'     => 'Negotiation',
+                        'Delivered'       => 'Delivered',
+                        'On Hold'         => 'On Hold',
+                        'Confirmed'       => 'Confirmed',
+                        'Closed Accepted' => 'Closed Accepted',
+                        'Closed Lost'     => 'Closed Lost',
+                        'Closed Dead'     => 'Closed Dead',
                     ],
                 ],
             ])->save();
@@ -451,10 +464,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Approval1',
+                    'default' => '',
                     'options' => [
-                        'Approval1' => 'Approval1',
-                        'Approval2' => 'Approval2',
+                        ''             => 'None',
+                        'Approved'     => 'Approved',
+                        'Not Approved' => 'Not Approved',
                     ],
                 ],
             ])->save();
@@ -473,10 +487,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Active',
+                    'default' => 'Not Invoiced',
                     'options' => [
-                        'Active'   => 'Active',
-                        'Inactive' => 'Inactive',
+                        'Not Invoiced' => 'Not Invoiced',
+                        'Invoiced'     => 'Invoiced',
                     ],
                 ],
             ])->save();

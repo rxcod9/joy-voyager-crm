@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Alert;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -143,7 +142,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'type');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'select_dropdown',
+                'type'         => 'text',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.type'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -152,13 +151,6 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
-                'details'      => [
-                    'default' => 'Type1',
-                    'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
-                    ],
-                ],
             ])->save();
         }
 

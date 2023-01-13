@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Sugarfeed;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -119,10 +118,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => 'sugar',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'sugar'  => 'SuiteCRM Email Client',
+                        'mailto' => 'External Email Client',
                     ],
                 ],
             ])->save();

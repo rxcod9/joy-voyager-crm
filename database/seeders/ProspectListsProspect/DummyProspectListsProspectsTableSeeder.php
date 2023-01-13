@@ -17,6 +17,11 @@ class DummyProspectListsProspectsTableSeeder extends Seeder
         $count = 20;
         Voyager::model('ProspectListsProspect')->factory()
             ->count($count)
+            ->state(function (array $attributes) use ($count) {
+                return [
+                    'prospect_list_id' => optional(Voyager::model('ProspectList')->inRandomOrder()->take(1)->first())->id,
+                ];
+            })
             ->create();
     }
 }

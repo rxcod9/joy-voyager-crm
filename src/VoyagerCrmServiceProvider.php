@@ -4,229 +4,253 @@ declare(strict_types=1);
 
 namespace Joy\VoyagerCrm;
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\ServiceProvider;
-use Joy\VoyagerCrm\Models\Account;
-use Joy\VoyagerCrm\Models\AccountsAudit;
-use Joy\VoyagerCrm\Models\AccountsBug;
-use Joy\VoyagerCrm\Models\AccountsCase;
-use Joy\VoyagerCrm\Models\AccountsContact;
-use Joy\VoyagerCrm\Models\AccountsCstm;
-use Joy\VoyagerCrm\Models\AccountsOpportunity;
-use Joy\VoyagerCrm\Models\AclAction;
-use Joy\VoyagerCrm\Models\AclRole;
-use Joy\VoyagerCrm\Models\AclRolesAction;
-use Joy\VoyagerCrm\Models\AclRolesUser;
-use Joy\VoyagerCrm\Models\AddressBook;
-use Joy\VoyagerCrm\Models\Alert;
-use Joy\VoyagerCrm\Models\AmProjecttemplate;
-use Joy\VoyagerCrm\Models\AmProjecttemplatesAudit;
-use Joy\VoyagerCrm\Models\AmProjecttemplatesContacts1C;
-use Joy\VoyagerCrm\Models\AmProjecttemplatesProject1C;
-use Joy\VoyagerCrm\Models\AmProjecttemplatesUsers1C;
-use Joy\VoyagerCrm\Models\AmTasktemplate;
-use Joy\VoyagerCrm\Models\AmTasktemplatesAmProjecttemplatesC;
-use Joy\VoyagerCrm\Models\AmTasktemplatesAudit;
-use Joy\VoyagerCrm\Models\AobhBusinesshour;
-use Joy\VoyagerCrm\Models\AodIndex;
-use Joy\VoyagerCrm\Models\AodIndexAudit;
-use Joy\VoyagerCrm\Models\AodIndexevent;
-use Joy\VoyagerCrm\Models\AodIndexeventAudit;
-use Joy\VoyagerCrm\Models\AokKnowledgeBaseCategoriesAudit;
-use Joy\VoyagerCrm\Models\AokKnowledgebase;
-use Joy\VoyagerCrm\Models\AokKnowledgebaseAudit;
-use Joy\VoyagerCrm\Models\AokKnowledgebaseBaseCategory;
-use Joy\VoyagerCrm\Models\AokKnowledgebaseCategory;
-use Joy\VoyagerCrm\Models\AopCaseEvent;
-use Joy\VoyagerCrm\Models\AopCaseEventsAudit;
-use Joy\VoyagerCrm\Models\AopCaseUpdate;
-use Joy\VoyagerCrm\Models\AopCaseUpdatesAudit;
-use Joy\VoyagerCrm\Models\AorChart;
-use Joy\VoyagerCrm\Models\AorCondition;
-use Joy\VoyagerCrm\Models\AorField;
-use Joy\VoyagerCrm\Models\AorReport;
-use Joy\VoyagerCrm\Models\AorReportsAudit;
-use Joy\VoyagerCrm\Models\AorScheduledReport;
-use Joy\VoyagerCrm\Models\AosContract;
-use Joy\VoyagerCrm\Models\AosContractsAudit;
-use Joy\VoyagerCrm\Models\AosContractsDocument;
-use Joy\VoyagerCrm\Models\AosInvoice;
-use Joy\VoyagerCrm\Models\AosInvoicesAudit;
-use Joy\VoyagerCrm\Models\AosLineItemGroup;
-use Joy\VoyagerCrm\Models\AosLineItemGroupsAudit;
-use Joy\VoyagerCrm\Models\AosPdfTemplate;
-use Joy\VoyagerCrm\Models\AosPdfTemplatesAudit;
-use Joy\VoyagerCrm\Models\AosProduct;
-use Joy\VoyagerCrm\Models\AosProductCategoriesAudit;
-use Joy\VoyagerCrm\Models\AosProductCategory;
-use Joy\VoyagerCrm\Models\AosProductsAudit;
-use Joy\VoyagerCrm\Models\AosProductsQuote;
-use Joy\VoyagerCrm\Models\AosProductsQuotesAudit;
-use Joy\VoyagerCrm\Models\AosQuote;
-use Joy\VoyagerCrm\Models\AosQuotesAosInvoicesC;
-use Joy\VoyagerCrm\Models\AosQuotesAudit;
-use Joy\VoyagerCrm\Models\AosQuotesOsContractsC;
-use Joy\VoyagerCrm\Models\AosQuotesProjectC;
-use Joy\VoyagerCrm\Models\AowAction;
-use Joy\VoyagerCrm\Models\AowCondition;
-use Joy\VoyagerCrm\Models\AowProcessed;
-use Joy\VoyagerCrm\Models\AowProcessedAowAction;
-use Joy\VoyagerCrm\Models\AowWorkflow;
-use Joy\VoyagerCrm\Models\AowWorkflowAudit;
-use Joy\VoyagerCrm\Models\Bug;
-use Joy\VoyagerCrm\Models\BugsAudit;
-use Joy\VoyagerCrm\Models\Call;
-use Joy\VoyagerCrm\Models\CallsContact;
-use Joy\VoyagerCrm\Models\CallsLead;
-use Joy\VoyagerCrm\Models\CallsReschedule;
-use Joy\VoyagerCrm\Models\CallsRescheduleAudit;
-use Joy\VoyagerCrm\Models\CallsUser;
-use Joy\VoyagerCrm\Models\Campaign;
-use Joy\VoyagerCrm\Models\CampaignLog;
-use Joy\VoyagerCrm\Models\CampaignTrkr;
-use Joy\VoyagerCrm\Models\CampaignsAudit;
-use Joy\VoyagerCrm\Models\CasesAudit;
-use Joy\VoyagerCrm\Models\CasesBug;
-use Joy\VoyagerCrm\Models\CasesCstm;
-use Joy\VoyagerCrm\Models\Config;
-use Joy\VoyagerCrm\Models\Contact;
-use Joy\VoyagerCrm\Models\ContactsAudit;
-use Joy\VoyagerCrm\Models\ContactsBug;
-use Joy\VoyagerCrm\Models\ContactsCase;
-use Joy\VoyagerCrm\Models\ContactsCstm;
-use Joy\VoyagerCrm\Models\ContactsUser;
-use Joy\VoyagerCrm\Models\CrmCase;
-use Joy\VoyagerCrm\Models\CronRemoveDocument;
-use Joy\VoyagerCrm\Models\Currency;
-use Joy\VoyagerCrm\Models\CustomField;
-use Joy\VoyagerCrm\Models\Document;
-use Joy\VoyagerCrm\Models\DocumentRevision;
-use Joy\VoyagerCrm\Models\DocumentsAccount;
-use Joy\VoyagerCrm\Models\DocumentsBug;
-use Joy\VoyagerCrm\Models\DocumentsCase;
-use Joy\VoyagerCrm\Models\DocumentsContact;
-use Joy\VoyagerCrm\Models\DocumentsOpportunity;
-use Joy\VoyagerCrm\Models\Eapm;
-use Joy\VoyagerCrm\Models\Email;
-use Joy\VoyagerCrm\Models\EmailAddrBeanRel;
-use Joy\VoyagerCrm\Models\EmailAddress;
-use Joy\VoyagerCrm\Models\EmailAddressesAudit;
-use Joy\VoyagerCrm\Models\EmailCache;
-use Joy\VoyagerCrm\Models\EmailMarketing;
-use Joy\VoyagerCrm\Models\EmailMarketingProspectList;
-use Joy\VoyagerCrm\Models\EmailTemplate;
-use Joy\VoyagerCrm\Models\Emailman;
-use Joy\VoyagerCrm\Models\EmailsBean;
-use Joy\VoyagerCrm\Models\EmailsEmailAddrRel;
-use Joy\VoyagerCrm\Models\EmailsText;
-use Joy\VoyagerCrm\Models\Favorite;
-use Joy\VoyagerCrm\Models\FieldsMetaDatum;
-use Joy\VoyagerCrm\Models\Folder;
-use Joy\VoyagerCrm\Models\FoldersRel;
-use Joy\VoyagerCrm\Models\FoldersSubscription;
-use Joy\VoyagerCrm\Models\FpEvent;
-use Joy\VoyagerCrm\Models\FpEventLocation;
-use Joy\VoyagerCrm\Models\FpEventLocationsAudit;
-use Joy\VoyagerCrm\Models\FpEventLocationsFpEvents1C;
-use Joy\VoyagerCrm\Models\FpEventsAudit;
-use Joy\VoyagerCrm\Models\FpEventsContactsC;
-use Joy\VoyagerCrm\Models\FpEventsFpEventDelegates1C;
-use Joy\VoyagerCrm\Models\FpEventsFpEventLocations1C;
-use Joy\VoyagerCrm\Models\FpEventsLeads1C;
-use Joy\VoyagerCrm\Models\FpEventsProspects1C;
-use Joy\VoyagerCrm\Models\ImportMap;
-use Joy\VoyagerCrm\Models\InboundEmail;
-use Joy\VoyagerCrm\Models\InboundEmailAutoreply;
-use Joy\VoyagerCrm\Models\InboundEmailCacheT;
-use Joy\VoyagerCrm\Models\JjwgAddressCache;
-use Joy\VoyagerCrm\Models\JjwgAddressCacheAudit;
-use Joy\VoyagerCrm\Models\JjwgArea;
-use Joy\VoyagerCrm\Models\JjwgAreasAudit;
-use Joy\VoyagerCrm\Models\JjwgMap;
-use Joy\VoyagerCrm\Models\JjwgMapsAudit;
-use Joy\VoyagerCrm\Models\JjwgMapsJjwgAreasC;
-use Joy\VoyagerCrm\Models\JjwgMapsJjwgMarkersC;
-use Joy\VoyagerCrm\Models\JjwgMarker;
-use Joy\VoyagerCrm\Models\JjwgMarkersAudit;
-use Joy\VoyagerCrm\Models\JobQueue;
-use Joy\VoyagerCrm\Models\Lead;
-use Joy\VoyagerCrm\Models\LeadsAudit;
-use Joy\VoyagerCrm\Models\LeadsCstm;
-use Joy\VoyagerCrm\Models\LinkedDocument;
-use Joy\VoyagerCrm\Models\Meeting;
-use Joy\VoyagerCrm\Models\MeetingsContact;
-use Joy\VoyagerCrm\Models\MeetingsCstm;
-use Joy\VoyagerCrm\Models\MeetingsLead;
-use Joy\VoyagerCrm\Models\MeetingsUser;
-use Joy\VoyagerCrm\Models\Note;
-use Joy\VoyagerCrm\Models\Oauth2client;
-use Joy\VoyagerCrm\Models\Oauth2token;
-use Joy\VoyagerCrm\Models\OauthConsumer;
-use Joy\VoyagerCrm\Models\OauthNonce;
-use Joy\VoyagerCrm\Models\OauthToken;
-use Joy\VoyagerCrm\Models\OpportunitiesAudit;
-use Joy\VoyagerCrm\Models\OpportunitiesContact;
-use Joy\VoyagerCrm\Models\OpportunitiesCstm;
-use Joy\VoyagerCrm\Models\Opportunity;
-use Joy\VoyagerCrm\Models\OutboundEmail;
-use Joy\VoyagerCrm\Models\OutboundEmailAudit;
-use Joy\VoyagerCrm\Models\Project;
-use Joy\VoyagerCrm\Models\ProjectContacts1C;
-use Joy\VoyagerCrm\Models\ProjectCstm;
-use Joy\VoyagerCrm\Models\ProjectTask;
-use Joy\VoyagerCrm\Models\ProjectTaskAudit;
-use Joy\VoyagerCrm\Models\ProjectUsers1C;
-use Joy\VoyagerCrm\Models\ProjectsAccount;
-use Joy\VoyagerCrm\Models\ProjectsBug;
-use Joy\VoyagerCrm\Models\ProjectsCase;
-use Joy\VoyagerCrm\Models\ProjectsContact;
-use Joy\VoyagerCrm\Models\ProjectsOpportunity;
-use Joy\VoyagerCrm\Models\ProjectsProduct;
-use Joy\VoyagerCrm\Models\Prospect;
-use Joy\VoyagerCrm\Models\ProspectList;
-use Joy\VoyagerCrm\Models\ProspectListCampaign;
-use Joy\VoyagerCrm\Models\ProspectListsProspect;
-use Joy\VoyagerCrm\Models\ProspectsCstm;
-use Joy\VoyagerCrm\Models\Relationship;
-use Joy\VoyagerCrm\Models\Release;
-use Joy\VoyagerCrm\Models\Reminder;
-use Joy\VoyagerCrm\Models\RemindersInvitee;
-use Joy\VoyagerCrm\Models\Role;
-use Joy\VoyagerCrm\Models\RolesModule;
-use Joy\VoyagerCrm\Models\RolesUser;
-use Joy\VoyagerCrm\Models\SavedSearch;
-use Joy\VoyagerCrm\Models\Scheduler;
-use Joy\VoyagerCrm\Models\Securitygroup;
-use Joy\VoyagerCrm\Models\SecuritygroupsAclRole;
-use Joy\VoyagerCrm\Models\SecuritygroupsAudit;
-use Joy\VoyagerCrm\Models\SecuritygroupsDefault;
-use Joy\VoyagerCrm\Models\SecuritygroupsRecord;
-use Joy\VoyagerCrm\Models\SecuritygroupsUser;
-use Joy\VoyagerCrm\Models\Spot;
-use Joy\VoyagerCrm\Models\Sugarfeed;
-use Joy\VoyagerCrm\Models\Survey;
-use Joy\VoyagerCrm\Models\Surveyquestion;
-use Joy\VoyagerCrm\Models\Surveyquestionoption;
-use Joy\VoyagerCrm\Models\SurveyquestionoptionsAudit;
-use Joy\VoyagerCrm\Models\SurveyquestionoptionsSurveyquestionresponse;
-use Joy\VoyagerCrm\Models\Surveyquestionresponse;
-use Joy\VoyagerCrm\Models\SurveyquestionresponsesAudit;
-use Joy\VoyagerCrm\Models\SurveyquestionsAudit;
-use Joy\VoyagerCrm\Models\Surveyresponse;
-use Joy\VoyagerCrm\Models\SurveyresponsesAudit;
-use Joy\VoyagerCrm\Models\SurveysAudit;
-use Joy\VoyagerCrm\Models\Task;
-use Joy\VoyagerCrm\Models\Templatesectionline;
-use Joy\VoyagerCrm\Models\Tracker;
-use Joy\VoyagerCrm\Models\UpgradeHistory;
-use Joy\VoyagerCrm\Models\User;
-use Joy\VoyagerCrm\Models\UserPreference;
-use Joy\VoyagerCrm\Models\UsersFeed;
-use Joy\VoyagerCrm\Models\UsersLastImport;
-use Joy\VoyagerCrm\Models\UsersPasswordLink;
-use Joy\VoyagerCrm\Models\UsersSignature;
-use Joy\VoyagerCrm\Models\Vcal;
+use Illuminate\Console\Scheduling\Schedule;
 use TCG\Voyager\Facades\Voyager;
+
+use Illuminate\Support\{
+    Facades\Route,
+    ServiceProvider
+};
+use Joy\VoyagerCrm\Console\Commands\{
+    AodIndexUnindexed,
+    AodOptimiseIndex,
+    AorRunScheduledReports,
+    CleanJobQueue,
+    PerformLuceneIndexing,
+    PollMonitoredInboxes,
+    PollMonitoredInboxesAop,
+    PollMonitoredInboxesForBouncedCampaignEmails,
+    ProcessAowWorkflow,
+    PruneDatabase,
+    RefreshJobs,
+    RemoveDocumentsFromFs,
+    RunMassEmailCampaign,
+    SecurityAudit,
+    SendEmailReminders,
+    SyncGoogleCalendar,
+    TrimSugarFeeds,
+    TrimTracker
+};
+use Joy\VoyagerCrm\Models\{
+    Account,
+    AccountsAudit,
+    AccountsBug,
+    AccountsCase,
+    AccountsContact,
+    AccountsCstm,
+    AccountsOpportunity,
+    AclAction,
+    AclRole,
+    AclRolesAction,
+    AclRolesUser,
+    AddressBook,
+    Alert,
+    AmProjecttemplate,
+    AmProjecttemplatesAudit,
+    AmProjecttemplatesContacts1C,
+    AmProjecttemplatesProject1C,
+    AmProjecttemplatesUsers1C,
+    AmTasktemplate,
+    AmTasktemplatesAmProjecttemplatesC,
+    AmTasktemplatesAudit,
+    AobhBusinesshour,
+    AodIndex,
+    AodIndexAudit,
+    AodIndexevent,
+    AodIndexeventAudit,
+    AokKnowledgebase,
+    AokKnowledgebaseAudit,
+    AokKnowledgebaseBaseCategory,
+    AokKnowledgeBaseCategoriesAudit,
+    AokKnowledgebaseCategory,
+    AopCaseEvent,
+    AopCaseEventsAudit,
+    AopCaseUpdate,
+    AopCaseUpdatesAudit,
+    AorChart,
+    AorCondition,
+    AorField,
+    AorReport,
+    AorReportsAudit,
+    AorScheduledReport,
+    AosContract,
+    AosContractsAudit,
+    AosContractsDocument,
+    AosInvoice,
+    AosInvoicesAudit,
+    AosLineItemGroup,
+    AosLineItemGroupsAudit,
+    AosPdfTemplate,
+    AosPdfTemplatesAudit,
+    AosProduct,
+    AosProductCategoriesAudit,
+    AosProductCategory,
+    AosProductsAudit,
+    AosProductsQuote,
+    AosProductsQuotesAudit,
+    AosQuote,
+    AosQuotesAosInvoicesC,
+    AosQuotesAudit,
+    AosQuotesOsContractsC,
+    AosQuotesProjectC,
+    AowAction,
+    AowCondition,
+    AowProcessed,
+    AowProcessedAowAction,
+    AowWorkflow,
+    AowWorkflowAudit,
+    Bug,
+    BugsAudit,
+    Call,
+    CallsContact,
+    CallsLead,
+    CallsReschedule,
+    CallsRescheduleAudit,
+    CallsUser,
+    Campaign,
+    CampaignLog,
+    CampaignsAudit,
+    CampaignTrkr,
+    CasesAudit,
+    CasesBug,
+    CasesCstm,
+    Config,
+    Contact,
+    ContactsAudit,
+    ContactsBug,
+    ContactsCase,
+    ContactsCstm,
+    ContactsUser,
+    CrmCase,
+    CronRemoveDocument,
+    Currency,
+    CustomField,
+    Document,
+    DocumentRevision,
+    DocumentsAccount,
+    DocumentsBug,
+    DocumentsCase,
+    DocumentsContact,
+    DocumentsOpportunity,
+    Eapm,
+    Email,
+    EmailAddrBeanRel,
+    EmailAddress,
+    EmailAddressesAudit,
+    EmailCache,
+    Emailman,
+    EmailMarketing,
+    EmailMarketingProspectList,
+    EmailsBean,
+    EmailsEmailAddrRel,
+    EmailsText,
+    EmailTemplate,
+    Favorite,
+    FieldsMetaDatum,
+    Folder,
+    FoldersRel,
+    FoldersSubscription,
+    FpEvent,
+    FpEventLocation,
+    FpEventLocationsAudit,
+    FpEventLocationsFpEvents1C,
+    FpEventsAudit,
+    FpEventsContactsC,
+    FpEventsFpEventDelegates1C,
+    FpEventsFpEventLocations1C,
+    FpEventsLeads1C,
+    FpEventsProspects1C,
+    ImportMap,
+    InboundEmail,
+    InboundEmailAutoreply,
+    InboundEmailCacheT,
+    JjwgAddressCache,
+    JjwgAddressCacheAudit,
+    JjwgArea,
+    JjwgAreasAudit,
+    JjwgMap,
+    JjwgMapsAudit,
+    JjwgMapsJjwgAreasC,
+    JjwgMapsJjwgMarkersC,
+    JjwgMarker,
+    JjwgMarkersAudit,
+    JobQueue,
+    Lead,
+    LeadsAudit,
+    LeadsCstm,
+    LinkedDocument,
+    Meeting,
+    MeetingsContact,
+    MeetingsCstm,
+    MeetingsLead,
+    MeetingsUser,
+    Note,
+    Oauth2client,
+    Oauth2token,
+    OauthConsumer,
+    OauthNonce,
+    OauthToken,
+    OpportunitiesAudit,
+    OpportunitiesContact,
+    OpportunitiesCstm,
+    Opportunity,
+    OutboundEmail,
+    OutboundEmailAudit,
+    Project,
+    ProjectContacts1C,
+    ProjectCstm,
+    ProjectsAccount,
+    ProjectsBug,
+    ProjectsCase,
+    ProjectsContact,
+    ProjectsOpportunity,
+    ProjectsProduct,
+    ProjectTask,
+    ProjectTaskAudit,
+    ProjectUsers1C,
+    Prospect,
+    ProspectList,
+    ProspectListCampaign,
+    ProspectListsProspect,
+    ProspectsCstm,
+    Relationship,
+    Release,
+    Reminder,
+    RemindersInvitee,
+    RolesModule,
+    SavedSearch,
+    Scheduler,
+    Securitygroup,
+    SecuritygroupsAclRole,
+    SecuritygroupsAudit,
+    SecuritygroupsDefault,
+    SecuritygroupsRecord,
+    SecuritygroupsUser,
+    Spot,
+    Sugarfeed,
+    Survey,
+    Surveyquestion,
+    Surveyquestionoption,
+    SurveyquestionoptionsAudit,
+    SurveyquestionoptionsSurveyquestionresponse,
+    Surveyquestionresponse,
+    SurveyquestionresponsesAudit,
+    SurveyquestionsAudit,
+    Surveyresponse,
+    SurveyresponsesAudit,
+    SurveysAudit,
+    Task,
+    Templatesectionline,
+    Tracker,
+    UpgradeHistory,
+    User,
+    UserPreference,
+    UsersFeed,
+    UsersLastImport,
+    UsersPasswordLink,
+    UsersSignature,
+    Vcal
+};
 
 /**
  * Class VoyagerCrmServiceProvider
@@ -479,6 +503,8 @@ class VoyagerCrmServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'joy-voyager-crm');
+
+        $this->bootSchedulers();
     }
 
     /**
@@ -538,6 +564,108 @@ class VoyagerCrmServiceProvider extends ServiceProvider
 
     protected function registerCommands(): void
     {
-        //
+        $this->app->singleton('command.joy-voyager-crm.refresh-jobs', function () {
+            return new RefreshJobs();
+        });
+        $this->app->singleton('command.joy-voyager-crm.poll-monitored-inboxes', function () {
+            return new PollMonitoredInboxes();
+        });
+        $this->app->singleton('command.joy-voyager-crm.run-mass-email-campaign', function () {
+            return new RunMassEmailCampaign();
+        });
+        $this->app->singleton('command.joy-voyager-crm.prune-database', function () {
+            return new PruneDatabase();
+        });
+        $this->app->singleton('command.joy-voyager-crm.security-audit', function () {
+            return new SecurityAudit();
+        });
+        $this->app->singleton('command.joy-voyager-crm.trim-tracker', function () {
+            return new TrimTracker();
+        });
+        $this->app->singleton('command.joy-voyager-crm.poll-monitored-inboxes-for-bounced-campaign-emails', function () {
+            return new PollMonitoredInboxesForBouncedCampaignEmails();
+        });
+        $this->app->singleton('command.joy-voyager-crm.send-email-reminders', function () {
+            return new SendEmailReminders();
+        });
+        $this->app->singleton('command.joy-voyager-crm.remove-documents-from-fs', function () {
+            return new RemoveDocumentsFromFs();
+        });
+        $this->app->singleton('command.joy-voyager-crm.trim-sugar-feeds', function () {
+            return new TrimSugarFeeds();
+        });
+        $this->app->singleton('command.joy-voyager-crm.sync-google-calendar', function () {
+            return new SyncGoogleCalendar();
+        });
+        $this->app->singleton('command.joy-voyager-crm.clean-job-queue', function () {
+            return new CleanJobQueue();
+        });
+        $this->app->singleton('command.joy-voyager-crm.poll-monitored-inboxes-aop', function () {
+            return new PollMonitoredInboxesAop();
+        });
+        $this->app->singleton('command.joy-voyager-crm.aod-index-unindexed', function () {
+            return new AodIndexUnindexed();
+        });
+        $this->app->singleton('command.joy-voyager-crm.aod-optimise-index', function () {
+            return new AodOptimiseIndex();
+        });
+        $this->app->singleton('command.joy-voyager-crm.perform-lucene-indexing', function () {
+            return new PerformLuceneIndexing();
+        });
+        $this->app->singleton('command.joy-voyager-crm.aor-run-scheduled-reports', function () {
+            return new AorRunScheduledReports();
+        });
+        $this->app->singleton('command.joy-voyager-crm.process-aow-workflow', function () {
+            return new ProcessAowWorkflow();
+        });
+
+        $this->commands([
+            'command.joy-voyager-crm.refresh-jobs',
+            'command.joy-voyager-crm.poll-monitored-inboxes',
+            'command.joy-voyager-crm.run-mass-email-campaign',
+            'command.joy-voyager-crm.prune-database',
+            'command.joy-voyager-crm.security-audit',
+            'command.joy-voyager-crm.trim-tracker',
+            'command.joy-voyager-crm.poll-monitored-inboxes-for-bounced-campaign-emails',
+            'command.joy-voyager-crm.send-email-reminders',
+            'command.joy-voyager-crm.remove-documents-from-fs',
+            'command.joy-voyager-crm.trim-sugar-feeds',
+            'command.joy-voyager-crm.sync-google-calendar',
+            'command.joy-voyager-crm.clean-job-queue',
+            'command.joy-voyager-crm.poll-monitored-inboxes-aop',
+            'command.joy-voyager-crm.aod-index-unindexed',
+            'command.joy-voyager-crm.aod-optimise-index',
+            'command.joy-voyager-crm.perform-lucene-indexing',
+            'command.joy-voyager-crm.aor-run-scheduled-reports',
+            'command.joy-voyager-crm.process-aow-workflow',
+        ]);
+    }
+
+    protected function bootSchedulers(): void
+    {
+        // Schedule the command if we are using the application via the CLI
+        if ($this->app->runningInConsole()) {
+            $this->app->booted(function () {
+                $schedule = $this->app->make(Schedule::class);
+                $schedule->command('joy-voyager-crm:process_aow_workflow')->everyMinute();
+                $schedule->command('joy-voyager-crm:aor_run_scheduled_reports')->everyMinute();
+                $schedule->command('joy-voyager-crm:trim_tracker')->monthlyOn(1, '2:00');
+                $schedule->command('joy-voyager-crm:poll_monitored_inboxes_aop')->everyMinute();
+                $schedule->command('joy-voyager-crm:poll_monitored_inboxes_for_bounced_campaign_emails')->twiceDaily(2, 6);
+                $schedule->command('joy-voyager-crm:run_mass_email_campaign')->twiceDaily(2, 6);
+                $schedule->command('joy-voyager-crm:prune_database')->monthlyOn(1, '4:00');
+                $schedule->command('joy-voyager-crm:aod_index_unindexed')->daily();
+                $schedule->command('joy-voyager-crm:aod_optimise_index')->everyThreeHours();
+                $schedule->command('joy-voyager-crm:send_email_reminders')->everyMinute();
+                $schedule->command('joy-voyager-crm:clean_job_queue')->dailyAt('5:00');
+                $schedule->command('joy-voyager-crm:remove_documents_from_fs')->monthlyOn(1, '3:00');
+                $schedule->command('joy-voyager-crm:trim_sugar_feeds')->monthlyOn(1, '2:00');
+                $schedule->command('joy-voyager-crm:sync_google_calendar')->everyFifteenMinutes();
+                // $schedule->command('joy-voyager-crm:refresh_jobs')->everyMinute();
+                // $schedule->command('joy-voyager-crm:poll_monitored_inboxes')->everyMinute();
+                // $schedule->command('joy-voyager-crm:security_audit')->everyMinute();
+                // $schedule->command('joy-voyager-crm:perform_lucene_indexing')->everyMinute();
+            });
+        }
     }
 }

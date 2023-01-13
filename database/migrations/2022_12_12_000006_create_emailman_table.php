@@ -25,8 +25,8 @@ return new class extends Migration {
             $table->boolean('in_queue')->nullable()->default(false);
             $table->dateTime('in_queue_date')->nullable();
             $table->integer('send_attempts')->nullable()->default(0);
-            $table->uuid('related_id')->nullable();
             $table->string('related_type', 100)->nullable();
+            $table->uuid('related_id')->nullable();
             $table->boolean('related_confirm_opt_in')->nullable()->default(false);
 
             $table->index(['list_id', 'user_id', 'deleted_at'], 'idx_eman_list');

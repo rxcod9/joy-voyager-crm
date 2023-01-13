@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Surveyquestion;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -89,10 +88,19 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => 'Text',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'Text'        => 'Text',
+                        'Textbox'     => 'Textbox',
+                        'Checkbox'    => 'Checkbox',
+                        'Radio'       => 'Radio',
+                        'Dropdown'    => 'Dropdown',
+                        'Multiselect' => 'Multiselect',
+                        'Matrix'      => 'Matrix',
+                        'DateTime'    => 'DateTime',
+                        'Date'        => 'Date',
+                        'Scale'       => 'Scale',
+                        'Rating'      => 'Rating',
                     ],
                 ],
             ])->save();

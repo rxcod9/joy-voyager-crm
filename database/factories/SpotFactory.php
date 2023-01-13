@@ -25,9 +25,15 @@ class SpotFactory extends Factory
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
             'config'      => null,
-            'type'        => $this->faker->randomElement([
-                'Type1',
-                'Type2',
+            'type'        => $this->faker->randomKey([
+                'getSalesSpotsData'             => 'Sales',
+                'getAccountsSpotsData'          => 'Accounts',
+                'getLeadsSpotsData'             => 'Leads',
+                'getServiceSpotsData'           => 'Service',
+                'getMarketingSpotsData'         => 'Marketing',
+                'getMarketingActivitySpotsData' => 'Marketing Activity',
+                'getActivitiesSpotsData'        => 'Activities',
+                'getQuotesSpotsData'            => 'Quotes'
             ]),
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),

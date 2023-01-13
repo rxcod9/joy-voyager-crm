@@ -25,14 +25,16 @@ class AmProjecttemplateFactory extends Factory
             'name'                    => $this->faker->name(),
             'description'             => $this->faker->text(500),
             'priority'                => $this->faker->randomElement([
-                'Low',
-                'Medium',
-                'High',
+                'High'   => 'High',
+                'Medium' => 'Medium',
+                'Low'    => 'Low',
             ]),
-            'status'                  => $this->faker->randomElement([
-                'Draft',
-                'Active',
-                'Inactive',
+            'status'                  => $this->faker->randomKey([
+                'Draft'     => 'Draft',
+                'In Review' => 'In Review',
+                'Underway'  => 'Underway',
+                'On_Hold'   => 'On Hold',
+                'Completed' => 'Completed',
             ]),
             'override_business_hours' => $this->faker->boolean(),
             'created_at'              => $this->faker->dateTime(),

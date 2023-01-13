@@ -88,10 +88,16 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => '',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'getSalesSpotsData'             => 'Sales',
+                        'getAccountsSpotsData'          => 'Accounts',
+                        'getLeadsSpotsData'             => 'Leads',
+                        'getServiceSpotsData'           => 'Service',
+                        'getMarketingSpotsData'         => 'Marketing',
+                        'getMarketingActivitySpotsData' => 'Marketing Activity',
+                        'getActivitiesSpotsData'        => 'Activities',
+                        'getQuotesSpotsData'            => 'Quotes'
                     ],
                 ],
             ])->save();

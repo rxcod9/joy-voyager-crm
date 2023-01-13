@@ -61,8 +61,10 @@ class AosInvoiceFactory extends Factory
             'due_date'                     => $this->faker->dateTimeBetween('-1month', 'now')->format('Y-m-d'),
             'template_ddown_c'             => null,
             'status'                       => $this->faker->randomKey([
-                'Active'   => 'Active',
-                'Inactive' => 'Inactive',
+                ''          => 'None',
+                'Paid'      => 'Paid',
+                'Unpaid'    => 'Unpaid',
+                'Cancelled' => 'Cancelled',
             ]),
             'created_at'                   => $this->faker->dateTime(),
             'updated_at'                   => $this->faker->dateTime(),

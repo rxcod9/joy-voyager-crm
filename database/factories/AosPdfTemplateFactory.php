@@ -22,12 +22,16 @@ class AosPdfTemplateFactory extends Factory
     public function definition()
     {
         return [
-            'name'        => $this->faker->name(),
-            'description' => $this->faker->text(500),
-            'active'      => $this->faker->boolean(),
-            'type'        => $this->faker->randomElement([
-                'Type1',
-                'Type2',
+            'name'          => $this->faker->name(),
+            'description'   => $this->faker->text(500),
+            'active'        => $this->faker->boolean(),
+            'type'          => $this->faker->randomKey([
+                'AOS_Quotes'    => 'Quotes',
+                'AOS_Invoices'  => 'Invoices',
+                'AOS_Contracts' => 'Contracts',
+                'Accounts'      => 'Accounts',
+                'Contacts'      => 'Contacts',
+                'Leads'         => 'Leads',
             ]),
             'pdfheader'     => $this->faker->paragraphs(10, true),
             'pdffooter'     => $this->faker->paragraphs(10, true),
@@ -38,12 +42,12 @@ class AosPdfTemplateFactory extends Factory
             'margin_header' => $this->faker->numberBetween(10, 20),
             'margin_footer' => $this->faker->numberBetween(10, 20),
             'page_size'     => $this->faker->numberBetween(100, 200) . ' KB',
-            'orientation'   => $this->faker->randomElement([
-                'LANDSCAPE',
-                'PORTRAIT',
+            'orientation'   => $this->faker->randomKey([
+                'Portrait'  => 'Portrait',
+                'Landscape' => 'Landscape',
             ]),
-            'created_at' => $this->faker->dateTime(),
-            'updated_at' => $this->faker->dateTime(),
+            'created_at'    => $this->faker->dateTime(),
+            'updated_at'    => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
         ];
     }

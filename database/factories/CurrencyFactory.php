@@ -23,7 +23,7 @@ class CurrencyFactory extends Factory
     {
         $currencyCode = $this->faker->unique()->currencyCode();
 
-        $currencies     = json_decode(file_get_contents(__DIR__ . '/json/currencies.json'));
+        $currencies     = json_decode(file_get_contents(__DIR__ . '/../json/currencies.json'));
         $randomCurrency = $this->faker->unique()->randomElement($currencies);
 
         return [

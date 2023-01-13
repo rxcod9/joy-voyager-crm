@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AosProduct;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -214,7 +213,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'category');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.category'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -223,6 +222,40 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''               => 'None',
+                        'Accounts'       => 'Accounts',
+                        'Activities'     => 'Activities',
+                        'Bugs'           => 'Bugs',
+                        'Calendar'       => 'Calendar',
+                        'Calls'          => 'Calls',
+                        'Campaigns'      => 'Campaigns',
+                        'Cases'          => 'Cases',
+                        'Contacts'       => 'Contacts',
+                        'Currencies'     => 'Currencies',
+                        'Dashboard'      => 'Dashboard',
+                        'Documents'      => 'Documents',
+                        'Emails'         => 'Emails',
+                        'Feeds'          => 'Feeds',
+                        'Forecasts'      => 'Forecasts',
+                        'Help'           => 'Help',
+                        'Home'           => 'Home',
+                        'Leads'          => 'Leads',
+                        'Meetings'       => 'Meetings',
+                        'Notes'          => 'Notes',
+                        'Opportunities'  => 'Opportunities',
+                        'Outlook Plugin' => 'Outlook Plugin',
+                        'Projects'       => 'Projects',
+                        'Quotes'         => 'Quotes',
+                        'Releases'       => 'Releases',
+                        'RSS'            => 'RSS',
+                        'Studio'         => 'Studio',
+                        'Upgrade'        => 'Upgrade',
+                        'Users'          => 'Users',
+                    ],
+                ],
             ])->save();
         }
 

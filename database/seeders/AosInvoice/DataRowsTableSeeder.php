@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AosInvoice;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -687,10 +686,12 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => '',
                     'options' => [
-                        'Inactive' => 'Inactive',
-                        'Active'   => 'Active',
+                        ''          => 'None',
+                        'Paid'      => 'Paid',
+                        'Unpaid'    => 'Unpaid',
+                        'Cancelled' => 'Cancelled',
                     ],
                 ],
             ])->save();

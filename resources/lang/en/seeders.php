@@ -602,6 +602,21 @@ return [
         'bean_type'                        => 'Bean type',
         'signature'                        => 'Signature',
         'signature_html'                   => 'Signature html',
+        'project'                          => 'Project',
+        'prospect'                         => 'Prospect',
+        'project_task'                     => 'Project task',
+        'related'                          => 'Related',
+        'email_address'                    => 'Email address',
+        'email_address_caps'               => 'Email address caps',
+        'invalid_email'                    => 'Invalid email',
+        'opt_out'                          => 'Opt out',
+        'confirm_opt_in'                   => 'Confirm opt in',
+        'confirm_opt_in_date'              => 'Confirm opt in date',
+        'confirm_opt_in_sent_date'         => 'Confirm opt in sent date',
+        'confirm_opt_in_fail_date'         => 'Confirm opt in fail date',
+        'confirm_opt_in_token'             => 'Confirm opt in token',
+        'record_id'                        => 'Record Id',
+        'record'                           => 'Record',
     ],
     'data_types'    => [
         'user'                            => [
@@ -1130,7 +1145,11 @@ return [
         ],
         'tracker'                         => [
             'singular' => 'Tracker',
-            'plural'   => 'Tracker',
+            'plural'   => 'Trackers',
+        ],
+        'email_address'                   => [
+            'singular' => 'Email Address',
+            'plural'   => 'Email Addresses',
         ]
     ],
     'menu_items'    => [
@@ -1271,6 +1290,11 @@ return [
         'custom_fields'                     => 'Custom fields',
         'emails_beans'                      => 'Emails beans',
         'trackers'                          => 'Trackers',
+        'email_addresses'                   => 'Email Addresses',
+        'crm_case'                          => 'Case',
+        'task'                              => 'Task',
+        'aos_quote'                         => 'Aos Quote',
+        'aos_invoice'                       => 'Aos Invoice',
     ],
     'settings'      => [
         'user'                 => [

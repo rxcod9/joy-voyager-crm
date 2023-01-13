@@ -16,7 +16,7 @@ class DataTypesTableSeeder extends Seeder
         $dataType = $this->dataType('slug', 'users-last-imports');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'users_last_imports',
+                'name'                  => 'users_last_import',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.users_last_import.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.users_last_import.plural'),
                 'icon'                  => 'voyager-bread voyager-crm-users_last_import voyager-upload',

@@ -23,7 +23,15 @@ class ProspectFactory extends Factory
     {
         return [
             'description'                => $this->faker->text(500),
-            'salutation'                 => $this->faker->title(),
+            'salutation'                 => $this->faker->randomKey([
+                ''      => 'None',
+                'Mr.'   => 'Mr.',
+                'Ms.'   => 'Ms.',
+                'Mrs.'  => 'Mrs.',
+                'Miss'  => 'Miss',
+                'Dr.'   => 'Dr.',
+                'Prof.' => 'Prof.',
+            ]),
             'first_name'                 => $this->faker->firstName(),
             'last_name'                  => $this->faker->lastName(),
             'title'                      => $this->faker->word(),
@@ -63,7 +71,7 @@ class ProspectFactory extends Factory
             // 'lead_source'                => $this->faker->word(),
 
             // 'lead_source_description'    => $this->faker->paragraphs(10, true),
-            
+
             'birthdate'                  => $this->faker->dateTimeBetween('-1month', 'now')->format('Y-m-d'),
             'lead_id'                    => null,
 

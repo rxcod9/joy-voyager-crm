@@ -23,7 +23,15 @@ class LeadFactory extends Factory
     {
         return [
             'description'                => $this->faker->text(500),
-            'salutation'                 => $this->faker->title(),
+            'salutation'                 => $this->faker->randomKey([
+                ''      => 'None',
+                'Mr.'   => 'Mr.',
+                'Ms.'   => 'Ms.',
+                'Mrs.'  => 'Mrs.',
+                'Miss'  => 'Miss',
+                'Dr.'   => 'Dr.',
+                'Prof.' => 'Prof.',
+            ]),
             'first_name'                 => $this->faker->firstName(),
             'last_name'                  => $this->faker->lastName(),
             'title'                      => $this->faker->word(),
@@ -58,7 +66,23 @@ class LeadFactory extends Factory
             'converted'                  => $this->faker->boolean(),
             'refered_by'                 => $this->faker->name(),
 
-            'lead_source'                => $this->faker->word(),
+            'lead_source'                => $this->faker->randomKey([
+                ''                  => 'None',
+                'Cold Call'         => 'Cold Call',
+                'Existing Customer' => 'Existing Customer',
+                'Self Generated'    => 'Self Generated',
+                'Employee'          => 'Employee',
+                'Partner'           => 'Partner',
+                'Public Relations'  => 'Public Relations',
+                'Direct Mail'       => 'Direct Mail',
+                'Conference'        => 'Conference',
+                'Trade Show'        => 'Trade Show',
+                'Web Site'          => 'Web Site',
+                'Word of mouth'     => 'Word of mouth',
+                'Email'             => 'Email',
+                'Campaign'          => 'Campaign',
+                'Other'             => 'Other',
+            ]),
 
             'lead_source_description'    => $this->faker->paragraphs(10, true),
 
@@ -76,8 +100,13 @@ class LeadFactory extends Factory
             'portal_app'                 => $this->faker->word(),
             'website'                    => $this->faker->domainName(),
             'status'                     => $this->faker->randomKey([
-                'Active'   => 'Active',
-                'Inactive' => 'Inactive',
+                ''           => 'None',
+                'New'        => 'New',
+                'Assigned'   => 'Assigned',
+                'In Process' => 'In Process',
+                'Converted'  => 'Converted',
+                'Recycled'   => 'Recycled',
+                'Dead'       => 'Dead',
             ]),
             'status_description'         => $this->faker->paragraphs(10, true),
 

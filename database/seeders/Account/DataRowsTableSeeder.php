@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Account;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -74,10 +73,19 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => '',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        ''           => 'None',
+                        'Analyst'    => 'Analyst',
+                        'Competitor' => 'Competitor',
+                        'Customer'   => 'Customer',
+                        'Integrator' => 'Integrator',
+                        'Investor'   => 'Investor',
+                        'Partner'    => 'Partner',
+                        'Press'      => 'Press',
+                        'Prospect'   => 'Prospect',
+                        'Reseller'   => 'Reseller',
+                        'Other'      => 'Other',
                     ],
                 ],
             ])->save();
@@ -86,7 +94,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'industry');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.industry'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -95,6 +103,42 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''                   => 'None',
+                        'Apparel'            => 'Apparel',
+                        'Banking'            => 'Banking',
+                        'Biotechnology'      => 'Biotechnology',
+                        'Chemicals'          => 'Chemicals',
+                        'Communications'     => 'Communications',
+                        'Construction'       => 'Construction',
+                        'Consulting'         => 'Consulting',
+                        'Education'          => 'Education',
+                        'Electronics'        => 'Electronics',
+                        'Energy'             => 'Energy',
+                        'Engineering'        => 'Engineering',
+                        'Entertainment'      => 'Entertainment',
+                        'Environmental'      => 'Environmental',
+                        'Finance'            => 'Finance',
+                        'Government'         => 'Government',
+                        'Healthcare'         => 'Healthcare',
+                        'Hospitality'        => 'Hospitality',
+                        'Insurance'          => 'Insurance',
+                        'Machinery'          => 'Machinery',
+                        'Manufacturing'      => 'Manufacturing',
+                        'Media'              => 'Media',
+                        'Not For Profit'     => 'Not For Profit',
+                        'Recreation'         => 'Recreation',
+                        'Retail'             => 'Retail',
+                        'Shipping'           => 'Shipping',
+                        'Technology'         => 'Technology',
+                        'Telecommunications' => 'Telecommunications',
+                        'Transportation'     => 'Transportation',
+                        'Utilities'          => 'Utilities',
+                        'Other'              => 'Other',
+                    ],
+                ],
             ])->save();
         }
 

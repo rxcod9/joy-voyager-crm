@@ -29,10 +29,7 @@ class AlertFactory extends Factory
                 'accounts',
                 'contacts',
             ]),
-            'type'          => $this->faker->randomElement([
-                'Type1',
-                'Type2',
-            ]),
+            'type'          => $this->faker->word(),
             'url_redirect'  => $this->faker->url(),
             // 'reminder_id' => null,
             'created_at'    => $this->faker->dateTime(),

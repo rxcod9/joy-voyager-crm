@@ -26,8 +26,9 @@ class SurveyFactory extends Factory
             'description'       => $this->faker->text(500),
             'status'            => $this->faker->randomKey(
                 config('joy-voyager-crm.surveys.statuses', [
-                    'Draft'     => 'Draft',
-                    'Published' => 'Published',
+                    'Draft'  => 'Draft',
+                    'Public' => 'Public',
+                    'Closed' => 'Closed',
                 ])
             ),
             'submit_text'       => $this->faker->text(10),

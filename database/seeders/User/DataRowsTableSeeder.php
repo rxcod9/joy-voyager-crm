@@ -637,10 +637,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => 'Active',
                     'options' => [
-                        'Inactive' => 'Inactive',
                         'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
                     ],
                 ],
             ])->save();
@@ -764,10 +764,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => 'Active',
                     'options' => [
-                        'Inactive' => 'Inactive',
-                        'Active'   => 'Active',
+                        'Active'           => 'Active',
+                        'Terminated'       => 'Terminated',
+                        'Leave of Absence' => 'Leave of Absence',
                     ],
                 ],
             ])->save();
@@ -791,15 +792,24 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'messenger_type');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.messenger_type'),
                 'required'     => 0,
-                'browse'       => 0,
-                'read'         => 0,
-                'edit'         => 0,
-                'add'          => 0,
-                'delete'       => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''       => 'None',
+                        'MSN'    => 'MSN',
+                        'Yahoo!' => 'Yahoo!',
+                        'AOL'    => 'AOL',
+                    ],
+                ],
             ])->save();
         }
 
@@ -876,7 +886,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'factor_auth_interface');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.factor_auth_interface'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -885,21 +895,12 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($dataType, 'factor_auth_interface');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.factor_auth_interface'),
-                'required'     => 0,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'order'        => ++$order,
+                'details'      => [
+                    'default' => 'FactorAuthEmailCode',
+                    'options' => [
+                        'FactorAuthEmailCode' => 'Email Code',
+                    ],
+                ],
             ])->save();
         }
     }

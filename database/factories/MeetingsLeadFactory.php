@@ -29,9 +29,10 @@ class MeetingsLeadFactory extends Factory
                 '0' => 'N',
             ]),
             'accept_status' => $this->faker->randomKey([
-                'none'    => 'none',
-                'Accept1' => 'Accept1',
-                'Accept2' => 'Accept2',
+                'accept'    => 'Accepted',
+                'decline'   => 'Declined',
+                'tentative' => 'Tentative',
+                'none'      => 'None',
             ]),
             'created_at'    => $this->faker->dateTime(),
             'updated_at'    => $this->faker->dateTime(),

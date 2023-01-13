@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Project;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -104,10 +103,13 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => config('joy-voyager-crm.projects.default_status', 'Active'),
+                    'default' => config('joy-voyager-crm.projects.default_status', 'Draft'),
                     'options' => config('joy-voyager-crm.projects.statuses', [
-                        'Active'   => 'Active',
-                        'Inactive' => 'Inactive',
+                        'Draft'     => 'Draft',
+                        'In Review' => 'In Review',
+                        'Underway'  => 'Underway',
+                        'On_Hold'   => 'On Hold',
+                        'Completed' => 'Completed',
                     ]),
                 ],
             ])->save();
@@ -128,9 +130,9 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => config('joy-voyager-crm.projects.default_priority', 'Low'),
                     'options' => config('joy-voyager-crm.projects.priorities', [
-                        'Low'    => 'Low',
-                        'Medium' => 'Medium',
                         'High'   => 'High',
+                        'Medium' => 'Medium',
+                        'Low'    => 'Low',
                     ]),
                 ],
             ])->save();

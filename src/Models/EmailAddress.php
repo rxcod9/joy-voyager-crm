@@ -5,8 +5,13 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Joy\VoyagerCrm\Database\Factories\EmailAddressFactory;
+
+use Illuminate\Database\Eloquent\{
+    Factories\HasFactory,
+    Model,
+    SoftDeletes
+};
 
 /**
  * Class EmailAddress
@@ -32,6 +37,7 @@ class EmailAddress extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use HasFactory;
 
     protected $table     = 'email_addresses';
     public $incrementing = false;
@@ -68,4 +74,14 @@ class EmailAddress extends Model
         'confirm_opt_in_fail_date',
         'confirm_opt_in_token',
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return EmailAddressFactory::new();
+    }
 }

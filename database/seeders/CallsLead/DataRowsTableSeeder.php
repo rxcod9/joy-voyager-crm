@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\CallsLead;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -89,7 +88,7 @@ class DataRowsTableSeeder extends Seeder
                     'type'        => 'belongsTo',
                     'column'      => 'lead_id',
                     'key'         => 'id',
-                    'label'       => 'name',
+                    'label'       => 'first_name',
                     'pivot_table' => 'leads',
                     'pivot'       => 0,
                 ],
@@ -148,9 +147,9 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => 'none',
                     'options' => [
-                        'none'    => 'none',
-                        'Accept1' => 'Accept1',
-                        'Accept2' => 'Accept2',
+                        'none'     => 'none',
+                        'Accepted' => 'Accepted',
+                        'Rejected' => 'Rejected',
                     ],
                 ],
             ])->save();

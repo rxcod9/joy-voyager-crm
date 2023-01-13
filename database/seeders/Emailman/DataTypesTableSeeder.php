@@ -16,7 +16,7 @@ class DataTypesTableSeeder extends Seeder
         $dataType = $this->dataType('slug', 'emailmans');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'emailmans',
+                'name'                  => 'emailman',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.emailman.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.emailman.plural'),
                 'icon'                  => 'fas fa-envelopes-bulk',

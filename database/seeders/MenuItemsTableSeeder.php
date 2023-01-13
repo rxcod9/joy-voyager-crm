@@ -3,8 +3,6 @@
 namespace Joy\VoyagerCrm\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\Menu;
-use TCG\Voyager\Models\MenuItem;
 use TCG\Voyager\Facades\Voyager;
 
 class MenuItemsTableSeeder extends Seeder
@@ -323,6 +321,7 @@ class MenuItemsTableSeeder extends Seeder
                 \Joy\VoyagerCrm\Database\Seeders\SecuritygroupsRecord\MenuItemsTableSeeder::class,
                 \Joy\VoyagerCrm\Database\Seeders\EmailsBean\MenuItemsTableSeeder::class,
                 \Joy\VoyagerCrm\Database\Seeders\Tracker\MenuItemsTableSeeder::class,
+                \Joy\VoyagerCrm\Database\Seeders\EmailAddress\MenuItemsTableSeeder::class,
             ],
             false,
             ['parentMenuId' => $othersMenuItem->id]

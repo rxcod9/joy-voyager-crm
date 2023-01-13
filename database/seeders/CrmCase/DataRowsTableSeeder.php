@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\CrmCase;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -89,10 +88,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => 'User',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'Administration' => 'Administration',
+                        'Product'        => 'Product',
+                        'User'           => 'User',
                     ],
                 ],
             ])->save();
@@ -111,10 +111,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Priority1',
+                    'default' => 'P2',
                     'options' => [
-                        'Priority1' => 'Priority1',
-                        'Priority2' => 'Priority2',
+                        'P1' => 'High',
+                        'P2' => 'Medium',
+                        'P3' => 'Low',
                     ],
                 ],
             ])->save();
@@ -123,22 +124,15 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'resolution');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'select_dropdown',
+                'type'         => 'text_area',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.resolution'),
                 'required'     => 0,
-                'browse'       => 1,
+                'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
-                'details'      => [
-                    'default' => 'Resolution1',
-                    'options' => [
-                        'Resolution1' => 'Resolution1',
-                        'Resolution2' => 'Resolution2',
-                    ],
-                ],
             ])->save();
         }
 
@@ -272,15 +266,17 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'model'       => Voyager::modelClass('Bug'),
-                    'table'       => 'bugs',
-                    'type'        => 'belongsToMany',
-                    'column'      => 'id',
-                    'key'         => 'id',
-                    'label'       => 'name',
-                    'pivot_table' => 'bugs',
-                    'pivot'       => '1',
-                    'taggable'    => '0',
+                    'model'             => Voyager::modelClass('Bug'),
+                    'table'             => 'bugs',
+                    'type'              => 'belongsToMany',
+                    'column'            => 'id',
+                    'key'               => 'id',
+                    'label'             => 'name',
+                    'pivot_table'       => 'cases_bugs',
+                    'foreign_pivot_key' => 'case_id',
+                    'related_pivot_key' => 'bug_id',
+                    'pivot'             => '1',
+                    'taggable'          => '0',
                 ],
             ])->save();
         }
@@ -298,10 +294,14 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => 'Open_New',
                     'options' => [
-                        'Inactive' => 'Inactive',
-                        'Active'   => 'Active',
+                        'Open_New'           => 'New',
+                        'Open_Assigned'      => 'Assigned',
+                        'Closed_Closed'      => 'Closed',
+                        'Open_Pending Input' => 'Pending Input',
+                        'Closed_Rejected'    => 'Rejected',
+                        'Closed_Duplicate'   => 'Duplicate',
                     ],
                 ],
             ])->save();

@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AowWorkflow;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -76,6 +75,7 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => null,
                     'options' => [
+                        // @TODO @fixme All datatypes except AOW_
                         'accounts' => 'accounts',
                         'contacts' => 'contacts',
                     ],
@@ -86,7 +86,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'flow_run_on');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.flow_run_on'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -95,13 +95,21 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        'All_Records'      => 'All Records',
+                        'New_Records'      => 'New Records',
+                        'Modified_Records' => 'Modified Records',
+                    ],
+                ],
             ])->save();
         }
 
         $dataRow = $this->dataRow($dataType, 'run_when');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.run_when'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -110,6 +118,14 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        'Always'       => 'Always',
+                        'On_Save'      => 'Only On Save',
+                        'In_Scheduler' => 'Only In The Scheduler',
+                    ],
+                ],
             ])->save();
         }
 

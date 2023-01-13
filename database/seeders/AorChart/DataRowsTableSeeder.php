@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AorChart;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -114,10 +113,14 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => null,
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'bar'         => 'Bar chart',
+                        'line'        => 'Line chart',
+                        'pie'         => 'Pie chart',
+                        'radar'       => 'Radar chart',
+                        'stacked_bar' => 'Stacked bar',
+                        'grouped_bar' => 'Grouped bar',
                     ],
                 ],
             ])->save();

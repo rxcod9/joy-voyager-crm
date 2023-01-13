@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\MeetingsContact;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -148,9 +147,10 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => 'none',
                     'options' => [
-                        'none'     => 'none',
-                        'Inactive' => 'Inactive',
-                        'Active'   => 'Active',
+                        'accept'    => 'Accepted',
+                        'decline'   => 'Declined',
+                        'tentative' => 'Tentative',
+                        'none'      => 'None',
                     ],
                 ],
             ])->save();

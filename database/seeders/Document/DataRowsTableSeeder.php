@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Document;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -89,10 +88,16 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'DocType1',
+                    'default' => 'Sugar',
                     'options' => [
-                        'DocType1' => 'DocType1',
-                        'DocType2' => 'DocType2',
+                        'Sugar'         => 'SuiteCRM',
+                        'WebEx'         => 'WebEx',
+                        'GoToMeeting'   => 'GoToMeeting',
+                        'IBMSmartCloud' => 'IBM SmartCloud',
+                        'Google'        => 'Google',
+                        'Box'           => 'Box.net',
+                        'Facebook'      => 'Facebook',
+                        'Twitter'       => 'Twitter',
                     ],
                 ],
             ])->save();
@@ -146,7 +151,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'category_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.category_id'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -155,13 +160,22 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''                => 'None',
+                        'Marketing'       => 'Marketing',
+                        'Knowledege Base' => 'Knowledge Base',
+                        'Sales'           => 'Sales',
+                    ],
+                ],
             ])->save();
         }
 
         $dataRow = $this->dataRow($dataType, 'subcategory_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.subcategory_id'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -170,13 +184,22 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''                     => 'None',
+                        'Marketing Collateral' => 'Marketing Collateral',
+                        'Product Brochures'    => 'Product Brochures',
+                        'FAQ'                  => 'FAQ',
+                    ],
+                ],
             ])->save();
         }
 
         $dataRow = $this->dataRow($dataType, 'status_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.status_id'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -185,6 +208,17 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        'Active'       => 'Active',
+                        'Draft'        => 'Draft',
+                        'FAQ'          => 'FAQ',
+                        'Expired'      => 'Expired',
+                        'Under Review' => 'Under Review',
+                        'Pending'      => 'Pending',
+                    ],
+                ],
             ])->save();
         }
 
@@ -336,10 +370,13 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'TemplateType1',
+                    'default' => '',
                     'options' => [
-                        'TemplateType1' => 'TemplateType1',
-                        'TemplateType2' => 'TemplateType2',
+                        ''          => 'None',
+                        'mailmerge' => 'Mail Merge',
+                        'eula'      => 'EULA',
+                        'nda'       => 'NDA',
+                        'license'   => 'License Agreement',
                     ],
                 ],
             ])->save();

@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Lead;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -49,7 +48,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'salutation');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.salutation'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -58,6 +57,18 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''      => 'None',
+                        'Mr.'   => 'Mr.',
+                        'Ms.'   => 'Ms.',
+                        'Mrs.'  => 'Mrs.',
+                        'Miss'  => 'Miss',
+                        'Dr.'   => 'Dr.',
+                        'Prof.' => 'Prof.',
+                    ],
+                ],
             ])->save();
         }
 
@@ -484,7 +495,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'lead_source');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.lead_source'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -493,6 +504,26 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => 'Self Generated',
+                    'options' => [
+                        ''                  => 'None',
+                        'Cold Call'         => 'Cold Call',
+                        'Existing Customer' => 'Existing Customer',
+                        'Self Generated'    => 'Self Generated',
+                        'Employee'          => 'Employee',
+                        'Partner'           => 'Partner',
+                        'Public Relations'  => 'Public Relations',
+                        'Direct Mail'       => 'Direct Mail',
+                        'Conference'        => 'Conference',
+                        'Trade Show'        => 'Trade Show',
+                        'Web Site'          => 'Web Site',
+                        'Word of mouth'     => 'Word of mouth',
+                        'Email'             => 'Email',
+                        'Campaign'          => 'Campaign',
+                        'Other'             => 'Other',
+                    ],
+                ],
             ])->save();
         }
 
@@ -896,10 +927,15 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => '',
                     'options' => [
-                        'Inactive' => 'Inactive',
-                        'Active'   => 'Active',
+                        ''           => 'None',
+                        'New'        => 'New',
+                        'Assigned'   => 'Assigned',
+                        'In Process' => 'In Process',
+                        'Converted'  => 'Converted',
+                        'Recycled'   => 'Recycled',
+                        'Dead'       => 'Dead',
                     ],
                 ],
             ])->save();

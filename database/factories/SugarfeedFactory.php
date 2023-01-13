@@ -28,8 +28,8 @@ class SugarfeedFactory extends Factory
             'related_id'     => null,
             'link_url'       => $this->faker->word(),
             'link_type'      => $this->faker->randomKey([
-                'Type1' => 'Type1',
-                'Type2' => 'Type2',
+                'sugar'  => 'SuiteCRM Email Client',
+                'mailto' => 'External Email Client',
             ]),
             'created_at'     => $this->faker->dateTime(),
             'updated_at'     => $this->faker->dateTime(),

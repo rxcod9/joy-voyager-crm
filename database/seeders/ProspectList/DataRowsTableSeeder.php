@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\ProspectList;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -74,10 +73,14 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => 'default',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'default'        => 'Default',
+                        'seed'           => 'Seed',
+                        'exempt_domain'  => 'Suppression List - By Domain',
+                        'exempt_address' => 'Suppression List - By Email Address',
+                        'exempt'         => 'Suppression List - By Id',
+                        'test'           => 'Test',
                     ],
                 ],
             ])->save();
@@ -120,6 +123,31 @@ class DataRowsTableSeeder extends Seeder
                     'pivot_table' => 'prospect_list_campaigns',
                     'pivot'       => '1',
                     'taggable'    => '0',
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'prospect_list_hasmany_prospects_list_prospect_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.prospects_list_prospect'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'       => Voyager::modelClass('ProspectListsProspect'),
+                    'table'       => 'prospect_lists_prospects',
+                    'type'        => 'hasMany',
+                    'column'      => 'prospect_list_id',
+                    'key'         => 'id',
+                    'label'       => 'id',
+                    'pivot_table' => 'prospect_lists_prospects',
+                    'pivot'       => 0,
                 ],
             ])->save();
         }

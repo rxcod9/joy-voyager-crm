@@ -34,8 +34,9 @@ class FpEventFactory extends Factory
             'accept_redirect'      => $this->faker->word(),
             'decline_redirect'     => $this->faker->word(),
             'activity_status_type' => $this->faker->randomKey([
-                'Active'   => 'Active',
-                'Inactive' => 'Inactive',
+                ''         => '--None--',
+                'active'   => 'Active',
+                'inactive' => 'Inactive',
             ]),
             'created_at'           => $this->faker->dateTime(),
             'updated_at'           => $this->faker->dateTime(),

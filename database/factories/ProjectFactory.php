@@ -28,8 +28,11 @@ class ProjectFactory extends Factory
             'estimated_end_date'      => $this->faker->dateTimeBetween('-1month', '+1month')->format('Y-m-d'),
             'status'                  => $this->faker->randomKey(
                 config('joy-voyager-crm.projects.statuses', [
-                    'Active'   => 'Active',
-                    'Inactive' => 'Inactive',
+                    'Draft'     => 'Draft',
+                    'In Review' => 'In Review',
+                    'Underway'  => 'Underway',
+                    'On_Hold'   => 'On Hold',
+                    'Completed' => 'Completed',
                 ])
             ),
             'priority'                => $this->faker->randomKey(

@@ -13,8 +13,8 @@ class VoyagerDummyDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            DummyCurrenciesTableSeeder::class
-        ]);
+        // $this->call([
+        //     DummyCurrenciesTableSeeder::class
+        // ]);
     }
 }

@@ -30,17 +30,17 @@ class TranslationsTableSeeder extends Seeder
      */
     private function emailmansTranslations()
     {
-        // Adding translations for 'emailmans'
+        // Adding translations for 'emailman'
         //
         $cat = Voyager::model('Emailman')->where('name', 'emailman-1')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['emailmans', 'name'], $cat->id), 'emailman-1');
-            $this->trans('pt', $this->arr(['emailmans', 'description'], $cat->id), 'Emailman 1');
+            $this->trans('pt', $this->arr(['emailman', 'name'], $cat->id), 'emailman-1');
+            $this->trans('pt', $this->arr(['emailman', 'description'], $cat->id), 'Emailman 1');
         }
         $cat = Voyager::model('Emailman')->where('name', 'emailman-2')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['emailmans', 'name'], $cat->id), 'emailman-2');
-            $this->trans('pt', $this->arr(['emailmans', 'description'], $cat->id), 'Emailman 2');
+            $this->trans('pt', $this->arr(['emailman', 'name'], $cat->id), 'emailman-2');
+            $this->trans('pt', $this->arr(['emailman', 'description'], $cat->id), 'Emailman 2');
         }
     }
 

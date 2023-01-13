@@ -63,7 +63,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'enclosure');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'select_dropdown',
+                'type'         => 'text',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.enclosure'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -72,25 +72,14 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
-                'details'      => [
-                    'default' => 'Type1',
-                    'options' => [
-                        ' ' => ' ',
-                        ',' => ',',
-                        ';' => ';',
-                        // '\t'  => '\t',
-                        '|' => '|',
-                        // '   ' => '   ',
-                    ],
-                ],
             ])->save();
         }
 
         $dataRow = $this->dataRow($dataType, 'delimiter');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'select_dropdown',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.enclosure'),
+                'type'         => 'text',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.delimiter'),
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -98,17 +87,6 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
-                'details'      => [
-                    'default' => 'Type1',
-                    'options' => [
-                        ' ' => ' ',
-                        ',' => ',',
-                        ';' => ';',
-                        // // '\t'  => '\t',
-                        '|' => '|',
-                        // '   ' => '   ',
-                    ],
-                ],
             ])->save();
         }
 

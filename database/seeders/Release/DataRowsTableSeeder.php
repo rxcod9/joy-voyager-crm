@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Release;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -74,10 +73,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => 'Active',
                     'options' => [
-                        'Inactive' => 'Inactive',
                         'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
                     ],
                 ],
             ])->save();

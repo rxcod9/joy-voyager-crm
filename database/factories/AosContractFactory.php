@@ -36,8 +36,7 @@ class AosContractFactory extends Factory
             'company_signed_date'           => $this->faker->dateTimeBetween('-1month', 'now')->format('Y-m-d'),
             'renewal_reminder_date'         => $this->faker->dateTimeBetween('-1month', 'now'),
             'contract_type'                 => $this->faker->randomKey([
-                'Type1' => 'Type1',
-                'Type2' => 'Type2',
+                'Type' => 'Type',
             ]),
             'total_contract_value'          => $this->faker->randomFloat(2),
             'total_contract_value_usdollar' => $this->faker->randomFloat(2),
@@ -57,8 +56,9 @@ class AosContractFactory extends Factory
             'total_amount'                  => $this->faker->randomFloat(2),
             'total_amount_usdollar'         => $this->faker->randomFloat(2),
             'status'                        => $this->faker->randomKey([
-                'Active'   => 'Active',
-                'Inactive' => 'Inactive',
+                'Not Started' => 'Not Started',
+                'In Progress' => 'In Progress',
+                'Signed'      => 'Signed',
             ]),
             'created_at'                    => $this->faker->dateTime(),
             'updated_at'                    => $this->faker->dateTime(),

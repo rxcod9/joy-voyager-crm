@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\JobQueue;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -114,10 +113,12 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Resolution1',
+                    'default' => 'queued',
                     'options' => [
-                        'Resolution1' => 'Resolution1',
-                        'Resolution2' => 'Resolution2',
+                        'queued'  => 'queued',
+                        'partial' => 'partial',
+                        'success' => 'success',
+                        'failure' => 'failure',
                     ],
                 ],
             ])->save();
@@ -271,10 +272,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Pending',
+                    'default' => 'queued',
                     'options' => [
-                        'Pending'  => 'Pending',
-                        'Finished' => 'Finished',
+                        'queued'  => 'queued',
+                        'running' => 'running',
+                        'done'    => 'done',
                     ],
                 ],
             ])->save();

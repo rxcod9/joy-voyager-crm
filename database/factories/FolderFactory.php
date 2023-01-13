@@ -24,9 +24,11 @@ class FolderFactory extends Factory
         return [
             'name'          => $this->faker->name(),
             // 'description' => $this->faker->text(500),
-            'folder_type'   => $this->faker->randomElement([
-                'Type1',
-                'Type2',
+            'folder_type'   => $this->faker->randomKey([
+                'inbound'  => 'inbound',
+                'draft'    => 'draft',
+                'sent'     => 'sent',
+                'archived' => 'archived',
             ]),
             'parent_folder' => null,
             'has_child'     => $this->faker->boolean(),

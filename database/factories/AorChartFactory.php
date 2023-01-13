@@ -25,9 +25,13 @@ class AorChartFactory extends Factory
             'name'          => $this->faker->name(),
             'description'   => $this->faker->text(500),
             'aor_report_id' => null,
-            'type'          => $this->faker->randomElement([
-                'Type1',
-                'Type2',
+            'type'          => $this->faker->randomKey([
+                'bar'         => 'Bar chart',
+                'line'        => 'Line chart',
+                'pie'         => 'Pie chart',
+                'radar'       => 'Radar chart',
+                'stacked_bar' => 'Stacked bar',
+                'grouped_bar' => 'Grouped bar',
             ]),
             'x_field'       => $this->faker->numberBetween(1, 100),
             'y_field'       => $this->faker->numberBetween(1, 100),

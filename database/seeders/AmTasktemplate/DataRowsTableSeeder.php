@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AmTasktemplate;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -74,11 +73,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Low',
+                    'default' => 'Medium',
                     'options' => [
-                        'Low'    => 'Low',
-                        'Medium' => 'Medium',
                         'High'   => 'High',
+                        'Medium' => 'Medium',
+                        'Low'    => 'Low',
                     ],
                 ],
             ])->save();
@@ -144,7 +143,8 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => 'FS',
                     'options' => [
-                        'FS' => 'FS',
+                        'FS' => 'Finish to Start',
+                        'SS' => 'Start to Start',
                     ],
                 ],
             ])->save();
@@ -240,9 +240,11 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => 'Not Started',
                     'options' => [
-                        'Not Started' => 'Not Started',
-                        'Inactive'    => 'Inactive',
-                        'Active'      => 'Active',
+                        'Not Started'   => 'Not Started',
+                        'In Progress'   => 'In Progress',
+                        'Completed'     => 'Completed',
+                        'Pending Input' => 'Pending Input',
+                        'Deferred'      => 'Deferred',
                     ],
                 ],
             ])->save();

@@ -135,8 +135,9 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => config('joy-voyager-crm.surveys.default_status', 'Active'),
                     'options' => config('joy-voyager-crm.surveys.statuses', [
-                        'Draft'     => 'Draft',
-                        'Published' => 'Published',
+                        'Draft'  => 'Draft',
+                        'Public' => 'Public',
+                        'Closed' => 'Closed',
                     ]),
                 ],
             ])->save();

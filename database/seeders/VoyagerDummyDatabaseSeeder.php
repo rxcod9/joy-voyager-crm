@@ -116,6 +116,7 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             \Joy\VoyagerCrm\Database\Seeders\SecuritygroupsRecord\VoyagerDummyDatabaseSeeder::class,
             \Joy\VoyagerCrm\Database\Seeders\EmailsBean\VoyagerDummyDatabaseSeeder::class,
             \Joy\VoyagerCrm\Database\Seeders\Tracker\VoyagerDummyDatabaseSeeder::class,
+            \Joy\VoyagerCrm\Database\Seeders\EmailAddress\VoyagerDummyDatabaseSeeder::class,
             // \Joy\VoyagerBreadActivity\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
             // \Joy\VoyagerBreadArticle\Database\Seeders\VoyagerDummyDatabaseSeeder::class,
             // \Joy\VoyagerBreadArticleCategory\Database\Seeders\VoyagerDummyDatabaseSeeder::class,

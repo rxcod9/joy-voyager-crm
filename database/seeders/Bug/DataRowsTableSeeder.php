@@ -90,8 +90,8 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => config('joy-voyager-crm.bugs.default_type', 'Type1'),
                     'options' => config('joy-voyager-crm.bugs.types', [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'Defect'  => 'Defect',
+                        'Feature' => 'Feature',
                     ]),
                 ],
             ])->save();
@@ -110,11 +110,12 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => config('joy-voyager-crm.bugs.default_priority', 'Low'),
+                    'default' => config('joy-voyager-crm.bugs.default_priority', 'Medium'),
                     'options' => config('joy-voyager-crm.bugs.priorities', [
-                        'Low'    => 'Low',
-                        'Medium' => 'Medium',
+                        'Urgent' => 'Urgent',
                         'High'   => 'High',
+                        'Medium' => 'Medium',
+                        'Low'    => 'Low',
                     ]),
                 ],
             ])->save();
@@ -133,10 +134,15 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => config('joy-voyager-crm.bugs.default_resolution', 'No'),
+                    'default' => config('joy-voyager-crm.bugs.default_resolution', ''),
                     'options' => config('joy-voyager-crm.bugs.resolutions', [
-                        'Yes' => 'Yes',
-                        'No'  => 'No',
+                        ''            => 'None',
+                        'Accepted'    => 'Accepted',
+                        'Duplicate'   => 'Duplicate',
+                        'Fixed'       => 'Fixed',
+                        'Out of Date' => 'Out of Date',
+                        'Invalid'     => 'Invalid',
+                        'Later'       => 'Later',
                     ]),
                 ],
             ])->save();
@@ -240,7 +246,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'source');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.source'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -249,13 +255,23 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''             => 'None',
+                        'Internal'     => 'Internal',
+                        'Forum'        => 'Forum',
+                        'Web'          => 'Web',
+                        'InboundEmail' => 'Email',
+                    ],
+                ],
             ])->save();
         }
 
         $dataRow = $this->dataRow($dataType, 'product_category');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.product_category'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -264,6 +280,40 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''               => 'None',
+                        'Accounts'       => 'Accounts',
+                        'Activities'     => 'Activities',
+                        'Bugs'           => 'Bugs',
+                        'Calendar'       => 'Calendar',
+                        'Calls'          => 'Calls',
+                        'Campaigns'      => 'Campaigns',
+                        'Cases'          => 'Cases',
+                        'Contacts'       => 'Contacts',
+                        'Currencies'     => 'Currencies',
+                        'Dashboard'      => 'Dashboard',
+                        'Documents'      => 'Documents',
+                        'Emails'         => 'Emails',
+                        'Feeds'          => 'Feeds',
+                        'Forecasts'      => 'Forecasts',
+                        'Help'           => 'Help',
+                        'Home'           => 'Home',
+                        'Leads'          => 'Leads',
+                        'Meetings'       => 'Meetings',
+                        'Notes'          => 'Notes',
+                        'Opportunities'  => 'Opportunities',
+                        'Outlook Plugin' => 'Outlook Plugin',
+                        'Projects'       => 'Projects',
+                        'Quotes'         => 'Quotes',
+                        'Releases'       => 'Releases',
+                        'RSS'            => 'RSS',
+                        'Studio'         => 'Studio',
+                        'Upgrade'        => 'Upgrade',
+                        'Users'          => 'Users',
+                    ],
+                ],
             ])->save();
         }
 
@@ -280,10 +330,13 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => config('joy-voyager-crm.bugs.default_status', 'Active'),
+                    'default' => config('joy-voyager-crm.bugs.default_status', 'New'),
                     'options' => config('joy-voyager-crm.bugs.statuses', [
-                        'Active'   => 'Active',
-                        'Inactive' => 'Inactive',
+                        'New'      => 'New',
+                        'Assigned' => 'Assigned',
+                        'Closed'   => 'Closed',
+                        'Pending'  => 'Pending',
+                        'Rejected' => 'Rejected',
                     ]),
                 ],
             ])->save();

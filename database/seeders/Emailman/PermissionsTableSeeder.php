@@ -13,6 +13,6 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        Voyager::model('Permission')->generateFor('emailmans');
+        Voyager::model('Permission')->generateFor('emailman');
     }
 }

@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Prospect;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -49,7 +48,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'salutation');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.salutation'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -58,6 +57,18 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''      => 'None',
+                        'Mr.'   => 'Mr.',
+                        'Ms.'   => 'Ms.',
+                        'Mrs.'  => 'Mrs.',
+                        'Miss'  => 'Miss',
+                        'Dr.'   => 'Dr.',
+                        'Prof.' => 'Prof.',
+                    ],
+                ],
             ])->save();
         }
 
@@ -514,7 +525,7 @@ class DataRowsTableSeeder extends Seeder
                     'type'        => 'belongsTo',
                     'column'      => 'lead_id',
                     'key'         => 'id',
-                    'label'       => 'name',
+                    'label'       => 'first_name',
                     'pivot_table' => 'leads',
                     'pivot'       => 0,
                 ],

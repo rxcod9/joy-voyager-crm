@@ -30,17 +30,17 @@ class TranslationsTableSeeder extends Seeder
      */
     private function usersLastImportsTranslations()
     {
-        // Adding translations for 'users_last_imports'
+        // Adding translations for 'users_last_import'
         //
         $cat = Voyager::model('UsersLastImport')->where('name', 'users_last_import-1')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['users_last_imports', 'name'], $cat->id), 'users-last-import-1');
-            $this->trans('pt', $this->arr(['users_last_imports', 'description'], $cat->id), 'UsersLastImport 1');
+            $this->trans('pt', $this->arr(['users_last_import', 'name'], $cat->id), 'users-last-import-1');
+            $this->trans('pt', $this->arr(['users_last_import', 'description'], $cat->id), 'UsersLastImport 1');
         }
         $cat = Voyager::model('UsersLastImport')->where('name', 'users_last_import-2')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['users_last_imports', 'name'], $cat->id), 'users-last-import-2');
-            $this->trans('pt', $this->arr(['users_last_imports', 'description'], $cat->id), 'UsersLastImport 2');
+            $this->trans('pt', $this->arr(['users_last_import', 'name'], $cat->id), 'users-last-import-2');
+            $this->trans('pt', $this->arr(['users_last_import', 'description'], $cat->id), 'UsersLastImport 2');
         }
     }
 

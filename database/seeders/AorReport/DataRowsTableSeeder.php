@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AorReport;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -76,6 +75,7 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => null,
                     'options' => [
+                        // @TODO All data types except AOR_ and AOW_
                         'accounts'      => 'accounts',
                         'contacts'      => 'contacts',
                         'opportunities' => 'opportunities',

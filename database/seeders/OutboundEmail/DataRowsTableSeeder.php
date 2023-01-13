@@ -48,7 +48,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'type');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'select_dropdown',
+                'type'         => 'text',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.type'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -57,13 +57,6 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
-                'details'      => [
-                    'default' => 'Type1',
-                    'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
-                    ],
-                ],
             ])->save();
         }
 
@@ -100,7 +93,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'mail_sendtype');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.mail_sendtype'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -109,6 +102,12 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => 'SMTP',
+                    'options' => [
+                        'SMTP' => 'SMTP',
+                    ],
+                ],
             ])->save();
         }
 
@@ -205,7 +204,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'mail_smtpssl');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.mail_smtpssl'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -214,6 +213,14 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        '0' => '',
+                        '1' => 'SSL',
+                        '2' => 'TLS',
+                    ],
+                ],
             ])->save();
         }
 

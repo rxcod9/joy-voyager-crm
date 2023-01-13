@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\CampaignLog;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -86,6 +85,31 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($dataType, 'target_type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.target_type'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => ++$order,
+                'details'      => [
+                    'default' => null,
+                    'options' => [
+                        Voyager::modelClass('Contact')  => 'Contacts',
+                        Voyager::modelClass('User')     => 'Users',
+                        Voyager::modelClass('Prospect') => 'Prospects',
+                        Voyager::modelClass('Lead')     => 'Leads',
+                        Voyager::modelClass('Account')  => 'Accounts',
+                    ],
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($dataType, 'target_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -101,11 +125,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'target_type');
+        $dataRow = $this->dataRow($dataType, 'campaign_log_morphto_target_relationship');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.target_type'),
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.target'),
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -113,6 +137,44 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'type'        => 'morphTo',
+                    'function'    => 'targetable',
+                    'type_column' => 'target_type',
+                    'column'      => 'target_id',
+                    'types'       => [
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.contact'),
+                            'model'        => Voyager::modelClass('Contact'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.user'),
+                            'model'        => Voyager::modelClass('User'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.prospect'),
+                            'model'        => Voyager::modelClass('Prospect'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.lead'),
+                            'model'        => Voyager::modelClass('Lead'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.account'),
+                            'model'        => Voyager::modelClass('Account'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ]
+                    ]
+                ],
             ])->save();
         }
 
@@ -129,10 +191,18 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => '',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        ''              => 'None',
+                        'targeted'      => 'Message Sent/Attempted',
+                        'send error'    => 'Bounced Messages,Other',
+                        'invalid email' => 'Bounced Messages,Invalid Email',
+                        'link'          => 'Click-thru Link',
+                        'viewed'        => 'Viewed Message',
+                        'removed'       => 'Opted Out',
+                        'lead'          => 'Leads Created',
+                        'contact'       => 'Contacts Created',
+                        'blocked'       => 'Suppressed by address or domain',
                     ],
                 ],
             ])->save();
@@ -153,6 +223,30 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($dataType, 'related_type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.related_type'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => ++$order,
+                'details'      => [
+                    'default' => null,
+                    'options' => [
+                        Voyager::modelClass('Contact')     => 'Contacts',
+                        Voyager::modelClass('Email')       => 'Emails',
+                        Voyager::modelClass('Lead')        => 'Leads',
+                        Voyager::modelClass('Opportunity') => 'Opportunities',
+                    ],
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($dataType, 'related_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -168,11 +262,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'related_type');
+        $dataRow = $this->dataRow($dataType, 'campaign_log_morphto_related_relationship');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.related_type'),
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.related'),
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -180,6 +274,38 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'type'        => 'morphTo',
+                    'function'    => 'relatedable',
+                    'type_column' => 'related_type',
+                    'column'      => 'related_id',
+                    'types'       => [
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.contact'),
+                            'model'        => Voyager::modelClass('Contact'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.email'),
+                            'model'        => Voyager::modelClass('Email'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.lead'),
+                            'model'        => Voyager::modelClass('Lead'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.opportunity'),
+                            'model'        => Voyager::modelClass('Opportunity'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ],
+                    ]
+                ],
             ])->save();
         }
 

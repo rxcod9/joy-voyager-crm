@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AorCondition;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -129,10 +128,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'LogicOp1',
+                    'default' => 'And',
                     'options' => [
-                        'LogicOp1' => 'LogicOp1',
-                        'LogicOp2' => 'LogicOp2',
+                        'And' => 'And',
+                        'OR'  => 'OR',
                     ],
                 ],
             ])->save();
@@ -153,10 +152,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        // Must override the view and CAST array to json
         $dataRow = $this->dataRow($dataType, 'module_path');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'select_dropdown',
+                'type'         => 'text',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.module_path'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -165,13 +165,6 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
-                'details'      => [
-                    'default' => 'Module1',
-                    'options' => [
-                        'Module1' => 'Module1',
-                        'Module2' => 'Module2',
-                    ],
-                ],
             ])->save();
         }
 
@@ -188,10 +181,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Field1',
+                    'default' => 'RegularUser',
                     'options' => [
-                        'Field1' => 'Field1',
-                        'Field2' => 'Field2',
+                        'RegularUser'   => 'Regular User',
+                        'Administrator' => 'Administrator',
                     ],
                 ],
             ])->save();
@@ -210,10 +203,18 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Operator1',
+                    'default' => 'Equal_To',
                     'options' => [
-                        'Operator1' => 'Operator1',
-                        'Operator2' => 'Operator2',
+                        'Equal_To'                 => 'Equal To',
+                        'Not_Equal_To'             => 'Not Equal To',
+                        'Greater_Than'             => 'Greater Than',
+                        'Less_Than'                => 'Less Than',
+                        'Greater_Than_or_Equal_To' => 'Greater Than or Equal To',
+                        'Less_Than_or_Equal_To'    => 'Less Than or Equal To',
+                        'Contains'                 => 'Contains',
+                        'Not_Contains'             => 'Not Contains',
+                        'Starts_With'              => 'Starts With',
+                        'Ends_With'                => 'Ends With',
                     ],
                 ],
             ])->save();
@@ -232,10 +233,14 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'value',
+                    'default' => 'Value',
                     'options' => [
-                        'value' => 'value',
-                        'field' => 'field',
+                        'Value'         => 'Value',
+                        'Field'         => 'Field',
+                        'Date'          => 'Date',
+                        'Multi'         => 'One of',
+                        'Period'        => 'Period',
+                        'CurrentUserID' => 'Current User',
                     ],
                 ],
             ])->save();

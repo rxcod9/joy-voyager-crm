@@ -26,17 +26,16 @@ class CrmCaseFactory extends Factory
             'description'           => $this->faker->text(500),
             // 'case_number'           => $this->faker->numberBetween(1, 100), // Auto incrementing
             'type'                  => $this->faker->randomKey([
-                'Type1' => 'Type1',
-                'Type2' => 'Type2',
+                'Administration' => 'Administration',
+                'Product'        => 'Product',
+                'User'           => 'User',
             ]),
             'priority'              => $this->faker->randomKey([
-                'Priority1' => 'Priority1',
-                'Priority2' => 'Priority2',
+                'P1' => 'High',
+                'P2' => 'Medium',
+                'P3' => 'Low',
             ]),
-            'resolution'            => $this->faker->randomKey([
-                'Resolution1' => 'Resolution1',
-                'Resolution2' => 'Resolution2',
-            ]),
+            'resolution'            => $this->faker->paragraphs(10, true),
             'work_log'              => $this->faker->paragraphs(10, true),
             'account_id'            => null,
             'state'                 => $this->faker->randomKey([
@@ -45,8 +44,12 @@ class CrmCaseFactory extends Factory
             ]),
             'contact_created_by_id' => null,
             'status'                => $this->faker->randomKey([
-                'Active'   => 'Active',
-                'Inactive' => 'Inactive',
+                'Open_New'           => 'New',
+                'Open_Assigned'      => 'Assigned',
+                'Closed_Closed'      => 'Closed',
+                'Open_Pending Input' => 'Pending Input',
+                'Closed_Rejected'    => 'Rejected',
+                'Closed_Duplicate'   => 'Duplicate',
             ]),
             'created_at'            => $this->faker->dateTime(),
             'updated_at'            => $this->faker->dateTime(),

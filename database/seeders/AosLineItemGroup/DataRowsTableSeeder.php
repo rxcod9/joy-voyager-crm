@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AosLineItemGroup;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -244,7 +243,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'parent_type');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.parent_type'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -253,6 +252,15 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '',
+                    'options' => [
+                        ''                                 => 'None',
+                        Voyager::modelClass('AosQuote')    => 'Quote',
+                        Voyager::modelClass('AosInvoice')  => 'Invoice',
+                        Voyager::modelClass('AosContract') => 'Contract',
+                    ],
+                ],
             ])->save();
         }
 
@@ -268,6 +276,47 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'aos_line_item_group_morphto_parent_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.parent'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => ++$order,
+                'details'      => [
+                    'type'        => 'morphTo',
+                    'function'    => 'parentable',
+                    'type_column' => 'parent_type',
+                    'column'      => 'parent_id',
+                    'types'       => [
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.aos_quote'),
+                            'model'        => Voyager::modelClass('AosQuote'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.aos_invoice'),
+                            'model'        => Voyager::modelClass('AosInvoice'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.aos_contract'),
+                            'model'        => Voyager::modelClass('AosContract'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ],
+                    ]
+                ],
             ])->save();
         }
 

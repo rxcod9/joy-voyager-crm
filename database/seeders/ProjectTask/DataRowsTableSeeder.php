@@ -88,10 +88,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => 'FS',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'FS' => 'Finish to Start',
+                        'SS' => 'Start to Start',
                     ],
                 ],
             ])->save();
@@ -202,11 +202,8 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => null,
                     'options' => [
-                        'Seconds' => 'Seconds',
-                        'Hours'   => 'Hours',
-                        'Days'    => 'Days',
-                        'Weeks'   => 'Weeks',
-                        'Months'  => 'Months',
+                        'Days'  => 'Days',
+                        'Hours' => 'Hours',
                     ],
                 ],
             ])->save();
@@ -300,11 +297,11 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Low',
+                    'default' => 'Medium',
                     'options' => [
-                        'Low'    => 'Low',
-                        'Medium' => 'Medium',
                         'High'   => 'High',
+                        'Medium' => 'Medium',
+                        'Low'    => 'Low',
                     ],
                 ],
             ])->save();
@@ -388,7 +385,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'utilization');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'number',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.utilization'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -397,6 +394,16 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => '0',
+                    'options' => [
+                        '0'   => 'none',
+                        '25'  => '25',
+                        '50'  => '50',
+                        '75'  => '75',
+                        '100' => '100',
+                    ],
+                ],
             ])->save();
         }
 
@@ -413,11 +420,13 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => 'Not Started',
                     'options' => [
-                        'Inactive' => 'Inactive',
-                        'Active'   => 'Active',
-                        'Planned'  => 'Planned',
+                        'Not Started'   => 'Not Started',
+                        'In Progress'   => 'In Progress',
+                        'Completed'     => 'Completed',
+                        'Pending Input' => 'Pending Input',
+                        'Deferred'      => 'Deferred',
                     ],
                 ],
             ])->save();

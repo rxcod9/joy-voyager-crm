@@ -35,9 +35,10 @@ class InboundEmailFactory extends Factory
             'service'        => $this->faker->text(10),
             'mailbox'        => $this->faker->text(50),
             'delete_seen'    => $this->faker->boolean(),
-            'mailbox_type'   => $this->faker->randomElement([
-                'MailboxType1',
-                'MailboxType2',
+            'mailbox_type'   => $this->faker->randomKey([
+                'pick'       => '--None--',
+                'createcase' => 'Create Case',
+                'bounce'     => 'Bounce Handling',
             ]),
             // 'template_id'    => null,
             // 'stored_options'    => null,

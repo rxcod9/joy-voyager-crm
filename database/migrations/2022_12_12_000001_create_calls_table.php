@@ -27,7 +27,7 @@ return new class extends Migration {
             $table->string('parent_type')->nullable();
             $table->string('status', 100)->nullable()->default('Planned')->index('idx_status');
             $table->string('direction', 100)->nullable();
-            $table->uuid('parent_id')->nullable()->comment('opportunities, cases, leads, project, aos_contracts, prospects, bugs, project_task, accounts');
+            $table->uuid('parent_id')->nullable();
             $table->integer('reminder_time')->nullable()->default(-1);
             $table->integer('email_reminder_time')->nullable()->default(-1);
             $table->boolean('email_reminder_sent')->nullable()->default(false);

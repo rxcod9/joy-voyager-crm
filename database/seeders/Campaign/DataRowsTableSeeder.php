@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Campaign;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -249,10 +248,18 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => '',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        ''           => 'None',
+                        'Telesales'  => 'Telesales',
+                        'Mail'       => 'Mail',
+                        'Email'      => 'Email',
+                        'Print'      => 'Print',
+                        'Web'        => 'Web',
+                        'Radio'      => 'Radio',
+                        'Television' => 'Television',
+                        'NewsLetter' => 'Newsletter',
+                        'Survey'     => 'Survey',
                     ],
                 ],
             ])->save();
@@ -303,12 +310,11 @@ class DataRowsTableSeeder extends Seeder
                 'details'      => [
                     'default' => null,
                     'options' => [
-                        'every minute' => 'Every minute',
-                        'hourly'       => 'Hourly',
-                        'daily'        => 'Daily',
-                        'weekly'       => 'Weekly',
-                        'mothly'       => 'Mothly',
-                        'yearly'       => 'Yearly',
+                        ''          => 'None',
+                        'Weekly'    => 'Weekly',
+                        'Monthly'   => 'Monthly',
+                        'Quarterly' => 'Quarterly',
+                        'Annually'  => 'Annually',
                     ],
                 ],
             ])->save();
@@ -367,10 +373,15 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Inactive',
+                    'default' => '',
                     'options' => [
-                        'Inactive' => 'Inactive',
+                        ''         => 'None',
+                        'Planning' => 'Planning',
                         'Active'   => 'Active',
+                        'Inactive' => 'Inactive',
+                        'Complete' => 'Complete',
+                        //'In Queue' => 'In Queue',
+                        //'Sending' => 'Sending',
                     ],
                 ],
             ])->save();

@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AosPdfTemplate;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -89,10 +88,14 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'Type1',
+                    'default' => '',
                     'options' => [
-                        'Type1' => 'Type1',
-                        'Type2' => 'Type2',
+                        'AOS_Quotes'    => 'Quotes',
+                        'AOS_Invoices'  => 'Invoices',
+                        'AOS_Contracts' => 'Contracts',
+                        'Accounts'      => 'Accounts',
+                        'Contacts'      => 'Contacts',
+                        'Leads'         => 'Leads',
                     ],
                 ],
             ])->save();
@@ -246,10 +249,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'order'        => ++$order,
                 'details'      => [
-                    'default' => 'LANDSCAPE',
+                    'default' => 'Portrait',
                     'options' => [
-                        'LANDSCAPE' => 'LANDSCAPE',
-                        'PORTRAIT'  => 'PORTRAIT',
+                        'Portrait'  => 'Portrait',
+                        'Landscape' => 'Landscape',
                     ],
                 ],
             ])->save();
