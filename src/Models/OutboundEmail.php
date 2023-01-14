@@ -44,8 +44,8 @@ class OutboundEmail extends Model
     use Traits\Auditable;
     use HasFactory;
 
-    protected $table     = 'outbound_email';
-    public $incrementing = false;
+    protected $table      = 'outbound_email';
+    public $incrementing  = false;
     protected $auditModel = OutboundEmailAudit::class;
 
     protected $casts = [
