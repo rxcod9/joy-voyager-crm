@@ -58,7 +58,7 @@ return new class extends Migration {
             $table->boolean('factor_auth')->nullable();
             $table->string('factor_auth_interface')->nullable();
 
-            $table->index(['user_name', 'is_group', 'status', DB::raw('last_name(30)'), DB::raw('first_name(30)'), 'id'], 'idx_user_name');
+            // $table->index(['user_name', 'is_group', 'status', DB::raw('last_name(30)'), DB::raw('first_name(30)'), 'id'], 'idx_user_name');
             // $table->timestamps();
             $table->softDeletes();
         });

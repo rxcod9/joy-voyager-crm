@@ -25,7 +25,7 @@ class VoyagerDatabaseSeeder extends Seeder
             // UserSettingsPermissionsTableSeeder::class,
             'Database\\Seeders\\PermissionRoleTableSeeder',
             // UserSettingsTableSeeder::class,
-            AosSamplesTableSeeder::class,
+            // AosSamplesTableSeeder::class,
         ]);
     }
 }

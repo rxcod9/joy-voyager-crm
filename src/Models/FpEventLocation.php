@@ -36,6 +36,7 @@ class FpEventLocation extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'fp_event_locations';

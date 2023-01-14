@@ -63,7 +63,7 @@ class DataRowsTableSeeder extends Seeder
         $dataRow = $this->dataRow($dataType, 'related_module');
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
+                'type'         => 'select_dropdown',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.related_module'),
                 'required'     => 0,
                 'browse'       => 1,
@@ -72,6 +72,15 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+                'details'      => [
+                    'default' => null,
+                    'options' => [
+                        Voyager::modelClass('Contact')     => 'Contacts',
+                        Voyager::modelClass('Email')       => 'Emails',
+                        Voyager::modelClass('Lead')        => 'Leads',
+                        Voyager::modelClass('Opportunity') => 'Opportunities',
+                    ],
+                ],
             ])->save();
         }
 
@@ -87,6 +96,53 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'sugarfeed_morphto_related_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.related'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => ++$order,
+                'details'      => [
+                    'type'        => 'morphTo',
+                    'function'    => 'relatedable',
+                    'type_column' => 'related_module',
+                    'column'      => 'related_id',
+                    'types'       => [
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.contact'),
+                            'model'        => Voyager::modelClass('Contact'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.email'),
+                            'model'        => Voyager::modelClass('Email'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.lead'),
+                            'model'        => Voyager::modelClass('Lead'),
+                            'key'          => 'id',
+                            'label'        => 'first_name',
+                        ],
+                        [
+                            'display_name' => __('joy-voyager-crm::seeders.data_rows.opportunity'),
+                            'model'        => Voyager::modelClass('Opportunity'),
+                            'key'          => 'id',
+                            'label'        => 'name',
+                        ],
+                    ]
+                ],
             ])->save();
         }
 
@@ -188,8 +244,8 @@ class DataRowsTableSeeder extends Seeder
                 'type'         => 'timestamp',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.updated_at'),
                 'required'     => 0,
-                'browse'       => 0,
-                'read'         => 0,
+                'browse'       => 1,
+                'read'         => 1,
                 'edit'         => 0,
                 'add'          => 0,
                 'delete'       => 0,

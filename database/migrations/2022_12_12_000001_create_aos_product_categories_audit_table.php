@@ -21,6 +21,7 @@ return new class extends Migration
             $table->uuid('created_by_id')->nullable();
             $table->string('field_name', 100)->nullable();
             $table->string('data_type', 100)->nullable();
+            $table->string('request', 100)->nullable();
             $table->string('before_value_string')->nullable();
             $table->string('after_value_string')->nullable();
             $table->text('before_value_text')->nullable();

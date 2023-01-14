@@ -41,10 +41,12 @@ class CrmCase extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
-    protected $table     = 'cases';
-    public $incrementing = false;
+    protected $table      = 'cases';
+    public $incrementing  = false;
+    protected $auditModel = CasesAudit::class;
 
     protected $casts = [
         'case_number' => 'int'

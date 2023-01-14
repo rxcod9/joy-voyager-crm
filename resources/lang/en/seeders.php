@@ -617,684 +617,891 @@ return [
         'confirm_opt_in_token'             => 'Confirm opt in token',
         'record_id'                        => 'Record Id',
         'record'                           => 'Record',
+        'field_name'                       => 'Field name',
+        'data_type'                        => 'Data type',
+        'before_value_string'              => 'Before value string',
+        'after_value_string'               => 'After value string',
+        'before_value_text'                => 'Before value text',
+        'after_value_text'                 => 'After value text',
+        'request'                          => 'Request',
     ],
     'data_types'    => [
-        'user'                            => [
+        'user'                                => [
             'singular' => 'User',
             'plural'   => 'Users',
         ],
-        'currency'                        => [
+        'currency'                            => [
             'singular' => 'Currency',
             'plural'   => 'Currencies',
         ],
-        'survey'                          => [
+        'survey'                              => [
             'singular' => 'Survey',
             'plural'   => 'Surveys',
         ],
-        'bug'                             => [
+        'bug'                                 => [
             'singular' => 'Bug',
             'plural'   => 'Bugs',
         ],
-        'call'                            => [
+        'call'                                => [
             'singular' => 'Call',
             'plural'   => 'Calls',
         ],
-        'document'                        => [
+        'document'                            => [
             'singular' => 'Document',
             'plural'   => 'Documents',
         ],
-        'aos_pdf_template'                => [
+        'aos_pdf_template'                    => [
             'singular' => 'Pdf template',
             'plural'   => 'Pdf templates',
         ],
-        'aos_product_category'            => [
+        'aos_product_category'                => [
             'singular' => 'Product category',
             'plural'   => 'Product categories',
         ],
-        'aow_workflow'                    => [
+        'aow_workflow'                        => [
             'singular' => 'Aow workflow',
             'plural'   => 'Aow workflows',
         ],
-        'email'                           => [
+        'email'                               => [
             'singular' => 'Email',
             'plural'   => 'Emails',
         ],
-        'prospect_list'                   => [
+        'prospect_list'                       => [
             'singular' => 'Prospect list',
             'plural'   => 'Prospect lists',
         ],
-        'inbound_email'                   => [
+        'inbound_email'                       => [
             'singular' => 'Inbound email',
             'plural'   => 'Inbound emails',
         ],
-        'outbound_email'                  => [
+        'outbound_email'                      => [
             'singular' => 'Outbound email',
             'plural'   => 'Outbound emails',
         ],
-        'email_template'                  => [
+        'email_template'                      => [
             'singular' => 'Email template',
             'plural'   => 'Email templates',
         ],
-        'email_cache'                     => [
+        'email_cache'                         => [
             'singular' => 'Email cache',
             'plural'   => 'Email caches',
         ],
-        'favorite'                        => [
+        'favorite'                            => [
             'singular' => 'Favorite',
             'plural'   => 'Favorites',
         ],
-        'folder'                          => [
+        'folder'                              => [
             'singular' => 'Folder',
             'plural'   => 'Folders',
         ],
-        'fp_event_location'               => [
+        'fp_event_location'                   => [
             'singular' => 'Fp event location',
             'plural'   => 'Fp event locations',
         ],
-        'import_map'                      => [
+        'import_map'                          => [
             'singular' => 'Import map',
             'plural'   => 'Import maps',
         ],
-        'jjwg_address_cache'              => [
+        'jjwg_address_cache'                  => [
             'singular' => 'Jjwg address cache',
             'plural'   => 'Jjwg address caches',
         ],
-        'jjwg_area'                       => [
+        'jjwg_area'                           => [
             'singular' => 'Jjwg area',
             'plural'   => 'Jjwg areas',
         ],
-        'jjwg_map'                        => [
+        'jjwg_map'                            => [
             'singular' => 'Jjwg map',
             'plural'   => 'Jjwg maps',
         ],
-        'jjwg_marker'                     => [
+        'jjwg_marker'                         => [
             'singular' => 'Jjwg marker',
             'plural'   => 'Jjwg markers',
         ],
-        'scheduler'                       => [
+        'scheduler'                           => [
             'singular' => 'Scheduler',
             'plural'   => 'Schedulers',
         ],
-        'meeting'                         => [
+        'meeting'                             => [
             'singular' => 'Meeting',
             'plural'   => 'Meetings',
         ],
-        'outbound_email'                  => [
+        'outbound_email'                      => [
             'singular' => 'Outbound email',
             'plural'   => 'Outbound emails',
         ],
-        'project'                         => [
+        'project'                             => [
             'singular' => 'Project',
             'plural'   => 'Projects',
         ],
-        'project_task'                    => [
+        'project_task'                        => [
             'singular' => 'Project task',
             'plural'   => 'Project tasks',
         ],
-        'release'                         => [
+        'release'                             => [
             'singular' => 'Release',
             'plural'   => 'Releases',
         ],
-        'saved_search'                    => [
+        'saved_search'                        => [
             'singular' => 'Saved search',
             'plural'   => 'Saved searches',
         ],
-        'securitygroup'                   => [
+        'securitygroup'                       => [
             'singular' => 'Securitygroup',
             'plural'   => 'Securitygroups',
         ],
-        'spot'                            => [
+        'spot'                                => [
             'singular' => 'Spot',
             'plural'   => 'Spots',
         ],
-        'templatesectionline'             => [
+        'templatesectionline'                 => [
             'singular' => 'Templatesectionline',
             'plural'   => 'Templatesectionlines',
         ],
-        'user_preference'                 => [
+        'user_preference'                     => [
             'singular' => 'User preference',
             'plural'   => 'User preferences',
         ],
-        'users_signature'                 => [
+        'users_signature'                     => [
             'singular' => 'Users signature',
             'plural'   => 'Users signatures',
         ],
-        'account'                         => [
+        'account'                             => [
             'singular' => 'Account',
             'plural'   => 'Accounts',
         ],
-        'reminder'                        => [
+        'reminder'                            => [
             'singular' => 'Reminder',
             'plural'   => 'Reminders',
         ],
-        'am_projecttemplate'              => [
+        'am_projecttemplate'                  => [
             'singular' => 'Project Template',
             'plural'   => 'Project Templates',
         ],
-        'am_tasktemplate'                 => [
+        'am_tasktemplate'                     => [
             'singular' => 'Task Template',
             'plural'   => 'Task Templates',
         ],
-        'aobh_businesshour'               => [
+        'aobh_businesshour'                   => [
             'singular' => 'Business hour',
             'plural'   => 'Business hours',
         ],
-        'aod_index'                       => [
+        'aod_index'                           => [
             'singular' => 'Aod index',
             'plural'   => 'Aod indexes',
         ],
-        'aok_knowledgebase_base_category' => [
+        'aok_knowledgebase_base_category'     => [
             'singular' => 'Knowledgebase base category',
             'plural'   => 'Knowledgebase base categories',
         ],
-        'aok_knowledgebase'               => [
+        'aok_knowledgebase'                   => [
             'singular' => 'Knowledgebase',
             'plural'   => 'Knowledgebases',
         ],
-        'aor_report'                      => [
+        'aor_report'                          => [
             'singular' => 'Report',
             'plural'   => 'Reports',
         ],
-        'eapm'                            => [
+        'eapm'                                => [
             'singular' => 'EAPM',
             'plural'   => 'EAPMs',
         ],
-        'alert'                           => [
+        'alert'                               => [
             'singular' => 'Alert',
             'plural'   => 'Alerts',
         ],
-        'reminders_invitee'               => [
+        'reminders_invitee'                   => [
             'singular' => 'Reminders invitee',
             'plural'   => 'Reminders invitees',
         ],
-        'alert'                           => [
+        'alert'                               => [
             'singular' => 'Alert',
             'plural'   => 'Alerts',
         ],
-        'account'                         => [
+        'account'                             => [
             'singular' => 'Account',
             'plural'   => 'Accounts',
         ],
-        'campaign'                        => [
+        'campaign'                            => [
             'singular' => 'Campaign',
             'plural'   => 'Campaigns',
         ],
-        'case'                            => [
+        'case'                                => [
             'singular' => 'Case',
             'plural'   => 'Cases',
         ],
-        'accounts_case'                   => [
+        'accounts_case'                       => [
             'singular' => 'Accounts case',
             'plural'   => 'Accounts cases',
         ],
-        'accounts_bug'                    => [
+        'accounts_bug'                        => [
             'singular' => 'Accounts bug',
             'plural'   => 'Accounts bugs',
         ],
-        'cases_bug'                       => [
+        'cases_bug'                           => [
             'singular' => 'Cases bug',
             'plural'   => 'Cases bugs',
         ],
-        'contact'                         => [
+        'contact'                             => [
             'singular' => 'Contact',
             'plural'   => 'Contacts',
         ],
-        'accounts_contact'                => [
+        'accounts_contact'                    => [
             'singular' => 'Accounts contact',
             'plural'   => 'Accounts contacts',
         ],
-        'contacts_case'                   => [
+        'contacts_case'                       => [
             'singular' => 'Contacts case',
             'plural'   => 'Contacts cases',
         ],
-        'opportunity'                     => [
+        'opportunity'                         => [
             'singular' => 'Opportunity',
             'plural'   => 'Opportunities',
         ],
-        'accounts_opportunity'            => [
+        'accounts_opportunity'                => [
             'singular' => 'Accounts opportunity',
             'plural'   => 'Accounts opportunities',
         ],
-        'aop_case_update'                 => [
+        'aop_case_update'                     => [
             'singular' => 'Aop case update',
             'plural'   => 'Aop case updates',
         ],
-        'contacts_bug'                    => [
+        'contacts_bug'                        => [
             'singular' => 'Contacts bug',
             'plural'   => 'Contacts bugs',
         ],
-        'acl_roles_action'                => [
+        'acl_roles_action'                    => [
             'singular' => 'Acl roles action',
             'plural'   => 'Acl roles actions',
         ],
-        'acl_roles_user'                  => [
+        'acl_roles_user'                      => [
             'singular' => 'Acl roles user',
             'plural'   => 'Acl roles users',
         ],
-        'aok_knowledgebase_category'      => [
+        'aok_knowledgebase_category'          => [
             'singular' => 'Aok knowledgebase category',
             'plural'   => 'Aok knowledgebase categories',
         ],
-        'aop_case_event'                  => [
+        'aop_case_event'                      => [
             'singular' => 'Aop case event',
             'plural'   => 'Aop case events',
         ],
-        'aor_chart'                       => [
+        'aor_chart'                           => [
             'singular' => 'Aor chart',
             'plural'   => 'Aor charts',
         ],
-        'aor_condition'                   => [
+        'aor_condition'                       => [
             'singular' => 'Aor condition',
             'plural'   => 'Aor conditions',
         ],
-        'aor_field'                       => [
+        'aor_field'                           => [
             'singular' => 'Aor field',
             'plural'   => 'Aor fields',
         ],
-        'aor_scheduled_report'            => [
+        'aor_scheduled_report'                => [
             'singular' => 'Aor scheduled report',
             'plural'   => 'Aor scheduled reports',
         ],
-        'aos_contract'                    => [
+        'aos_contract'                        => [
             'singular' => 'Aos contract',
             'plural'   => 'Aos contracts',
         ],
-        'calls_reschedule'                => [
+        'calls_reschedule'                    => [
             'singular' => 'Calls reschedule',
             'plural'   => 'Calls reschedule',
         ],
-        'documents_opportunity'           => [
+        'documents_opportunity'               => [
             'singular' => 'Documents opportunity',
             'plural'   => 'Documents opportunities',
         ],
-        'documents_contact'               => [
+        'documents_contact'                   => [
             'singular' => 'Documents contact',
             'plural'   => 'Documents contacts',
         ],
-        'document_revision'               => [
+        'document_revision'                   => [
             'singular' => 'Document revision',
             'plural'   => 'Document revisions',
         ],
-        'documents_case'                  => [
+        'documents_case'                      => [
             'singular' => 'Documents case',
             'plural'   => 'Documents cases',
         ],
-        'documents_bug'                   => [
+        'documents_bug'                       => [
             'singular' => 'Documents bug',
             'plural'   => 'Documents bugs',
         ],
-        'documents_account'               => [
+        'documents_account'                   => [
             'singular' => 'Documents account',
             'plural'   => 'Documents accounts',
         ],
-        'aos_contracts_document'          => [
+        'aos_contracts_document'              => [
             'singular' => 'Aos contracts document',
             'plural'   => 'Aos contracts documents',
         ],
-        'aos_invoice'                     => [
+        'aos_invoice'                         => [
             'singular' => 'Aos invoice',
             'plural'   => 'Aos invoices',
         ],
-        'aos_line_item_group'             => [
+        'aos_line_item_group'                 => [
             'singular' => 'Aos line item group',
             'plural'   => 'Aos line item groups',
         ],
-        'aos_product'                     => [
+        'aos_product'                         => [
             'singular' => 'Aos product',
             'plural'   => 'Aos products',
         ],
-        'aos_products_quote'              => [
+        'aos_products_quote'                  => [
             'singular' => 'Aos products quote',
             'plural'   => 'Aos products quotes',
         ],
-        'aos_quote'                       => [
+        'aos_quote'                           => [
             'singular' => 'Aos quote',
             'plural'   => 'Aos quotes',
         ],
-        'aow_action'                      => [
+        'aow_action'                          => [
             'singular' => 'Aow action',
             'plural'   => 'Aow actions',
         ],
-        'aow_condition'                   => [
+        'aow_condition'                       => [
             'singular' => 'Aow condition',
             'plural'   => 'Aow conditions',
         ],
-        'aow_processed'                   => [
+        'aow_processed'                       => [
             'singular' => 'Aow processed',
             'plural'   => 'Aow processed',
         ],
-        'aow_processed_aow_action'        => [
+        'aow_processed_aow_action'            => [
             'singular' => 'Aow processed aow action',
             'plural'   => 'Aow processed aow actions',
         ],
-        'calls_contact'                   => [
+        'calls_contact'                       => [
             'singular' => 'Calls contact',
             'plural'   => 'Calls contacts',
         ],
-        'lead'                            => [
+        'lead'                                => [
             'singular' => 'Lead',
             'plural'   => 'Leads',
         ],
-        'calls_lead'                      => [
+        'calls_lead'                          => [
             'singular' => 'Calls lead',
             'plural'   => 'Calls leads',
         ],
-        'calls_user'                      => [
+        'calls_user'                          => [
             'singular' => 'Calls user',
             'plural'   => 'Calls users',
         ],
-        'campaign_trkr'                   => [
+        'campaign_trkr'                       => [
             'singular' => 'Campaign trkr',
             'plural'   => 'Campaign trkrs',
         ],
-        'prospect'                        => [
+        'prospect'                            => [
             'singular' => 'Prospect',
             'plural'   => 'Prospects',
         ],
-        'campaign_log'                    => [
+        'campaign_log'                        => [
             'singular' => 'Campaign log',
             'plural'   => 'Campaign log',
         ],
-        'contacts_user'                   => [
+        'contacts_user'                       => [
             'singular' => 'Contacts user',
             'plural'   => 'Contacts users',
         ],
-        'email_marketing'                 => [
+        'email_marketing'                     => [
             'singular' => 'Email marketing',
             'plural'   => 'Email marketing',
         ],
-        'email_marketing_prospect_list'   => [
+        'email_marketing_prospect_list'       => [
             'singular' => 'Email marketing prospect list',
             'plural'   => 'Email marketing prospect lists',
         ],
-        'emailman'                        => [
+        'emailman'                            => [
             'singular' => 'Emailman',
             'plural'   => 'Emailmans',
         ],
-        'fp_event'                        => [
+        'fp_event'                            => [
             'singular' => 'Fp event',
             'plural'   => 'Fp events',
         ],
-        'job_queue'                       => [
+        'job_queue'                           => [
             'singular' => 'Job queue',
             'plural'   => 'Job queues',
         ],
-        'linked_document'                 => [
+        'linked_document'                     => [
             'singular' => 'Linked document',
             'plural'   => 'Linked documents',
         ],
-        'meetings_lead'                   => [
+        'meetings_lead'                       => [
             'singular' => 'Meetings lead',
             'plural'   => 'Meetings leads',
         ],
-        'meetings_contact'                => [
+        'meetings_contact'                    => [
             'singular' => 'Meetings contact',
             'plural'   => 'Meetings contacts',
         ],
-        'meetings_user'                   => [
+        'meetings_user'                       => [
             'singular' => 'Meetings user',
             'plural'   => 'Meetings users',
         ],
-        'note'                            => [
+        'note'                                => [
             'singular' => 'Note',
             'plural'   => 'Notes',
         ],
-        'oauth2token'                     => [
+        'oauth2token'                         => [
             'singular' => 'Oauth2token',
             'plural'   => 'Oauth2tokens',
         ],
-        'opportunities_contact'           => [
+        'opportunities_contact'               => [
             'singular' => 'Opportunities contact',
             'plural'   => 'Opportunities contacts',
         ],
-        'projects_account'                => [
+        'projects_account'                    => [
             'singular' => 'Projects account',
             'plural'   => 'Projects accounts',
         ],
-        'projects_bug'                    => [
+        'projects_bug'                        => [
             'singular' => 'Projects bug',
             'plural'   => 'Projects bugs',
         ],
-        'projects_case'                   => [
+        'projects_case'                       => [
             'singular' => 'Projects case',
             'plural'   => 'Projects cases',
         ],
-        'projects_contact'                => [
+        'projects_contact'                    => [
             'singular' => 'Projects contact',
             'plural'   => 'Projects contacts',
         ],
-        'projects_opportunity'            => [
+        'projects_opportunity'                => [
             'singular' => 'Projects opportunity',
             'plural'   => 'Projects opportunities',
         ],
-        'projects_product'                => [
+        'projects_product'                    => [
             'singular' => 'Projects product',
             'plural'   => 'Projects products',
         ],
-        'prospect_list_campaign'          => [
+        'prospect_list_campaign'              => [
             'singular' => 'Prospect list campaign',
             'plural'   => 'Prospect list campaigns',
         ],
-        'prospect_lists_prospect'         => [
+        'prospect_lists_prospect'             => [
             'singular' => 'Prospect lists prospect',
             'plural'   => 'Prospect lists prospects',
         ],
-        'roles_module'                    => [
+        'roles_module'                        => [
             'singular' => 'Roles module',
             'plural'   => 'Roles modules',
         ],
-        'securitygroups_user'             => [
+        'securitygroups_user'                 => [
             'singular' => 'Securitygroups user',
             'plural'   => 'Securitygroups users',
         ],
-        'securitygroups_default'          => [
+        'securitygroups_default'              => [
             'singular' => 'Securitygroups default',
             'plural'   => 'Securitygroups defaults',
         ],
-        'securitygroups_acl_role'         => [
+        'securitygroups_acl_role'             => [
             'singular' => 'Securitygroups acl role',
             'plural'   => 'Securitygroups acl roles',
         ],
-        'surveyquestion'                  => [
+        'surveyquestion'                      => [
             'singular' => 'Surveyquestion',
             'plural'   => 'Surveyquestions',
         ],
-        'surveyquestionoption'            => [
+        'surveyquestionoption'                => [
             'singular' => 'Surveyquestionoption',
             'plural'   => 'Surveyquestionoptions',
         ],
-        'surveyresponse'                  => [
+        'surveyresponse'                      => [
             'singular' => 'Surveyresponse',
             'plural'   => 'Surveyresponses',
         ],
-        'surveyquestionresponse'          => [
+        'surveyquestionresponse'              => [
             'singular' => 'Surveyquestionresponse',
             'plural'   => 'Surveyquestionresponses',
         ],
-        'task'                            => [
+        'task'                                => [
             'singular' => 'Task',
             'plural'   => 'Tasks',
         ],
-        'sugarfeed'                       => [
+        'sugarfeed'                           => [
             'singular' => 'Sugarfeed',
             'plural'   => 'Sugarfeeds',
         ],
-        'users_feed'                      => [
+        'users_feed'                          => [
             'singular' => 'Users feed',
             'plural'   => 'Users feeds',
         ],
-        'users_last_import'               => [
+        'users_last_import'                   => [
             'singular' => 'Users last import',
             'plural'   => 'Users last import',
         ],
-        'aod_indexevent'                  => [
+        'aod_indexevent'                      => [
             'singular' => 'Aod indexevent',
             'plural'   => 'Aod indexevent',
         ],
-        'securitygroups_record'           => [
+        'securitygroups_record'               => [
             'singular' => 'Securitygroups record',
             'plural'   => 'Securitygroups records',
         ],
-        'custom_field'                    => [
+        'custom_field'                        => [
             'singular' => 'Custom field',
             'plural'   => 'Custom fields',
         ],
-        'emails_bean'                     => [
+        'emails_bean'                         => [
             'singular' => 'Emails bean',
             'plural'   => 'Emails beans',
         ],
-        'tracker'                         => [
+        'tracker'                             => [
             'singular' => 'Tracker',
             'plural'   => 'Trackers',
         ],
-        'email_address'                   => [
+        'email_address'                       => [
             'singular' => 'Email Address',
             'plural'   => 'Email Addresses',
+        ],
+        'accounts_audit'                      => [
+            'singular' => 'Accounts audit',
+            'plural'   => 'Accounts audit',
+        ],
+        'am_projecttemplates_audit'           => [
+            'singular' => 'Am projecttemplates audit',
+            'plural'   => 'Am projecttemplates audit',
+        ],
+        'am_tasktemplates_audit'              => [
+            'singular' => 'Am tasktemplates audit',
+            'plural'   => 'Am tasktemplates audit',
+        ],
+        'aod_index_audit'                     => [
+            'singular' => 'Aod index audit',
+            'plural'   => 'Aod index audit',
+        ],
+        'aod_indexevent_audit'                => [
+            'singular' => 'Aod indexevent audit',
+            'plural'   => 'Aod indexevent audit',
+        ],
+        'aok_knowledgebase_audit'             => [
+            'singular' => 'Aok knowledgebase audit',
+            'plural'   => 'Aok knowledgebase audit',
+        ],
+        'aok_knowledge_base_categories_audit' => [
+            'singular' => 'Aok knowledge base categories audit',
+            'plural'   => 'Aok knowledge base categories audit',
+        ],
+        'aop_case_events_audit'               => [
+            'singular' => 'Aop case events audit',
+            'plural'   => 'Aop case events audit',
+        ],
+        'aop_case_updates_audit'              => [
+            'singular' => 'Aop case updates audit',
+            'plural'   => 'Aop case updates audit',
+        ],
+        'aor_reports_audit'                   => [
+            'singular' => 'Aor reports audit',
+            'plural'   => 'Aor reports audit',
+        ],
+        'aos_contracts_audit'                 => [
+            'singular' => 'Aos contracts audit',
+            'plural'   => 'Aos contracts audit',
+        ],
+        'aos_invoices_audit'                  => [
+            'singular' => 'Aos invoices audit',
+            'plural'   => 'Aos invoices audit',
+        ],
+        'aos_line_item_groups_audit'          => [
+            'singular' => 'Aos line item groups audit',
+            'plural'   => 'Aos line item groups audit',
+        ],
+        'aos_pdf_templates_audit'             => [
+            'singular' => 'Aos pdf templates audit',
+            'plural'   => 'Aos pdf templates audit',
+        ],
+        'aos_product_categories_audit'        => [
+            'singular' => 'Aos product categories audit',
+            'plural'   => 'Aos product categories audit',
+        ],
+        'aos_products_audit'                  => [
+            'singular' => 'Aos products audit',
+            'plural'   => 'Aos products audit',
+        ],
+        'aos_products_quotes_audit'           => [
+            'singular' => 'Aos products quotes audit',
+            'plural'   => 'Aos products quotes audit',
+        ],
+        'aos_quotes_audit'                    => [
+            'singular' => 'Aos quotes audit',
+            'plural'   => 'Aos quotes audit',
+        ],
+        'aow_workflow_audit'                  => [
+            'singular' => 'Aow workflow audit',
+            'plural'   => 'Aow workflow audit',
+        ],
+        'bugs_audit'                          => [
+            'singular' => 'Bugs audit',
+            'plural'   => 'Bugs audit',
+        ],
+        'calls_reschedule_audit'              => [
+            'singular' => 'Calls reschedule audit',
+            'plural'   => 'Calls reschedule audit',
+        ],
+        'campaigns_audit'                     => [
+            'singular' => 'Campaigns audit',
+            'plural'   => 'Campaigns audit',
+        ],
+        'cases_audit'                         => [
+            'singular' => 'Cases audit',
+            'plural'   => 'Cases audit',
+        ],
+        'contacts_audit'                      => [
+            'singular' => 'Contacts audit',
+            'plural'   => 'Contacts audit',
+        ],
+        'email_addresses_audit'               => [
+            'singular' => 'Email addresses audit',
+            'plural'   => 'Email addresses audit',
+        ],
+        'fp_event_locations_audit'            => [
+            'singular' => 'Fp event locations audit',
+            'plural'   => 'Fp event locations audit',
+        ],
+        'fp_events_audit'                     => [
+            'singular' => 'Fp events audit',
+            'plural'   => 'Fp events audit',
+        ],
+        'jjwg_address_cache_audit'            => [
+            'singular' => 'Jjwg address cache audit',
+            'plural'   => 'Jjwg address cache audit',
+        ],
+        'jjwg_areas_audit'                    => [
+            'singular' => 'Jjwg areas audit',
+            'plural'   => 'Jjwg areas audit',
+        ],
+        'jjwg_markers_audit'                  => [
+            'singular' => 'Jjwg markers audit',
+            'plural'   => 'Jjwg markers audit',
+        ],
+        'leads_audit'                         => [
+            'singular' => 'Leads audit',
+            'plural'   => 'Leads audit',
+        ],
+        'opportunities_audit'                 => [
+            'singular' => 'Opportunities audit',
+            'plural'   => 'Opportunities audit',
+        ],
+        'outbound_email_audit'                => [
+            'singular' => 'Outbound email audit',
+            'plural'   => 'Outbound email audit',
+        ],
+        'project_task_audit'                  => [
+            'singular' => 'Project task audit',
+            'plural'   => 'Project task audit',
+        ],
+        'securitygroups_audit'                => [
+            'singular' => 'Securitygroups audit',
+            'plural'   => 'Securitygroups audit',
+        ],
+        'surveyquestionoptions_audit'         => [
+            'singular' => 'Surveyquestionoptions audit',
+            'plural'   => 'Surveyquestionoptions audit',
+        ],
+        'surveyquestionresponses_audit'       => [
+            'singular' => 'Surveyquestionresponses audit',
+            'plural'   => 'Surveyquestionresponses audit',
+        ],
+        'surveyquestions_audit'               => [
+            'singular' => 'Surveyquestions audit',
+            'plural'   => 'Surveyquestions audit',
+        ],
+        'surveyresponses_audit'               => [
+            'singular' => 'Surveyresponses audit',
+            'plural'   => 'Surveyresponses audit',
+        ],
+        'surveys_audit'                       => [
+            'singular' => 'Surveys audit',
+            'plural'   => 'Surveys audit',
         ]
     ],
     'menu_items'    => [
-        'crm'                               => 'CRM',
-        'sales'                             => 'Sales',
-        'marketing'                         => 'Marketing',
-        'support'                           => 'Support',
-        'activities'                        => 'Activities',
-        'collaboration'                     => 'Collaboration',
-        'all'                               => 'All',
-        'others'                            => 'Others',
-        'users'                             => 'Users',
-        'currencies'                        => 'Currencies',
-        'surveys'                           => 'Surveys',
-        'bugs'                              => 'Bugs',
-        'calls'                             => 'Calls',
-        'documents'                         => 'Documents',
-        'aos_pdf_templates'                 => 'Pdf templates',
-        'aos_product_categories'            => 'Product categories',
-        'aow_workflows'                     => 'Aow workflows',
-        'emails'                            => 'Emails',
-        'prospect_lists'                    => 'Prospect lists',
-        'inbound_emails'                    => 'Inbound emails',
-        'outbound_emails'                   => 'Outbound emails',
-        'email_templates'                   => 'Email templates',
-        'email_caches'                      => 'Email caches',
-        'favorites'                         => 'Favorites',
-        'folders'                           => 'Folders',
-        'fp_event_locations'                => 'Fp event locations',
-        'import_maps'                       => 'Import maps',
-        'jjwg_address_caches'               => 'Jjwg address caches',
-        'jjwg_areas'                        => 'Jjwg areas',
-        'jjwg_maps'                         => 'Jjwg maps',
-        'jjwg_markers'                      => 'Jjwg markers',
-        'schedulers'                        => 'Schedulers',
-        'meetings'                          => 'Meetings',
-        'projects'                          => 'Projects',
-        'project_tasks'                     => 'Project tasks',
-        'releases'                          => 'Releases',
-        'saved_searches'                    => 'Saved searches',
-        'securitygroups'                    => 'Securitygroups',
-        'spots'                             => 'Spots',
-        'templatesectionlines'              => 'Templatesectionlines',
-        'user_preferences'                  => 'User preferences',
-        'users_signatures'                  => 'Users signatures',
-        'accounts'                          => 'Accounts',
-        'reminders'                         => 'Reminders',
-        'am_projecttemplates'               => 'Project Templates',
-        'am_tasktemplates'                  => 'Task Templates',
-        'aobh_businesshours'                => 'Businesshours',
-        'aod_indexes'                       => 'Aod indexes',
-        'aok_knowledgebase_base_categories' => 'Knowledgebase base categories',
-        'aok_knowledgebases'                => 'Knowledgebases',
-        'aor_reports'                       => 'Reports',
-        'eapms'                             => 'EAPMs',
-        'alerts'                            => 'Alerts',
-        'reminders_invitees'                => 'Reminders invitees',
-        'campaigns'                         => 'Campaigns',
-        'cases'                             => 'Cases',
-        'accounts_cases'                    => 'Accounts cases',
-        'accounts_bugs'                     => 'Accounts bugs',
-        'cases_bugs'                        => 'Cases bugs',
-        'contacts'                          => 'Contacts',
-        'accounts_contacts'                 => 'Accounts contacts',
-        'contacts_cases'                    => 'Contacts cases',
-        'opportunities'                     => 'Opportunities',
-        'accounts_opportunities'            => 'Accounts opportunities',
-        'aop_case_updates'                  => 'Aop case updates',
-        'contacts_bugs'                     => 'Contacts bugs',
-        'acl_roles_actions'                 => 'Acl roles actions',
-        'acl_roles_users'                   => 'Acl roles users',
-        'aok_knowledgebase_categories'      => 'Aok knowledgebase categories',
-        'aop_case_events'                   => 'Aop case events',
-        'aor_charts'                        => 'Aor charts',
-        'aor_conditions'                    => 'Aor conditions',
-        'aor_fields'                        => 'Aor fields',
-        'aor_scheduled_reports'             => 'Aor scheduled reports',
-        'aos_contracts'                     => 'Aos contracts',
-        'calls_reschedules'                 => 'Calls reschedule',
-        'documents_opportunities'           => 'Documents opportunities',
-        'documents_contacts'                => 'Documents contacts',
-        'document_revisions'                => 'Document revisions',
-        'documents_cases'                   => 'Documents cases',
-        'documents_bugs'                    => 'Documents bugs',
-        'documents_accounts'                => 'Documents accounts',
-        'aos_contracts_documents'           => 'Aos contracts documents',
-        'aos_invoices'                      => 'Aos invoices',
-        'aos_line_item_groups'              => 'Aos line item groups',
-        'aos_products'                      => 'Aos products',
-        'aos_products_quotes'               => 'Aos products quotes',
-        'aos_quotes'                        => 'Aos quotes',
-        'aow_actions'                       => 'Aow actions',
-        'aow_conditions'                    => 'Aow conditions',
-        'aow_processed'                     => 'Aow processed',
-        'aow_processed_aow_actions'         => 'Aow processed aow actions',
-        'calls_contacts'                    => 'Calls contacts',
-        'leads'                             => 'Leads',
-        'calls_leads'                       => 'Calls leads',
-        'calls_users'                       => 'Calls users',
-        'campaign_trkrs'                    => 'Campaign trkrs',
-        'prospects'                         => 'Prospects',
-        'campaign_logs'                     => 'Campaign logs',
-        'contacts_users'                    => 'Contacts users',
-        'email_marketing'                   => 'Email marketing',
-        'email_marketing_prospect_lists'    => 'Email marketing prospect lists',
-        'emailmans'                         => 'Emailmans',
-        'fp_events'                         => 'Fp events',
-        'job_queues'                        => 'Job queue',
-        'linked_documents'                  => 'Linked documents',
-        'meetings_leads'                    => 'Meetings leads',
-        'meetings_contacts'                 => 'Meetings contacts',
-        'meetings_users'                    => 'Meetings users',
-        'notes'                             => 'Notes',
-        'oauth2tokens'                      => 'Oauth2tokens',
-        'opportunities_contacts'            => 'Opportunities contacts',
-        'projects_accounts'                 => 'Projects accounts',
-        'projects_bugs'                     => 'Projects bugs',
-        'projects_cases'                    => 'Projects cases',
-        'projects_contacts'                 => 'Projects contacts',
-        'projects_opportunities'            => 'Projects opportunities',
-        'projects_products'                 => 'Projects products',
-        'prospect_list_campaigns'           => 'Prospect list campaigns',
-        'prospect_lists_prospects'          => 'Prospect lists prospects',
-        'roles_modules'                     => 'Roles modules',
-        'securitygroups_users'              => 'Securitygroups users',
-        'securitygroups_default'            => 'Securitygroups default',
-        'securitygroups_acl_roles'          => 'Securitygroups acl roles',
-        'surveyquestions'                   => 'Surveyquestions',
-        'surveyquestionoptions'             => 'Surveyquestionoptions',
-        'surveyresponses'                   => 'Surveyresponses',
-        'surveyquestionresponses'           => 'Surveyquestionresponses',
-        'tasks'                             => 'Tasks',
-        'sugarfeeds'                        => 'Sugarfeeds',
-        'users_feeds'                       => 'Users feeds',
-        'users_last_imports'                => 'Users last imports',
-        'aod_indexevents'                   => 'Aod index events',
-        'securitygroups_records'            => 'Securitygroups records',
-        'custom_fields'                     => 'Custom fields',
-        'emails_beans'                      => 'Emails beans',
-        'trackers'                          => 'Trackers',
-        'email_addresses'                   => 'Email Addresses',
-        'crm_case'                          => 'Case',
-        'task'                              => 'Task',
-        'aos_quote'                         => 'Aos Quote',
-        'aos_invoice'                       => 'Aos Invoice',
+        'crm'                                 => 'CRM',
+        'sales'                               => 'Sales',
+        'marketing'                           => 'Marketing',
+        'support'                             => 'Support',
+        'activities'                          => 'Activities',
+        'collaboration'                       => 'Collaboration',
+        'all'                                 => 'All',
+        'others'                              => 'Others',
+        'users'                               => 'Users',
+        'currencies'                          => 'Currencies',
+        'surveys'                             => 'Surveys',
+        'bugs'                                => 'Bugs',
+        'calls'                               => 'Calls',
+        'documents'                           => 'Documents',
+        'aos_pdf_templates'                   => 'Pdf templates',
+        'aos_product_categories'              => 'Product categories',
+        'aow_workflows'                       => 'Aow workflows',
+        'emails'                              => 'Emails',
+        'prospect_lists'                      => 'Prospect lists',
+        'inbound_emails'                      => 'Inbound emails',
+        'outbound_emails'                     => 'Outbound emails',
+        'email_templates'                     => 'Email templates',
+        'email_caches'                        => 'Email caches',
+        'favorites'                           => 'Favorites',
+        'folders'                             => 'Folders',
+        'fp_event_locations'                  => 'Fp event locations',
+        'import_maps'                         => 'Import maps',
+        'jjwg_address_caches'                 => 'Jjwg address caches',
+        'jjwg_areas'                          => 'Jjwg areas',
+        'jjwg_maps'                           => 'Jjwg maps',
+        'jjwg_markers'                        => 'Jjwg markers',
+        'schedulers'                          => 'Schedulers',
+        'meetings'                            => 'Meetings',
+        'projects'                            => 'Projects',
+        'project_tasks'                       => 'Project tasks',
+        'releases'                            => 'Releases',
+        'saved_searches'                      => 'Saved searches',
+        'securitygroups'                      => 'Securitygroups',
+        'spots'                               => 'Spots',
+        'templatesectionlines'                => 'Templatesectionlines',
+        'user_preferences'                    => 'User preferences',
+        'users_signatures'                    => 'Users signatures',
+        'accounts'                            => 'Accounts',
+        'reminders'                           => 'Reminders',
+        'am_projecttemplates'                 => 'Project Templates',
+        'am_tasktemplates'                    => 'Task Templates',
+        'aobh_businesshours'                  => 'Businesshours',
+        'aod_indexes'                         => 'Aod indexes',
+        'aok_knowledgebase_base_categories'   => 'Knowledgebase base categories',
+        'aok_knowledgebases'                  => 'Knowledgebases',
+        'aor_reports'                         => 'Reports',
+        'eapms'                               => 'EAPMs',
+        'alerts'                              => 'Alerts',
+        'reminders_invitees'                  => 'Reminders invitees',
+        'campaigns'                           => 'Campaigns',
+        'cases'                               => 'Cases',
+        'accounts_cases'                      => 'Accounts cases',
+        'accounts_bugs'                       => 'Accounts bugs',
+        'cases_bugs'                          => 'Cases bugs',
+        'contacts'                            => 'Contacts',
+        'accounts_contacts'                   => 'Accounts contacts',
+        'contacts_cases'                      => 'Contacts cases',
+        'opportunities'                       => 'Opportunities',
+        'accounts_opportunities'              => 'Accounts opportunities',
+        'aop_case_updates'                    => 'Aop case updates',
+        'contacts_bugs'                       => 'Contacts bugs',
+        'acl_roles_actions'                   => 'Acl roles actions',
+        'acl_roles_users'                     => 'Acl roles users',
+        'aok_knowledgebase_categories'        => 'Aok knowledgebase categories',
+        'aop_case_events'                     => 'Aop case events',
+        'aor_charts'                          => 'Aor charts',
+        'aor_conditions'                      => 'Aor conditions',
+        'aor_fields'                          => 'Aor fields',
+        'aor_scheduled_reports'               => 'Aor scheduled reports',
+        'aos_contracts'                       => 'Aos contracts',
+        'calls_reschedules'                   => 'Calls reschedule',
+        'documents_opportunities'             => 'Documents opportunities',
+        'documents_contacts'                  => 'Documents contacts',
+        'document_revisions'                  => 'Document revisions',
+        'documents_cases'                     => 'Documents cases',
+        'documents_bugs'                      => 'Documents bugs',
+        'documents_accounts'                  => 'Documents accounts',
+        'aos_contracts_documents'             => 'Aos contracts documents',
+        'aos_invoices'                        => 'Aos invoices',
+        'aos_line_item_groups'                => 'Aos line item groups',
+        'aos_products'                        => 'Aos products',
+        'aos_products_quotes'                 => 'Aos products quotes',
+        'aos_quotes'                          => 'Aos quotes',
+        'aow_actions'                         => 'Aow actions',
+        'aow_conditions'                      => 'Aow conditions',
+        'aow_processed'                       => 'Aow processed',
+        'aow_processed_aow_actions'           => 'Aow processed aow actions',
+        'calls_contacts'                      => 'Calls contacts',
+        'leads'                               => 'Leads',
+        'calls_leads'                         => 'Calls leads',
+        'calls_users'                         => 'Calls users',
+        'campaign_trkrs'                      => 'Campaign trkrs',
+        'prospects'                           => 'Prospects',
+        'campaign_logs'                       => 'Campaign logs',
+        'contacts_users'                      => 'Contacts users',
+        'email_marketing'                     => 'Email marketing',
+        'email_marketing_prospect_lists'      => 'Email marketing prospect lists',
+        'emailmans'                           => 'Emailmans',
+        'fp_events'                           => 'Fp events',
+        'job_queues'                          => 'Job queue',
+        'linked_documents'                    => 'Linked documents',
+        'meetings_leads'                      => 'Meetings leads',
+        'meetings_contacts'                   => 'Meetings contacts',
+        'meetings_users'                      => 'Meetings users',
+        'notes'                               => 'Notes',
+        'oauth2tokens'                        => 'Oauth2tokens',
+        'opportunities_contacts'              => 'Opportunities contacts',
+        'projects_accounts'                   => 'Projects accounts',
+        'projects_bugs'                       => 'Projects bugs',
+        'projects_cases'                      => 'Projects cases',
+        'projects_contacts'                   => 'Projects contacts',
+        'projects_opportunities'              => 'Projects opportunities',
+        'projects_products'                   => 'Projects products',
+        'prospect_list_campaigns'             => 'Prospect list campaigns',
+        'prospect_lists_prospects'            => 'Prospect lists prospects',
+        'roles_modules'                       => 'Roles modules',
+        'securitygroups_users'                => 'Securitygroups users',
+        'securitygroups_default'              => 'Securitygroups default',
+        'securitygroups_acl_roles'            => 'Securitygroups acl roles',
+        'surveyquestions'                     => 'Surveyquestions',
+        'surveyquestionoptions'               => 'Surveyquestionoptions',
+        'surveyresponses'                     => 'Surveyresponses',
+        'surveyquestionresponses'             => 'Surveyquestionresponses',
+        'tasks'                               => 'Tasks',
+        'sugarfeeds'                          => 'Sugarfeeds',
+        'users_feeds'                         => 'Users feeds',
+        'users_last_imports'                  => 'Users last imports',
+        'aod_indexevents'                     => 'Aod index events',
+        'securitygroups_records'              => 'Securitygroups records',
+        'custom_fields'                       => 'Custom fields',
+        'emails_beans'                        => 'Emails beans',
+        'trackers'                            => 'Trackers',
+        'email_addresses'                     => 'Email Addresses',
+        'crm_case'                            => 'Case',
+        'task'                                => 'Task',
+        'aos_quote'                           => 'Aos Quote',
+        'aos_invoice'                         => 'Aos Invoice',
+        'accounts_audit'                      => 'Accounts audit',
+        'am_projecttemplates_audit'           => 'Am projecttemplates audit',
+        'am_tasktemplates_audit'              => 'Am tasktemplates audit',
+        'aod_index_audit'                     => 'Aod index audit',
+        'aod_indexevent_audit'                => 'Aod indexevent audit',
+        'aok_knowledgebase_audit'             => 'Aok knowledgebase audit',
+        'aok_knowledge_base_categories_audit' => 'Aok knowledge base categories audit',
+        'aop_case_events_audit'               => 'Aop case events audit',
+        'aop_case_updates_audit'              => 'Aop case updates audit',
+        'aor_reports_audit'                   => 'Aor reports audit',
+        'aos_contracts_audit'                 => 'Aos contracts audit',
+        'aos_invoices_audit'                  => 'Aos invoices audit',
+        'aos_line_item_groups_audit'          => 'Aos line item groups audit',
+        'aos_pdf_templates_audit'             => 'Aos pdf templates audit',
+        'aos_product_categories_audit'        => 'Aos product categories audit',
+        'aos_products_audit'                  => 'Aos products audit',
+        'aos_products_quotes_audit'           => 'Aos products quotes audit',
+        'aos_quotes_audit'                    => 'Aos quotes audit',
+        'aow_workflow_audit'                  => 'Aow workflow audit',
+        'bugs_audit'                          => 'Bugs audit',
+        'calls_reschedule_audit'              => 'Calls reschedule audit',
+        'campaigns_audit'                     => 'Campaigns audit',
+        'cases_audit'                         => 'Cases audit',
+        'contacts_audit'                      => 'Contacts audit',
+        'email_addresses_audit'               => 'Email addresses audit',
+        'fp_event_locations_audit'            => 'Fp event locations audit',
+        'fp_events_audit'                     => 'Fp events audit',
+        'jjwg_address_cache_audit'            => 'Jjwg address cache audit',
+        'jjwg_areas_audit'                    => 'Jjwg areas audit',
+        'jjwg_markers_audit'                  => 'Jjwg markers audit',
+        'leads_audit'                         => 'Leads audit',
+        'opportunities_audit'                 => 'Opportunities audit',
+        'outbound_email_audit'                => 'Outbound email audit',
+        'project_task_audit'                  => 'Project task audit',
+        'securitygroups_audit'                => 'Securitygroups audit',
+        'surveyquestionoptions_audit'         => 'Surveyquestionoptions audit',
+        'surveyquestionresponses_audit'       => 'Surveyquestionresponses audit',
+        'surveyquestions_audit'               => 'Surveyquestions audit',
+        'surveyresponses_audit'               => 'Surveyresponses audit',
+        'surveys_audit'                       => 'Surveys audit',
     ],
     'settings'      => [
         'user'                 => [

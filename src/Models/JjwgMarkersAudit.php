@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Joy\VoyagerCrm\Database\Factories\JjwgMarkersAuditFactory;
 
 /**
  * Class JjwgMarkersAudit
@@ -17,6 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $created_by
  * @property string|null $field_name
  * @property string|null $data_type
+ * @property string|null $request
  * @property string|null $before_value_string
  * @property string|null $after_value_string
  * @property string|null $before_value_text
@@ -29,7 +32,7 @@ class JjwgMarkersAudit extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
-    // use HasFactory;
+    use HasFactory;
 
     protected $table     = 'jjwg_markers_audit';
     public $incrementing = false;
@@ -49,9 +52,20 @@ class JjwgMarkersAudit extends Model
         'created_by_id',
         'field_name',
         'data_type',
+        'request',
         'before_value_string',
         'after_value_string',
         'before_value_text',
         'after_value_text'
     ];
+
+    /**
+    * Create a new factory instance for the model.
+    *
+    * @return \Illuminate\Database\Eloquent\Factories\Factory
+    */
+    protected static function newFactory()
+    {
+        return JjwgMarkersAuditFactory::new();
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 // if (! function_exists('joyVoyagerCrm')) {
 //     /**
 //      * Helper
@@ -9,3 +11,17 @@
 //         //
 //     }
 // }
+
+if (!function_exists('uniqFingerprint')) {
+    /**
+     * Helper
+     */
+    function uniqFingerprint()
+    {
+        if (app()->bound('request') && request()->route()) {
+            return request()->uniqFingerprint();
+        }
+
+        return sha1(Str::uuid());
+    }
+}

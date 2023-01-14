@@ -32,10 +32,12 @@ class JjwgAddressCache extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'jjwg_address_cache';
     public $incrementing = false;
+    protected $auditModel = JjwgAddressCacheAudit::class;
 
     protected $casts = [
         'lat' => 'float',

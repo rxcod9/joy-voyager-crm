@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $created_by
  * @property string|null $field_name
  * @property string|null $data_type
+ * @property string|null $request
  * @property string|null $before_value_string
  * @property string|null $after_value_string
  * @property string|null $before_value_text
@@ -49,6 +50,7 @@ class JjwgMapsAudit extends Model
         'created_by_id',
         'field_name',
         'data_type',
+        'request',
         'before_value_string',
         'after_value_string',
         'before_value_text',

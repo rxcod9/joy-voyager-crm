@@ -46,6 +46,7 @@ class AosLineItemGroup extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'aos_line_item_groups';

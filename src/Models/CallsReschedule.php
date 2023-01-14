@@ -32,10 +32,12 @@ class CallsReschedule extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'calls_reschedule';
     public $incrementing = false;
+    public $auditModel   = CallsRescheduleAudit::class;
 
     protected $dates = [
         'created_at',

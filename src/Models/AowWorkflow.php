@@ -36,10 +36,12 @@ class AowWorkflow extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'aow_workflow';
     public $incrementing = false;
+    public $auditModel   = AowWorkflowAudit::class;
 
     protected $casts = [
         'multiple_runs' => 'bool',

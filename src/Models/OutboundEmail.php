@@ -41,10 +41,12 @@ class OutboundEmail extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'outbound_email';
     public $incrementing = false;
+    protected $auditModel = OutboundEmailAudit::class;
 
     protected $casts = [
         'mail_smtpauth_req' => 'bool',

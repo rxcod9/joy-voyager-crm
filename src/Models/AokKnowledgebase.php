@@ -35,10 +35,12 @@ class AokKnowledgebase extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'aok_knowledgebase';
     public $incrementing = false;
+    public $auditModel   = AokKnowledgebaseAudit::class;
 
     protected $dates = [
         'created_at',

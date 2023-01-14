@@ -53,10 +53,12 @@ class ProjectTask extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
-    protected $table     = 'project_task';
-    public $incrementing = false;
+    protected $table      = 'project_task';
+    public $incrementing  = false;
+    protected $auditModel = ProjectTaskAudit::class;
 
     protected $casts = [
         'project_task_id'  => 'int',

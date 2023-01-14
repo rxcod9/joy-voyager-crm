@@ -34,10 +34,12 @@ class AodIndexevent extends Model
     use SoftDeletes;
     use Traits\Uuids;
     use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'aod_indexevent';
     public $incrementing = false;
+    public $auditModel   = AodIndexeventAudit::class;
 
     protected $casts = [
         'success' => 'bool'

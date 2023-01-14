@@ -30,10 +30,12 @@ class AokKnowledgebaseBaseCategory extends Model
     use SoftDeletes;
     use Traits\Uuids;
     // use Traits\CreatedModifiedBy;
+    use Traits\Auditable;
     use HasFactory;
 
     protected $table     = 'aok_knowledgebase_base_categories';
     public $incrementing = false;
+    public $auditModel   = AokKnowledgeBaseCategoriesAudit::class;
 
     protected $dates = [
         'created_at',
