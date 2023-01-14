@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.5 - 2023-01-14
+
+**Full Changelog**: https://github.com/rxcod9/joy-voyager-crm/compare/v2.0.4...v2.0.5
+
 ## v2.0.4 - 2023-01-13
 
 v2.0.4
