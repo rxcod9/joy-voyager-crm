@@ -5,10 +5,13 @@ declare(strict_types=1);
 namespace Joy\VoyagerCrm\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Joy\VoyagerCrm\Database\Factories\BugsAuditFactory;
+
+use Illuminate\Database\Eloquent\{
+    Factories\HasFactory,
+    Model,
+    SoftDeletes
+};
 
 /**
  * Class BugsAudit
@@ -53,6 +56,7 @@ class BugsAudit extends Model
         'field_name',
         'data_type',
         'request',
+        'step',
         'before_value_string',
         'after_value_string',
         'before_value_text',

@@ -792,6 +792,31 @@ class DataRowsTableSeeder extends Seeder
                 'order'        => ++$order,
             ])->save();
         }
+
+        $dataRow = $this->dataRow($dataType, 'account_hasmany_accounts_audit_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.accounts_audits'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'       => Voyager::modelClass('AccountsAudit'),
+                    'table'       => 'accounts_audit',
+                    'type'        => 'hasMany',
+                    'column'      => 'parent_id',
+                    'key'         => 'id',
+                    'label'       => 'id',
+                    'pivot_table' => 'accounts_audit',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
     }
 
     /**

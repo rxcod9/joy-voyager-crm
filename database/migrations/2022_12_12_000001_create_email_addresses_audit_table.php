@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -22,6 +21,7 @@ return new class extends Migration
             $table->string('field_name', 100)->nullable();
             $table->string('data_type', 100)->nullable();
             $table->string('request', 100)->nullable();
+            $table->unsignedInteger('step')->default(1)->nullable();
             $table->string('before_value_string')->nullable();
             $table->string('after_value_string')->nullable();
             $table->text('before_value_text')->nullable();

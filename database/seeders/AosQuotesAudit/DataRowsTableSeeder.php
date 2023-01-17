@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\AosQuotesAudit;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataRow;
 
 class DataRowsTableSeeder extends Seeder
 {
@@ -106,6 +105,21 @@ class DataRowsTableSeeder extends Seeder
             $dataRow->fill([
                 'type'         => 'text',
                 'display_name' => __('joy-voyager-crm::seeders.data_rows.request'),
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => ++$order,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'step');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.step'),
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,

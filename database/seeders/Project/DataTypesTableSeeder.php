@@ -22,8 +22,10 @@ class DataTypesTableSeeder extends Seeder
                 'model_name'            => Voyager::modelClass('Project'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\ProjectPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',
-                'generate_permissions' => 1,
-                'description'          => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+                'order_column'          => 'created_at',
+                'order_direction'       => 'desc',
             ])->save();
         }
     }

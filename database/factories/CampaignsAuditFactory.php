@@ -24,6 +24,8 @@ class CampaignsAuditFactory extends Factory
         return [
             'field_name'          => null,
             'data_type'           => null,
+            'request'             => null,
+            'step'                => null,
             'before_value_string' => null,
             'after_value_string'  => null,
             'before_value_text'   => null,

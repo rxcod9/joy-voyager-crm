@@ -4,7 +4,6 @@ namespace Joy\VoyagerCrm\Database\Seeders\Surveyquestion;
 
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Models\DataType;
 
 class DataTypesTableSeeder extends Seeder
 {
@@ -23,8 +22,10 @@ class DataTypesTableSeeder extends Seeder
                 'model_name'            => Voyager::modelClass('Surveyquestion'),
                 // 'policy_name'           => 'Joy\\VoyagerCrm\\Policies\\SurveyquestionPolicy',
                 // 'controller'            => 'Joy\\VoyagerCrm\\Http\\Controllers\\VoyagerCrmController',
-                'generate_permissions' => 1,
-                'description'          => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+                'order_column'          => 'created_at',
+                'order_direction'       => 'desc',
             ])->save();
         }
     }

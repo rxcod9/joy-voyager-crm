@@ -624,6 +624,7 @@ return [
         'before_value_text'                => 'Before value text',
         'after_value_text'                 => 'After value text',
         'request'                          => 'Request',
+        'step'                             => 'Step',
     ],
     'data_types'    => [
         'user'                                => [

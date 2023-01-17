@@ -4,11 +4,74 @@ declare(strict_types=1);
 
 namespace Joy\VoyagerCrm\Models\Traits;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
+use Illuminate\Support\{
+    Arr,
+    Str
+};
 
 trait Auditable
 {
+    /**
+     * The event isAuditable instance.
+     *
+     * @var bool
+     */
+    protected static $isAuditable = true;
+
+    /**
+     * Get the event isAuditable instance.
+     *
+     * @return bool
+     */
+    public static function getIsAuditable()
+    {
+        return static::$isAuditable;
+    }
+
+    /**
+     * Set the event isAuditable instance.
+     *
+     * @param  bool $isAuditable
+     * @return void
+     */
+    public static function setIsAuditable(bool $isAuditable)
+    {
+        static::$isAuditable = $isAuditable;
+    }
+
+    /**
+     * Unset the event isAuditable for models.
+     *
+     * @return void
+     */
+    public static function unsetIsAuditable()
+    {
+        static::$isAuditable = null;
+    }
+
+    /**
+     * Execute a callback without auditable.
+     *
+     * @param  callable $callback
+     * @return mixed
+     */
+    public static function withoutAuditable(callable $callback)
+    {
+        $isAuditable = static::getIsAuditable();
+
+        if (!is_null($isAuditable)) {
+            static::setIsAuditable(false);
+        }
+
+        try {
+            return $callback();
+        } finally {
+            if (!is_null($isAuditable)) {
+                static::setIsAuditable($isAuditable);
+            }
+        }
+    }
+
     /**
      * Get the auditModel associated with the model.
      *
@@ -44,12 +107,16 @@ trait Auditable
     {
         // Creating audit log on when bean is created
         static::created(function ($model) {
-            $request = uniqFingerprint();
+            if (!static::getIsAuditable()) {
+                return;
+            }
 
             $auditModel = $model->getAuditModel();
             if (!$auditModel) {
                 return;
             }
+
+            $request = uniqFingerprint();
 
             $attributes = Arr::except($model->getAttributes(), ['created_at', 'updated_at']);
 
@@ -63,6 +130,7 @@ trait Auditable
                 $log->parent_id  = $model->getKey();
                 $log->field_name = $attribute;
                 $log->data_type  = gettype($newValue);
+                $log->step       = 1;
                 $log->request    = $request;
 
                 if (
@@ -81,14 +149,20 @@ trait Auditable
 
         // Creating audit log on when bean is updated
         static::updated(function ($model) {
-            $request = uniqFingerprint();
+            if (!static::getIsAuditable()) {
+                return;
+            }
 
             $auditModel = $model->getAuditModel();
             if (!$auditModel) {
                 return;
             }
 
+            $request = uniqFingerprint();
+
             $changes = Arr::except($model->getChanges(), 'updated_at');
+
+            $lastStep = ((new $auditModel)::whereParentId($model->getKey())->max('step') ?? 0);
 
             foreach ($changes as $attribute => $newValue) {
                 $originalValue = $model->getOriginal($attribute);
@@ -100,6 +174,7 @@ trait Auditable
                 $log->parent_id  = $model->getKey();
                 $log->field_name = $attribute;
                 $log->data_type  = gettype($newValue);
+                $log->step       = $lastStep + 1;
                 $log->request    = $request;
 
                 if (
