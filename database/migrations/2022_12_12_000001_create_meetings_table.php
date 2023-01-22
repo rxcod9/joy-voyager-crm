@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->string('location', 50)->nullable();
             $table->string('password', 50)->nullable();
             $table->string('join_url', 200)->nullable();
@@ -51,7 +51,7 @@ return new class extends Migration {
             $table->integer('gsync_lastsync')->nullable();
 
             $table->index(['parent_id', 'parent_type', 'deleted_at'], 'idx_meet_par_del');
-            $table->index(['assigned_user_id', 'status', 'deleted_at'], 'idx_meet_stat_del');
+            $table->index(['assigned_to_id', 'status', 'deleted_at'], 'idx_meet_stat_del');
             $table->timestamps();
             $table->softDeletes();
         });

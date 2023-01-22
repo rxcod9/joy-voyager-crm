@@ -16,9 +16,9 @@ return new class extends Migration {
             $table->comment('');
             $table->uuid('id')->primary();
             $table->uuid('folder_id');
-            $table->uuid('assigned_user_id');
+            $table->uuid('assigned_to_id');
 
-            $table->index(['folder_id', 'assigned_user_id'], 'idx_folder_id_assigned_user_id');
+            $table->index(['folder_id', 'assigned_to_id'], 'idx_folder_id_assigned_to_id');
             $table->timestamps();
             $table->softDeletes();
         });

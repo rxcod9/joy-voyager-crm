@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->integer('case_number')->index('case_number');
             $table->string('type')->nullable();
             $table->string('status', 100)->nullable();
@@ -31,7 +31,7 @@ return new class extends Migration {
             $table->uuid('contact_created_by_id')->nullable();
 
             $table->unique(['case_number'], 'casesnumk');
-            $table->index(['assigned_user_id', 'status', 'deleted_at'], 'idx_cases_stat_del');
+            $table->index(['assigned_to_id', 'status', 'deleted_at'], 'idx_cases_stat_del');
             $table->timestamps();
             $table->softDeletes();
         });

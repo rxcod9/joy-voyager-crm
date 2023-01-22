@@ -20,7 +20,7 @@ return new class extends Migration
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->string('account_type', 50)->nullable();
             $table->string('industry', 50)->nullable();
             $table->string('annual_revenue', 100)->nullable();
@@ -48,7 +48,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['deleted_at', 'assigned_user_id'], 'idx_accnt_assigned_del');
+            $table->index(['deleted_at', 'assigned_to_id'], 'idx_accnt_assigned_del');
             $table->index(['id', 'deleted_at'], 'idx_accnt_id_del');
             $table->index(['name', 'deleted_at'], 'idx_accnt_name_del');
         });

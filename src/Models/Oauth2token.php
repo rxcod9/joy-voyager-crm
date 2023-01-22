@@ -28,7 +28,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $grant_type
  * @property string|null $state
  * @property string|null $client
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  *
  * @package Joy\VoyagerCrm\Models
  */
@@ -76,6 +76,6 @@ class Oauth2token extends Model
         'grant_type',
         'state',
         'client',
-        'assigned_user_id'
+        'assigned_to_id'
     ];
 }

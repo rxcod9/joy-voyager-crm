@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $is_published
  *
  * @package Joy\VoyagerCrm\Models
@@ -62,7 +62,7 @@ class ImportMap extends Model
         'content',
         'default_values',
         'has_header',
-        'assigned_user_id',
+        'assigned_to_id',
         'is_published'
     ];
 

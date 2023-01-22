@@ -13,7 +13,7 @@ use Joy\VoyagerCrm\Database\Factories\JobQueueFactory;
 /**
  * Class JobQueue
  *
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string      $id
  * @property string|null $name
  * @property Carbon|null $deleted_at
@@ -63,7 +63,7 @@ class JobQueue extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'assigned_user_id',
+        'assigned_to_id',
         'name',
         'scheduler_id',
         'execute_time',

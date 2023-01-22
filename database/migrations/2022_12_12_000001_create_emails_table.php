@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->string('name')->nullable()->index('idx_email_name');
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->boolean('orphaned')->nullable();
             $table->dateTime('last_synced')->nullable();
             $table->dateTime('date_sent_received')->nullable();
@@ -34,7 +34,7 @@ return new class extends Migration {
             $table->string('uid')->nullable()->index('idx_email_uid');
             $table->string('category_id', 100)->nullable()->index('idx_email_cat');
 
-            $table->index(['assigned_user_id', 'type', 'status'], 'idx_email_assigned');
+            $table->index(['assigned_to_id', 'type', 'status'], 'idx_email_assigned');
             $table->timestamps();
             $table->softDeletes();
         });

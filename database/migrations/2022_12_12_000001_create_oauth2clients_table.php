@@ -27,7 +27,7 @@ return new class extends Migration
             $table->integer('duration_value')->nullable();
             $table->integer('duration_amount')->nullable();
             $table->string('duration_unit')->nullable()->default('Duration Unit');
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

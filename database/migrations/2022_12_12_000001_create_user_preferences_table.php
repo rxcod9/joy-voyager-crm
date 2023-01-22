@@ -16,10 +16,10 @@ return new class extends Migration {
             $table->comment('');
             $table->uuid('id')->primary();
             $table->string('category', 50)->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->longText('contents')->nullable();
 
-            $table->index(['assigned_user_id', 'category'], 'idx_userprefnamecat');
+            $table->index(['assigned_to_id', 'category'], 'idx_userprefnamecat');
             $table->timestamps();
             $table->softDeletes();
         });

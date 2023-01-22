@@ -21,7 +21,7 @@ use Joy\VoyagerCrm\Database\Factories\TaskFactory;
  * @property string|null $created_by
  * @property string|null $description
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $status
  * @property bool|null   $date_due_flag
  * @property Carbon|null $date_due
@@ -65,7 +65,7 @@ class Task extends Model
         'modified_by_id',
         'created_by_id',
         'description',
-        'assigned_user_id',
+        'assigned_to_id',
         'status',
         'date_due_flag',
         'date_due',

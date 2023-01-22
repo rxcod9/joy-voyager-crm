@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable()->index('idx_opp_assigned');
+            $table->uuid('assigned_to_id')->nullable()->index('idx_opp_assigned');
             $table->string('opportunity_type')->nullable();
             $table->uuid('campaign_id')->nullable();
             $table->string('lead_source', 50)->nullable();

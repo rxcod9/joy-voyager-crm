@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable()->index('idx_lead_assigned');
+            $table->uuid('assigned_to_id')->nullable()->index('idx_lead_assigned');
             $table->string('salutation')->nullable();
             $table->string('first_name', 100)->nullable();
             $table->string('last_name', 100)->nullable();
@@ -70,7 +70,7 @@ return new class extends Migration {
             $table->index(['last_name', 'status', 'deleted_at', 'first_name'], 'idx_lead_del_stat');
             $table->index(['id', 'deleted_at'], 'idx_leads_id_del');
             $table->index(['last_name', 'first_name', 'deleted_at'], 'idx_lead_last_first');
-            $table->index(['deleted_at', 'assigned_user_id'], 'idx_del_user');
+            $table->index(['deleted_at', 'assigned_to_id'], 'idx_del_user');
             $table->index(['account_id', 'deleted_at'], 'idx_leads_acct_del');
             $table->index(['opportunity_id', 'deleted_at'], 'idx_lead_opp_del');
             $table->timestamps();

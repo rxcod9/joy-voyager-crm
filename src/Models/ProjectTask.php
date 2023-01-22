@@ -34,7 +34,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $date_due
  * @property Carbon|null $time_due
  * @property int|null    $parent_task_id
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $modified_by_id
  * @property string|null $priority
  * @property string|null $created_by
@@ -108,7 +108,7 @@ class ProjectTask extends Model
         'date_due',
         'time_due',
         'parent_task_id',
-        'assigned_user_id',
+        'assigned_to_id',
         'modified_by_id',
         'created_by_id',
         'priority',

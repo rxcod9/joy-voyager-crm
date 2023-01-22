@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('job_queue', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->uuid('id')->primary();
             $table->string('name')->nullable();
             $table->uuid('scheduler_id')->nullable();

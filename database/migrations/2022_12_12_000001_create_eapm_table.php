@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->string('password')->nullable();
             $table->string('url')->nullable();
             $table->string('application', 100)->nullable()->default('webex');
@@ -30,7 +30,7 @@ return new class extends Migration {
             $table->string('oauth_secret')->nullable();
             $table->boolean('validated')->nullable();
 
-            $table->index(['assigned_user_id', 'application', 'validated'], 'idx_app_active');
+            $table->index(['assigned_to_id', 'application', 'validated'], 'idx_app_active');
             $table->timestamps();
             $table->softDeletes();
         });

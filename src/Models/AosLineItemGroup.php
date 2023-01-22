@@ -21,7 +21,7 @@ use Joy\VoyagerCrm\Database\Factories\AosLineItemGroupFactory;
  * @property string|null $created_by
  * @property string|null $description
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property float|null  $total_amt
  * @property float|null  $total_amt_usdollar
  * @property float|null  $discount_amount
@@ -82,7 +82,7 @@ class AosLineItemGroup extends Model
         'modified_by_id',
         'created_by_id',
         'description',
-        'assigned_user_id',
+        'assigned_to_id',
         'total_amt',
         'total_amt_usdollar',
         'discount_amount',

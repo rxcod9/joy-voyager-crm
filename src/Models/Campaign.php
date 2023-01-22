@@ -20,7 +20,7 @@ use Joy\VoyagerCrm\Database\Factories\CampaignFactory;
  * @property string|null $modified_by_id
  * @property string|null $created_by
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property int         $tracker_key
  * @property int|null    $tracker_count
  * @property string|null $refer_url
@@ -78,7 +78,7 @@ class Campaign extends Model
         'name',
         'modified_by_id',
         'created_by_id',
-        'assigned_user_id',
+        'assigned_to_id',
         'tracker_key',
         'tracker_count',
         'refer_url',

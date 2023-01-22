@@ -20,7 +20,7 @@ use Joy\VoyagerCrm\Database\Factories\EmailFactory;
  * @property string|null $modified_by_id
  * @property string|null $created_by
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property bool|null   $orphaned
  * @property Carbon|null $last_synced
  * @property Carbon|null $date_sent_received
@@ -69,7 +69,7 @@ class Email extends Model
         'name',
         'modified_by_id',
         'created_by_id',
-        'assigned_user_id',
+        'assigned_to_id',
         'orphaned',
         'last_synced',
         'date_sent_received',

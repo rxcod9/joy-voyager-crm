@@ -20,7 +20,7 @@ return new class extends Migration
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable()->index('idx_task_assigned');
+            $table->uuid('assigned_to_id')->nullable()->index('idx_task_assigned');
             $table->string('status', 100)->nullable()->default('Not Started')->index('idx_task_status');
             $table->boolean('date_due_flag')->nullable()->default(false);
             $table->dateTime('date_due')->nullable();

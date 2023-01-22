@@ -20,7 +20,7 @@ return new class extends Migration
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->decimal('total_amt', 26, 6)->nullable();
             $table->decimal('total_amt_usdollar', 26, 6)->nullable();
             $table->decimal('discount_amount', 26, 6)->nullable();

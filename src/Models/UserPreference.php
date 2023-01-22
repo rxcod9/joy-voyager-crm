@@ -18,7 +18,7 @@ use Joy\VoyagerCrm\Database\Factories\UserPreferenceFactory;
  * @property Carbon|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $contents
  *
  * @package Joy\VoyagerCrm\Models
@@ -44,7 +44,7 @@ class UserPreference extends Model
         'updated_at',
         'deleted_at',
         'category',
-        'assigned_user_id',
+        'assigned_to_id',
         'contents'
     ];
 

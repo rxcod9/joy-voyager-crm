@@ -13,7 +13,7 @@ use Joy\VoyagerCrm\Database\Factories\UsersLastImportFactory;
  * Class UsersLastImport
  *
  * @property string      $id
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $import_module
  * @property string|null $bean_type
  * @property string|null $bean_id
@@ -41,7 +41,7 @@ class UsersLastImport extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'assigned_user_id',
+        'assigned_to_id',
         'import_module',
         'bean_type',
         'bean_id',

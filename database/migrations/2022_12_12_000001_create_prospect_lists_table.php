@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('prospect_lists', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->uuid('id')->primary();
             $table->string('name')->nullable()->index('idx_prospect_list_name');
             $table->string('list_type', 100)->nullable();

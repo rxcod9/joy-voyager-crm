@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('project', function (Blueprint $table) {
             $table->comment('');
             $table->uuid('id')->primary();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->string('name', 50)->nullable();

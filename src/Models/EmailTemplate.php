@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $body
  * @property string|null $body_html
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property bool|null   $text_only
  * @property string|null $type
  *
@@ -63,7 +63,7 @@ class EmailTemplate extends Model
         'subject',
         'body',
         'body_html',
-        'assigned_user_id',
+        'assigned_to_id',
         'text_only',
         'type'
     ];

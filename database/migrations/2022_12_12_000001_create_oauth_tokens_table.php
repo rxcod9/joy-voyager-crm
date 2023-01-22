@@ -22,7 +22,7 @@ return new class extends Migration {
             $table->string('verify', 32)->nullable();
             // $table->boolean('deleted')->default(false);
             $table->string('callback_url')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
 
             $table->index(['tstate', 'token_ts'], 'oauth_state_ts');
             $table->primary(['id', 'deleted_at']);

@@ -21,7 +21,7 @@ use Joy\VoyagerCrm\Database\Factories\SurveyFactory;
  * @property string|null $created_by
  * @property string|null $description
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $status
  * @property string|null $submit_text
  * @property string|null $satisfied_text
@@ -55,7 +55,7 @@ class Survey extends Model
         'modified_by_id',
         'created_by_id',
         'description',
-        'assigned_user_id',
+        'assigned_to_id',
         'status',
         'submit_text',
         'satisfied_text',

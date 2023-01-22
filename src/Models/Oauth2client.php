@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int|null    $duration_value
  * @property int|null    $duration_amount
  * @property string|null $duration_unit
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  *
  * @package Joy\VoyagerCrm\Models
  */
@@ -71,6 +71,6 @@ class Oauth2client extends Model
         'duration_value',
         'duration_amount',
         'duration_unit',
-        'assigned_user_id'
+        'assigned_to_id'
     ];
 }

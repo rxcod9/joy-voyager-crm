@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $modified_by_id
  * @property string|null $created_by
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  *
  * @package Joy\VoyagerCrm\Models
  */
@@ -81,7 +81,7 @@ class OutboundEmail extends Model
         'mail_smtpssl',
         'modified_by_id',
         'created_by_id',
-        'assigned_user_id'
+        'assigned_to_id'
     ];
 
     /**

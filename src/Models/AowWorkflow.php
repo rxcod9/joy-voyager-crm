@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $created_by
  * @property string|null $description
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $flow_module
  * @property string|null $flow_run_on
  * @property string|null $status
@@ -62,7 +62,7 @@ class AowWorkflow extends Model
         'modified_by_id',
         'created_by_id',
         'description',
-        'assigned_user_id',
+        'assigned_to_id',
         'flow_module',
         'flow_run_on',
         'status',

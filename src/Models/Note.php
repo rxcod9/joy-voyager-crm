@@ -13,7 +13,7 @@ use Joy\VoyagerCrm\Database\Factories\NoteFactory;
 /**
  * Class Note
  *
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string      $id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -57,7 +57,7 @@ class Note extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'assigned_user_id',
+        'assigned_to_id',
         'modified_by_id',
         'created_by_id',
         'name',

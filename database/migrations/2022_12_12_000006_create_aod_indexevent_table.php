@@ -20,7 +20,7 @@ return new class extends Migration
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->string('error')->nullable();
             $table->boolean('success')->nullable()->default(false);
             $table->uuid('record_id')->nullable()->index('idx_record_id');

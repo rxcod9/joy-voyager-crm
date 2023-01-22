@@ -19,7 +19,7 @@ use Joy\VoyagerCrm\Database\Factories\SavedSearchFactory;
  * @property Carbon|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string|null $contents
  * @property string|null $description
  *
@@ -48,7 +48,7 @@ class SavedSearch extends Model
         'name',
         'search_module',
         'updated_at',
-        'assigned_user_id',
+        'assigned_to_id',
         'contents',
         'description'
     ];

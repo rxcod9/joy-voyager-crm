@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $created_by
  * @property string|null $description
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property int|null    $duration_hours
  * @property int|null    $duration_minutes
  * @property Carbon|null $date_start
@@ -81,7 +81,7 @@ class Call extends Model
         'modified_by_id',
         'created_by_id',
         'description',
-        'assigned_user_id',
+        'assigned_to_id',
         'duration_hours',
         'duration_minutes',
         'date_start',

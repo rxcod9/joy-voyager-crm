@@ -20,7 +20,7 @@ return new class extends Migration
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->string('flow_module', 100)->nullable();
             $table->string('flow_run_on', 100)->nullable()->default('0');
             $table->string('status', 100)->nullable()->default('Active')->index('aow_workflow_index_status');

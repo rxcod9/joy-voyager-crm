@@ -196,11 +196,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'reminder_belongsto_assigned_user_relationship');
+        $dataRow = $this->dataRow($dataType, 'reminder_belongsto_assigned_to_relationship');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'relationship',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_to'),
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -212,7 +212,7 @@ class DataRowsTableSeeder extends Seeder
                     'model'       => Voyager::modelClass('User'),
                     'table'       => 'users',
                     'type'        => 'belongsTo',
-                    'column'      => 'assigned_user_id',
+                    'column'      => 'assigned_to_id',
                     'key'         => 'id',
                     'label'       => 'name',
                     'pivot_table' => 'users',
@@ -221,11 +221,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'assigned_user_id');
+        $dataRow = $this->dataRow($dataType, 'assigned_to_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_to'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,

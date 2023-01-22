@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->comment('');
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->uuid('id')->primary();
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
@@ -28,7 +28,7 @@ return new class extends Migration {
             $table->boolean('embed_flag')->nullable()->default(false);
             $table->text('description')->nullable();
 
-            $table->index(['deleted_at', 'assigned_user_id'], 'idx_notes_assigned_del');
+            $table->index(['deleted_at', 'assigned_to_id'], 'idx_notes_assigned_del');
             $table->index(['parent_id', 'parent_type'], 'idx_notes_parent');
             $table->timestamps();
             $table->softDeletes();

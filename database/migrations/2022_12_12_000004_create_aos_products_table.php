@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->string('maincode', 100)->nullable()->default('XXXX');
             $table->string('part_number', 25)->nullable();
             $table->string('category', 100)->nullable();

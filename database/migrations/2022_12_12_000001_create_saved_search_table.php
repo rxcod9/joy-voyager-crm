@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name', 150)->nullable();
             $table->string('search_module', 150)->nullable();
             
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->text('contents')->nullable();
             $table->text('description')->nullable();
 

@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
             // $table->boolean('deleted')->nullable()->default(false)->index('idx_reminder_deleted');
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->boolean('popup')->nullable();
             $table->boolean('email')->nullable();
             $table->boolean('email_sent')->nullable();

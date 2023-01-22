@@ -273,11 +273,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'assigned_user_id');
+        $dataRow = $this->dataRow($dataType, 'assigned_to_id');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_user'),
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.assigned_to'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,

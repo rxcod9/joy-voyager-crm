@@ -15,11 +15,11 @@ return new class extends Migration {
         Schema::create('address_book', function (Blueprint $table) {
             $table->comment('');
             $table->uuid('id')->primary();
-            $table->uuid('assigned_user_id');
+            $table->uuid('assigned_to_id');
             $table->string('bean', 50)->nullable();
             $table->uuid('bean_id');
 
-            $table->index(['assigned_user_id', 'bean'], 'ab_user_bean_idx');
+            $table->index(['assigned_to_id', 'bean'], 'ab_user_bean_idx');
             $table->timestamps();
             $table->softDeletes();
         });

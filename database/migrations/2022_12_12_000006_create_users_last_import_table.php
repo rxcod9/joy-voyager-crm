@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('users_last_import', function (Blueprint $table) {
             $table->comment('');
             $table->uuid('id')->primary();
-            $table->uuid('assigned_user_id')->nullable()->index('idx_user_id');
+            $table->uuid('assigned_to_id')->nullable()->index('idx_user_id');
             $table->uuid('import_module')->nullable();
             $table->uuid('bean_type')->nullable();
             $table->uuid('bean_id')->nullable();

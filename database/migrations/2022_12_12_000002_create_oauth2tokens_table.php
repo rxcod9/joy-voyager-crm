@@ -28,7 +28,7 @@ return new class extends Migration {
             $table->string('grant_type')->nullable();
             $table->string('state', 1024)->nullable();
             $table->uuid('client')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

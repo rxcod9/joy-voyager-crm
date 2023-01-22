@@ -25,7 +25,7 @@ return new class extends Migration
             $table->longText('body')->nullable();
             $table->longText('body_html')->nullable();
             
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->boolean('text_only')->nullable();
             $table->string('type')->nullable();
             $table->timestamps();

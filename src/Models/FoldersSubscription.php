@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property string $id
  * @property string $folder_id
- * @property string $assigned_user_id
+ * @property string $assigned_to_id
  *
  * @package Joy\VoyagerCrm\Models
  */
@@ -36,6 +36,6 @@ class FoldersSubscription extends Model
         'updated_at',
         'deleted_at',
         'folder_id',
-        'assigned_user_id'
+        'assigned_to_id'
     ];
 }

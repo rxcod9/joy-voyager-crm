@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class ProspectList
  *
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property string      $id
  * @property string|null $name
  * @property string|null $list_type
@@ -47,7 +47,7 @@ class ProspectList extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'assigned_user_id',
+        'assigned_to_id',
         'name',
         'list_type',
         'modified_by_id',

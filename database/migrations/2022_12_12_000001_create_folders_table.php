@@ -23,7 +23,7 @@ return new class extends Migration
             $table->boolean('is_group')->nullable()->default(false);
             $table->boolean('is_dynamic')->nullable()->default(false);
             $table->text('dynamic_query')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->timestamps();

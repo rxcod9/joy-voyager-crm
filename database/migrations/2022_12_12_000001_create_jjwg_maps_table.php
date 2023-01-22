@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->float('distance', 9, 4)->nullable();
             $table->string('unit_type', 100)->nullable()->default('mi');
             $table->string('module_type', 100)->nullable()->default('Accounts');

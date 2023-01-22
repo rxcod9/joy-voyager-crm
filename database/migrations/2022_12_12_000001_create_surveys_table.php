@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->string('status', 100)->nullable()->default('Draft');
             $table->string('submit_text')->nullable()->default('Submit');
             $table->string('satisfied_text')->nullable()->default('Satisfied');

@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->uuid('modified_by_id')->nullable();
             $table->uuid('created_by_id')->nullable();
             $table->text('description')->nullable();
-            $table->uuid('assigned_user_id')->nullable();
+            $table->uuid('assigned_to_id')->nullable();
             $table->integer('duration_hours')->nullable();
             $table->integer('duration_minutes')->nullable();
             $table->dateTime('date_start')->nullable()->index('idx_calls_date_start');
@@ -40,7 +40,7 @@ return new class extends Migration {
             $table->uuid('repeat_parent_id')->nullable();
             $table->uuid('recurring_source')->nullable();
 
-            $table->index(['deleted_at', 'assigned_user_id'], 'idx_calls_assigned_del');
+            $table->index(['deleted_at', 'assigned_to_id'], 'idx_calls_assigned_del');
             $table->index(['parent_id', 'parent_type', 'deleted_at'], 'idx_calls_par_del');
             $table->timestamps();
             $table->softDeletes();

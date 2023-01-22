@@ -21,7 +21,7 @@ use Joy\VoyagerCrm\Database\Factories\AlertFactory;
  * @property string|null $created_by
  * @property string|null $description
  * @property Carbon|null $deleted_at
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  * @property bool|null   $is_read
  * @property string|null $target_module
  * @property string|null $type
@@ -58,7 +58,7 @@ class Alert extends Model
         'modified_by_id',
         'created_by_id',
         'description',
-        'assigned_user_id',
+        'assigned_to_id',
         'is_read',
         'target_module',
         'type',

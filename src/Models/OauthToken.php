@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $verify
  * @property bool        $deleted
  * @property string|null $callback_url
- * @property string|null $assigned_user_id
+ * @property string|null $assigned_to_id
  *
  * @package Joy\VoyagerCrm\Models
  */
@@ -55,6 +55,6 @@ class OauthToken extends Model
         'token_ts',
         'verify',
         'callback_url',
-        'assigned_user_id'
+        'assigned_to_id'
     ];
 }

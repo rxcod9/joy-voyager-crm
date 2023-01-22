@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class AddressBook
  *
- * @property string      $assigned_user_id
+ * @property string      $assigned_to_id
  * @property string|null $bean
  * @property string      $bean_id
  *
@@ -35,7 +35,7 @@ class AddressBook extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'assigned_user_id',
+        'assigned_to_id',
         'bean',
         'bean_id'
     ];
