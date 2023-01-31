@@ -183,6 +183,56 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($dataType, 'survey_hasmany_surveyquestions_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.surveyquestions'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Surveyquestion'),
+                    'table'       => 'surveyquestions',
+                    'type'        => 'hasMany',
+                    'column'      => 'survey_id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'surveyquestions',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'survey_hasmany_surveyresponses_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.surveyresponses'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 1,
+                'add'          => 0,
+                'delete'       => 0,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Surveyresponse'),
+                    'table'       => 'surveyresponses',
+                    'type'        => 'hasMany',
+                    'column'      => 'survey_id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'surveyresponses',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($dataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([

@@ -201,6 +201,31 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($dataType, 'survey_question_hasmany_surveyquestionoptions_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.surveyquestionoptions'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Surveyquestionoption'),
+                    'table'       => 'surveyquestionoptions',
+                    'type'        => 'hasMany',
+                    'column'      => 'survey_question_id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'surveyquestionoptions',
+                    'pivot'       => 0,
+                ],
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($dataType, 'created_at');
         if (!$dataRow->exists) {
             $dataRow->fill([

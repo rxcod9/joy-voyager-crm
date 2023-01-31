@@ -247,6 +247,7 @@ use Joy\VoyagerCrm\Models\UsersPasswordLink;
 use Joy\VoyagerCrm\Models\UsersSignature;
 use Joy\VoyagerCrm\Models\Vcal;
 use RuntimeException;
+use Joy\VoyagerDatatable\Facades\Voyager as VoyagerFacade;
 
 /**
  * Class VoyagerCrmServiceProvider

@@ -30,17 +30,17 @@ class TranslationsTableSeeder extends Seeder
      */
     private function aodIndexesTranslations()
     {
-        // Adding translations for 'aod_indexes'
+        // Adding translations for 'aod_index'
         //
         $cat = Voyager::model('AodIndex')->where('name', 'aod_index-1')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['aod_indexes', 'name'], $cat->id), 'aod-index-1');
-            $this->trans('pt', $this->arr(['aod_indexes', 'description'], $cat->id), 'AodIndex 1');
+            $this->trans('pt', $this->arr(['aod_index', 'name'], $cat->id), 'aod-index-1');
+            $this->trans('pt', $this->arr(['aod_index', 'description'], $cat->id), 'AodIndex 1');
         }
         $cat = Voyager::model('AodIndex')->where('name', 'aod_index-2')->first();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['aod_indexes', 'name'], $cat->id), 'aod-index-2');
-            $this->trans('pt', $this->arr(['aod_indexes', 'description'], $cat->id), 'AodIndex 2');
+            $this->trans('pt', $this->arr(['aod_index', 'name'], $cat->id), 'aod-index-2');
+            $this->trans('pt', $this->arr(['aod_index', 'description'], $cat->id), 'AodIndex 2');
         }
     }
 

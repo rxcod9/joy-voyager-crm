@@ -13,6 +13,6 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        Voyager::model('Permission')->generateFor('aod_indexes');
+        Voyager::model('Permission')->generateFor('aod_index');
     }
 }

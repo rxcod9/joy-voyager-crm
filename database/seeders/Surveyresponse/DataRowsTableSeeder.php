@@ -122,7 +122,7 @@ class DataRowsTableSeeder extends Seeder
                     'model'       => Voyager::modelClass('Account'),
                     'table'       => 'accounts',
                     'type'        => 'belongsTo',
-                    'column'      => 'accounts',
+                    'column'      => 'account_id',
                     'key'         => 'id',
                     'label'       => 'name',
                     'pivot_table' => 'accounts',
@@ -162,7 +162,7 @@ class DataRowsTableSeeder extends Seeder
                     'model'       => Voyager::modelClass('Campaign'),
                     'table'       => 'campaigns',
                     'type'        => 'belongsTo',
-                    'column'      => 'campaigns',
+                    'column'      => 'campaign_id',
                     'key'         => 'id',
                     'label'       => 'name',
                     'pivot_table' => 'campaigns',
@@ -202,7 +202,7 @@ class DataRowsTableSeeder extends Seeder
                     'model'       => Voyager::modelClass('Contact'),
                     'table'       => 'contacts',
                     'type'        => 'belongsTo',
-                    'column'      => 'contacts',
+                    'column'      => 'contact_id',
                     'key'         => 'id',
                     'label'       => 'first_name',
                     'pivot_table' => 'contacts',
@@ -242,7 +242,7 @@ class DataRowsTableSeeder extends Seeder
                     'model'       => Voyager::modelClass('Survey'),
                     'table'       => 'surveys',
                     'type'        => 'belongsTo',
-                    'column'      => 'surveys',
+                    'column'      => 'survey_id',
                     'key'         => 'id',
                     'label'       => 'name',
                     'pivot_table' => 'surveys',
@@ -288,6 +288,31 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'order'        => ++$order,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($dataType, 'survey_question_hasmany_surveyquestionresponses_relationship');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'relationship',
+                'display_name' => __('joy-voyager-crm::seeders.data_rows.surveyquestionresponses'),
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 0,
+                'order'        => ++$order,
+                'details'      => [
+                    'model'       => Voyager::modelClass('Surveyquestionresponse'),
+                    'table'       => 'surveyquestionresponses',
+                    'type'        => 'hasMany',
+                    'column'      => 'surveyresponse_id',
+                    'key'         => 'id',
+                    'label'       => 'name',
+                    'pivot_table' => 'surveyquestionresponses',
+                    'pivot'       => 0,
+                ],
             ])->save();
         }
 

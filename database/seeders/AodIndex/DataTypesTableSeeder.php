@@ -15,7 +15,7 @@ class DataTypesTableSeeder extends Seeder
         $dataType = $this->dataType('slug', 'aod-indexes');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'aod_indexes',
+                'name'                  => 'aod_index',
                 'display_name_singular' => __('joy-voyager-crm::seeders.data_types.aod_index.singular'),
                 'display_name_plural'   => __('joy-voyager-crm::seeders.data_types.aod_index.plural'),
                 'icon'                  => 'voyager-bread voyager-crm-aod_index voyager-key',
