@@ -65,7 +65,7 @@ class Tracker extends Model
     /**
     * Create a new factory instance for the model.
     *
-    * @return \Illuminate\Database\Eloquent\Factories\Factory
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
     */
     protected static function newFactory()
     {
