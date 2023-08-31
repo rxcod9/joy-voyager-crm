@@ -23,7 +23,7 @@ class TaskFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Contact')     => 'Contact',
             Voyager::modelClass('Task')        => 'Task',
@@ -52,7 +52,7 @@ class TaskFactory extends Factory
             'date_start_flag' => $this->faker->boolean(),
             'date_start'      => $this->faker->dateTimeBetween('-1month', 'now')->format('Y-m-d'),
             'parent_type'     => $parentType,
-            'parent_id'       => optional($parentType)->factory(),
+            'parent_id'       => (new $parentType)->factory(),
             'contact_id'      => null,
             'priority'        => $this->faker->randomKey([
                 'Low'    => 'Low',

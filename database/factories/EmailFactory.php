@@ -23,7 +23,7 @@ class EmailFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -73,7 +73,7 @@ class EmailFactory extends Factory
             'intent'             => $this->faker->text('10'),
             'mailbox_id'         => null,
             'parent_type'        => $parentType,
-            'parent_id'          => optional($parentType)->factory(),
+            'parent_id'          => (new $parentType)->factory(),
             'uid'                => null,
             'category_id'        => $this->faker->randomKey([
                 ''         => 'None',

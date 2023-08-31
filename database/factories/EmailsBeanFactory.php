@@ -23,7 +23,7 @@ class EmailsBeanFactory extends Factory
     public function definition()
     {
         $beanType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -34,7 +34,7 @@ class EmailsBeanFactory extends Factory
         return [
             'email_id'      => null,
             'bean_module'   => $beanType,
-            'bean_id'       => optional($beanType)->factory(),
+            'bean_id'       => (new $beanType)->factory(),
             'campaign_data' => $this->faker->paragraphs(10, true),
             'created_at'    => $this->faker->dateTime(),
             'updated_at'    => $this->faker->dateTime(),

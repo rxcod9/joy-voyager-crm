@@ -23,7 +23,7 @@ class AowProcessedFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -49,7 +49,7 @@ class AowProcessedFactory extends Factory
             'description'     => $this->faker->text(500),
             'aow_workflow_id' => null,
             'parent_type'     => $parentType,
-            'parent_id'       => optional($parentType)->factory(),
+            'parent_id'       => (new $parentType)->factory(),
             'status'          => $this->faker->randomKey([
                 'Complete' => 'Complete',
                 'Running'  => 'Running',

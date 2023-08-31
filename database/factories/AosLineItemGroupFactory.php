@@ -23,7 +23,7 @@ class AosLineItemGroupFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('AosQuote')    => 'Quote',
             Voyager::modelClass('AosInvoice')  => 'Invoice',
             Voyager::modelClass('AosContract') => 'Contract',
@@ -45,7 +45,7 @@ class AosLineItemGroupFactory extends Factory
             'total_amount'                 => $this->faker->randomFloat(6),
             'total_amount_usdollar'        => $this->faker->randomFloat(6),
             'parent_type'                  => $parentType,
-            'parent_id'                    => optional($parentType)->factory(),
+            'parent_id'                    => (new $parentType)->factory(),
             'number'                       => $this->faker->numberBetween(1, 100),
             'currency_id'                  => null,
             'created_at'                   => $this->faker->dateTime(),

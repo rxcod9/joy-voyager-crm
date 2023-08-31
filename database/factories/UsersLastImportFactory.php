@@ -23,7 +23,7 @@ class UsersLastImportFactory extends Factory
     public function definition()
     {
         $beanType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -47,7 +47,7 @@ class UsersLastImportFactory extends Factory
         return [
             'import_module' => $this->faker->word(),
             'bean_type'     => $beanType,
-            'bean_id'       => optional($beanType)->factory(),
+            'bean_id'       => (new $beanType)->factory(),
             'created_at'    => $this->faker->dateTime(),
             'updated_at'    => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

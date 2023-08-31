@@ -23,7 +23,7 @@ class AodIndexeventFactory extends Factory
     public function definition()
     {
         $recordType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -50,7 +50,7 @@ class AodIndexeventFactory extends Factory
             'error'         => $this->faker->text(50),
             'success'       => $this->faker->boolean(),
             'record_module' => $recordType,
-            'record_id'     => optional($recordType)->factory(),
+            'record_id'     => (new $recordType)->factory(),
             'created_at'    => $this->faker->dateTime(),
             'updated_at'    => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

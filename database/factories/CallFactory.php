@@ -23,7 +23,7 @@ class CallFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Contact')     => 'Contact',
             Voyager::modelClass('Task')        => 'Task',
@@ -52,7 +52,7 @@ class CallFactory extends Factory
             'date_start'          => $this->faker->dateTimeBetween('-3months', '-2months'),
             'date_end'            => $this->faker->dateTimeBetween('-2months', '-1month'),
             'parent_type'         => $parentType,
-            'parent_id'           => optional($parentType)->factory(),
+            'parent_id'           => (new $parentType)->factory(),
             'status'              => $this->faker->randomKey([
                 'Planned'  => 'Planned',
                 'Held'     => 'Held',

@@ -23,7 +23,7 @@ class NoteFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Contact')     => 'Contact',
             Voyager::modelClass('Opportunity') => 'Opportunity',
@@ -54,7 +54,7 @@ class NoteFactory extends Factory
             'file_mime_type' => $this->faker->text(50),
             'filename'       => $this->faker->text(50),
             'parent_type'    => $parentType,
-            'parent_id'      => optional($parentType)->factory(),
+            'parent_id'      => (new $parentType)->factory(),
             'contact_id'     => null,
             'portal_flag'    => $this->faker->boolean(),
             'embed_flag'     => $this->faker->boolean(),

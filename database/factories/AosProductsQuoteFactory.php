@@ -23,7 +23,7 @@ class AosProductsQuoteFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -69,7 +69,7 @@ class AosProductsQuoteFactory extends Factory
             'product_total_price_usdollar'     => $this->faker->randomFloat(2),
             'vat'                              => $this->faker->text(50),
             'parent_type'                      => $parentType,
-            'parent_id'                        => optional($parentType)->factory(),
+            'parent_id'                        => (new $parentType)->factory(),
             'product_id'                       => null,
             'group_id'                         => null,
             'created_at'                       => $this->faker->dateTime(),

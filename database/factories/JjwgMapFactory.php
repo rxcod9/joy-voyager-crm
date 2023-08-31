@@ -23,7 +23,7 @@ class JjwgMapFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -54,7 +54,7 @@ class JjwgMapFactory extends Factory
             ]),
             'module_type' => null,
             'parent_type' => $parentType,
-            'parent_id'   => optional($parentType)->factory(),
+            'parent_id'   => (new $parentType)->factory(),
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

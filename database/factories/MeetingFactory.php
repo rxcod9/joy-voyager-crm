@@ -23,7 +23,7 @@ class MeetingFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Contact')     => 'Contact',
             Voyager::modelClass('Task')        => 'Task',
@@ -59,7 +59,7 @@ class MeetingFactory extends Factory
             'date_start'          => $this->faker->dateTimeBetween('-1month', 'now'),
             'date_end'            => $this->faker->dateTimeBetween('-1month', '+1month'),
             'parent_type'         => $parentType,
-            'parent_id'           => optional($parentType)->factory(),
+            'parent_id'           => (new $parentType)->factory(),
             'status'              => $this->faker->randomKey(
                 config('joy-voyager-crm.meetings.statuses', [
                     'Planned'  => 'Planned',

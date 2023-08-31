@@ -23,7 +23,7 @@ class SecuritygroupsRecordFactory extends Factory
     public function definition()
     {
         $recordType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Opportunity') => 'Opportunity',
             Voyager::modelClass('CrmCase')     => 'Case',
@@ -47,7 +47,7 @@ class SecuritygroupsRecordFactory extends Factory
         return [
             'securitygroup_id' => null,
             'module'           => $recordType,
-            'record_id'        => optional($recordType)->factory(),
+            'record_id'        => (new $recordType)->factory(),
             'created_at'       => $this->faker->dateTime(),
             'updated_at'       => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),

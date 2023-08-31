@@ -23,7 +23,7 @@ class FavoriteFactory extends Factory
     public function definition()
     {
         $parentType = $this->faker->randomKey([
-            ''                                 => 'None',
+            // ''                                 => 'None',
             Voyager::modelClass('Account')     => 'Account',
             Voyager::modelClass('Contact')     => 'Contact',
             Voyager::modelClass('Task')        => 'Task',
@@ -48,7 +48,7 @@ class FavoriteFactory extends Factory
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(500),
             'parent_type' => $parentType,
-            'parent_id'   => optional($parentType)->factory(),
+            'parent_id'   => (new $parentType)->factory(),
             'created_at'  => $this->faker->dateTime(),
             'updated_at'  => $this->faker->dateTime(),
             // 'deleted_at' => $this->faker->dateTime(),
