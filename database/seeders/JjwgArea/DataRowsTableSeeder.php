@@ -106,18 +106,22 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($dataType, 'coordinates');
+        $dataRow = $this->dataRow($dataType, 'coordinates'); // point
         if (!$dataRow->exists) {
             $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => __('joy-voyager-crm::seeders.data_rows.coordinates'),
+                'type'         => 'coordinates',
+                'display_name' => __('joy-voyager-bread-sample::seeders.data_rows.coordinates'),
                 'required'     => 0,
-                'browse'       => 0,
-                'read'         => 0,
-                'edit'         => 0,
-                'add'          => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
                 'delete'       => 0,
                 'order'        => ++$order,
+                'details' => [
+                    "showAutocompleteInput" => true,
+                    "showLatLngInput" => true
+                ]
             ])->save();
         }
 
