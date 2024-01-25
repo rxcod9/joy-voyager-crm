@@ -31,9 +31,9 @@ php artisan vendor:publish --provider="Joy\VoyagerCrm\VoyagerCrmServiceProvider"
 # 3. Migrate
 php artisan migrate
 # 4. Seeders
-php artisan db:seed --provider="\Joy\VoyagerCrm\Database\Seeders\VoyagerDatabaseSeeder" --force
+php artisan db:seed --class="\Joy\VoyagerCrm\Database\Seeders\VoyagerDatabaseSeeder" --force
 # 5. Dmmy Seeders
-php artisan db:seed --provider="\Joy\VoyagerCrm\Database\Seeders\VoyagerDummyDatabaseSeeder" --force
+php artisan db:seed --class="\Joy\VoyagerCrm\Database\Seeders\VoyagerDummyDatabaseSeeder" --force
 ```
 
 ---
